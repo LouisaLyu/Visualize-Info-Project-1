@@ -1,0 +1,2539 @@
+{
+  "tracks" : [ {
+    "artist" : "Robin",
+    "album" : "INSIDE",
+    "track" : "Hope Is the Thing With Feathers",
+    "uri" : "spotify:track:3FUaNR2HD1XaeOmw4puhkz"
+  }, {
+    "artist" : "GOT7",
+    "album" : "7 for 7",
+    "track" : "Face",
+    "uri" : "spotify:track:5sAuJgcO45I2Y3F5CAowAe"
+  }, {
+    "artist" : "Kevin Chung",
+    "album" : "Friends to Lovers",
+    "track" : "Friends to Lovers",
+    "uri" : "spotify:track:6dEPa7HFFOBC4A6kdGjwdX"
+  }, {
+    "artist" : "Andrew Tan",
+    "album" : "再愛一遍‧天后陳勢安",
+    "track" : "天后",
+    "uri" : "spotify:track:4D0KlK4Fl8lotvsoys1bYQ"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "學不會",
+    "track" : "那些你很冒險的夢",
+    "uri" : "spotify:track:2aMN1ky0SzSEcV1QdBYbW9"
+  }, {
+    "artist" : "習譜予",
+    "album" : "习谱予",
+    "track" : "Let Me Know",
+    "uri" : "spotify:track:6QJoOJOKfLc2oehqTmetS7"
+  }, {
+    "artist" : "WeiBird",
+    "album" : "如果可以",
+    "track" : "如果可以 - 電影\"月老\"主題曲",
+    "uri" : "spotify:track:72OVnXDzugvrCU25lMi9au"
+  }, {
+    "artist" : "aespa",
+    "album" : "Whiplash - The 5th Mini Album",
+    "track" : "Whiplash",
+    "uri" : "spotify:track:3coRPMnFg2dJcPu5RMloa9"
+  }, {
+    "artist" : "KISS OF LIFE",
+    "album" : "Midas Touch",
+    "track" : "Midas Touch",
+    "uri" : "spotify:track:0vaxYDAuAO1nPolC6bQp7V"
+  }, {
+    "artist" : "Eason Chan",
+    "album" : "陳奕迅2011 \"?\" 國語專輯",
+    "track" : "孤獨患者(國)",
+    "uri" : "spotify:track:2woOC3CRkSj2Mac0mazL7b"
+  }, {
+    "artist" : "MICO",
+    "album" : "Internet hometown hero",
+    "track" : "TV",
+    "uri" : "spotify:track:0fVYCQFCcaUiRc5WcijDVO"
+  }, {
+    "artist" : "Jackson Wang",
+    "album" : "MAGIC MAN",
+    "track" : "Blow",
+    "uri" : "spotify:track:5WjFTHBXtirpkDcG0pZYQH"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 5th Album 'HAPPY BURSTDAY'",
+    "track" : "THUNDER",
+    "uri" : "spotify:track:0qkYuCno3SoU8vxkCdx0iJ"
+  }, {
+    "artist" : "Porter Robinson",
+    "album" : "Everything Goes On",
+    "track" : "Everything Goes On",
+    "uri" : "spotify:track:4C4zy9kfjYjr6IcNAdV7ZD"
+  }, {
+    "artist" : "League of Legends",
+    "album" : "Legends Never Die",
+    "track" : "Legends Never Die",
+    "uri" : "spotify:track:1FpVJ7HpZInE2GvhVE2TwT"
+  }, {
+    "artist" : "Robin",
+    "album" : "INSIDE",
+    "track" : "Sway to My Beat in Cosmos",
+    "uri" : "spotify:track:2AnvQvVqWORCmgRzLR0sHe"
+  }, {
+    "artist" : "蓝心羽",
+    "album" : "淋一场雨",
+    "track" : "淋一场雨",
+    "uri" : "spotify:track:4EyMYDoUS8u85sL1cq52gf"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "JJ林俊傑100天",
+    "track" : "愛不會絕跡",
+    "uri" : "spotify:track:3zP4GbFEI4GLJMblRgLmdK"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "因你 而在",
+    "track" : "修煉愛情",
+    "uri" : "spotify:track:101iWa6yaODTI0RWewMK1B"
+  }, {
+    "artist" : "BIGBANG",
+    "album" : "MADE",
+    "track" : "BANG BANG BANG",
+    "uri" : "spotify:track:3dI59jLoFMjMAyUAyRZnkE"
+  }, {
+    "artist" : "ITZY",
+    "album" : "GOLD",
+    "track" : "Imaginary Friend",
+    "uri" : "spotify:track:06BeeZaS4YArThfTMu80QS"
+  }, {
+    "artist" : "DOUDOU",
+    "album" : "嗵嗵",
+    "track" : "嗵嗵",
+    "uri" : "spotify:track:2XP3hbbZKRhrlSBf8POjuA"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "Obsessed",
+    "track" : "Obsessed",
+    "uri" : "spotify:track:4PPsV0xEXwFxisegC58FKb"
+  }, {
+    "artist" : "i-dle",
+    "album" : "I NEVER DIE",
+    "track" : "MY BAG",
+    "uri" : "spotify:track:1t8sqIScEIP0B4bQzBuI2P"
+  }, {
+    "artist" : "Ice Paper",
+    "album" : "心如止水",
+    "track" : "心如止水",
+    "uri" : "spotify:track:6cKDT1dGunKpKS0IijtGqb"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "HOME;RUN",
+    "uri" : "spotify:track:4w25m2448QReLEsiuqhpLt"
+  }, {
+    "artist" : "Arcane",
+    "album" : "Arcane League of Legends: Season 2 (Soundtrack from the Animated Series)",
+    "track" : "这样很好 (Isha's Song) (from the series Arcane League of Legends)",
+    "uri" : "spotify:track:3cG6423elE49gy76onK3VK"
+  }, {
+    "artist" : "三块木头",
+    "album" : "我们啊",
+    "track" : "我们啊",
+    "uri" : "spotify:track:7xRrG4bWqRZMEmksSWozWC"
+  }, {
+    "artist" : "Jay Park",
+    "album" : "EVERYTHING YOU WANTED",
+    "track" : "Me Like Yuh",
+    "uri" : "spotify:track:3SWju8HQ6II7QXkWtFSDE1"
+  }, {
+    "artist" : "GOT7",
+    "album" : "Breath of Love: Last Piece",
+    "track" : "LAST PIECE",
+    "uri" : "spotify:track:6oZK2OtYfjLk6FLdXJW6FI"
+  }, {
+    "artist" : "糯米Nomi",
+    "album" : "心理罪",
+    "track" : "心理罪",
+    "uri" : "spotify:track:0KGoqfzohqIIkCFOoapEGv"
+  }, {
+    "artist" : "玥夏",
+    "album" : "木偶戏",
+    "track" : "木偶戏",
+    "uri" : "spotify:track:4S1GVHv92Mmj0rcmaiH9vs"
+  }, {
+    "artist" : "ONE OK ROCK",
+    "album" : "Luxury Disease",
+    "track" : "Let Me Let You Go",
+    "uri" : "spotify:track:1l6fmXCPtTpJrKpYBe9bBw"
+  }, {
+    "artist" : "Hebe Tien",
+    "album" : "小幸運",
+    "track" : "小幸運",
+    "uri" : "spotify:track:1ZeVIrCWzEmsJexkrgvjFv"
+  }, {
+    "artist" : "elijah woods",
+    "album" : "bright orange everglow",
+    "track" : "where we're going",
+    "uri" : "spotify:track:4mm39wDyaVYByBLz5MN3kW"
+  }, {
+    "artist" : "eaJ",
+    "album" : "Car Crash",
+    "track" : "Car Crash",
+    "uri" : "spotify:track:6mZ6SNzhdYJg9cN22RoZip"
+  }, {
+    "artist" : "TakaseToya",
+    "album" : "The 2nd of Undecimber",
+    "track" : "The 1st of the 13th month",
+    "uri" : "spotify:track:3TGj4dcHrdB7rpCzGntFC8"
+  }, {
+    "artist" : "糯米Nomi",
+    "album" : "調查中",
+    "track" : "調查中",
+    "uri" : "spotify:track:05sD6G0xkuoy2PIKGgZwpL"
+  }, {
+    "artist" : "The Chainsmokers",
+    "album" : "Memories...Do Not Open",
+    "track" : "Paris",
+    "uri" : "spotify:track:72jbDTw1piOOj770jWNeaG"
+  }, {
+    "artist" : "Seraphine",
+    "album" : "Made Me This Way",
+    "track" : "Made Me This Way",
+    "uri" : "spotify:track:2Ixg9XqR0ZTIMNIukrPIA3"
+  }, {
+    "artist" : "Joker Xue",
+    "album" : "天外来物",
+    "track" : "野心",
+    "uri" : "spotify:track:5tWoYDjiLPfZe1y4cXNAoj"
+  }, {
+    "artist" : "ROSÉ",
+    "album" : "rosie",
+    "track" : "toxic till the end",
+    "uri" : "spotify:track:1z5ebC9238uGoBgzYyvGpQ"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "重拾_快樂",
+    "track" : "自畫像",
+    "uri" : "spotify:track:17RHsGZoe2YWoaQA9HFzeP"
+  }, {
+    "artist" : "Gun Boi Kaz",
+    "album" : "Tattoos",
+    "track" : "Tattoos",
+    "uri" : "spotify:track:2cL5xA2cJkPwlBaxOjuAvc"
+  }, {
+    "artist" : "MAMAMOO",
+    "album" : "Dingga",
+    "track" : "Dingga",
+    "uri" : "spotify:track:0bDYceyQd1jnJO4sK47YxU"
+  }, {
+    "artist" : "MICO",
+    "album" : "Internet hometown hero",
+    "track" : "Senses",
+    "uri" : "spotify:track:1y5h2rARaMMsNpSLIgfMfT"
+  }, {
+    "artist" : "Yihuik苡慧",
+    "album" : "我们俩",
+    "track" : "我们俩",
+    "uri" : "spotify:track:7IGSu3U1mUxUi1eVjxOj4M"
+  }, {
+    "artist" : "Tank",
+    "album" : "The Little Fairy",
+    "track" : "Thousand Years Tear",
+    "uri" : "spotify:track:4AX28WygFNFw0mg3D6nhNS"
+  }, {
+    "artist" : "GOT7",
+    "album" : "DYE",
+    "track" : "LOVE YOU BETTER",
+    "uri" : "spotify:track:7inzKPIYYPKhOBIXBsycho"
+  }, {
+    "artist" : "マルシィ",
+    "album" : "Memory",
+    "track" : "未来図",
+    "uri" : "spotify:track:3hD6z4YbJk64kN3v3N47hr"
+  }, {
+    "artist" : "Chris James",
+    "album" : "The Weight of Nostalgia",
+    "track" : "29",
+    "uri" : "spotify:track:0ahoVVrk5FRFzVF8Fp7Pzp"
+  }, {
+    "artist" : "GOT7",
+    "album" : "Breath of Love: Last Piece",
+    "track" : "Breath",
+    "uri" : "spotify:track:48iEeKVDuRYEqpksJJAELP"
+  }, {
+    "artist" : "Joker Xue",
+    "album" : "薛之谦",
+    "track" : "认真的雪",
+    "uri" : "spotify:track:2ukWUxS1rgl8erHlCjoYzb"
+  }, {
+    "artist" : "Joker Xue",
+    "album" : "渡 The Crossing",
+    "track" : "暧昧",
+    "uri" : "spotify:track:2Hj4mXU7UhvCzkIECelzd6"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "新地球",
+    "track" : "可惜沒如果",
+    "uri" : "spotify:track:0E8P8DNhj10IAF62AAjpgd"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 6th Mini Album 'YOU MADE MY DAWN'",
+    "track" : "Getting Closer",
+    "uri" : "spotify:track:4CQsxHBYtQvDuNPnlDo5RE"
+  }, {
+    "artist" : "XG",
+    "album" : "GRL GVNG",
+    "track" : "GRL GVNG",
+    "uri" : "spotify:track:5OqMZ8In8CkCa0SbknnDPl"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "F*ck My Life",
+    "uri" : "spotify:track:1DI66g4SmYOnZQVdZd51Oa"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 4th Album 'Face the Sun'",
+    "track" : "Shadow",
+    "uri" : "spotify:track:2rwJP8OEao5y3xexw52HfD"
+  }, {
+    "artist" : "Henry Young",
+    "album" : "One More Last Time",
+    "track" : "One More Last Time",
+    "uri" : "spotify:track:2EPQXOr3VLvDImQnoHOYO3"
+  }, {
+    "artist" : "BSS",
+    "album" : "BSS 2nd Single Album ‘TELEPARTY’",
+    "track" : "CBZ (Prime time)",
+    "uri" : "spotify:track:0ofqcEBPdlyczRjUhjCiIS"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "Lie With Me",
+    "track" : "Lie With Me",
+    "uri" : "spotify:track:6Y6h80Y0CoUBXm3WeFWBgh"
+  }, {
+    "artist" : "LBI利比",
+    "album" : "Jumping Machine (跳楼机)",
+    "track" : "Jumping Machine (跳楼机)",
+    "uri" : "spotify:track:1XZE0InCx3SdCnLpVsPpZl"
+  }, {
+    "artist" : "Sān-Z",
+    "album" : "Fearless",
+    "track" : "Fearless",
+    "uri" : "spotify:track:2G5iUlHUHT28DauclHioat"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "Press Against Me",
+    "track" : "Press Against Me",
+    "uri" : "spotify:track:60ht9ujk1yPAqycFf4pzfD"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "新地球",
+    "track" : "新地球",
+    "uri" : "spotify:track:0kkYM3cLSfPZT4MMmx9cwr"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 4th Album Repackage 'SECTOR 17'",
+    "track" : "CHEERS",
+    "uri" : "spotify:track:1pdFdv8R6ezIAUUNkn785b"
+  }, {
+    "artist" : "宿羽阳",
+    "album" : "暗恋是一个人的事",
+    "track" : "暗恋是一个人的事",
+    "uri" : "spotify:track:21st68V0VJNuUZDNFXkMrO"
+  }, {
+    "artist" : "Amber Kuo",
+    "album" : "愛異想",
+    "track" : "你在 不在",
+    "uri" : "spotify:track:0qi7Dkh3oepaKgivmuAAFI"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "Heng:garæ",
+    "track" : "My My",
+    "uri" : "spotify:track:4rnvC8St4YDHGuQdBEByRz"
+  }, {
+    "artist" : "BTS",
+    "album" : "Love Yourself 轉 'Tear'",
+    "track" : "FAKE LOVE",
+    "uri" : "spotify:track:6m1TWFMeon7ai9XLOzdbiR"
+  }, {
+    "artist" : "i-dle",
+    "album" : "I NEVER DIE",
+    "track" : "TOMBOY",
+    "uri" : "spotify:track:0IGUXY4JbK18bu9oD4mPIm"
+  }, {
+    "artist" : "MICO",
+    "album" : "the afterparty EP",
+    "track" : "better",
+    "uri" : "spotify:track:25gA7JjM32MdWZgkAblAQc"
+  }, {
+    "artist" : "(sic)boy",
+    "album" : "HOLLOW",
+    "track" : "Miss You feat. Vernon of SEVENTEEN",
+    "uri" : "spotify:track:4moXDtZ8yh7xIzJIsHQP7C"
+  }, {
+    "artist" : "Jess Lee",
+    "album" : "歌手2025 第8期 (Live)",
+    "track" : "天后 - Live",
+    "uri" : "spotify:track:01ccKjHEH1cZJOpUQ4qZei"
+  }, {
+    "artist" : "XG",
+    "album" : "MILLION PLACES",
+    "track" : "MILLION PLACES",
+    "uri" : "spotify:track:4HJNGbmQomaeZoh6aOYDIT"
+  }, {
+    "artist" : "姚六一",
+    "album" : "雾里",
+    "track" : "雾里",
+    "uri" : "spotify:track:5A1EaQtZZKhFkqzwHHza3F"
+  }, {
+    "artist" : "Alex Hagen",
+    "album" : "full stop",
+    "track" : "full stop",
+    "uri" : "spotify:track:1iBD7I8FnRTtZ3drvrv4Kb"
+  }, {
+    "artist" : "于冬然",
+    "album" : "舍不得又如何",
+    "track" : "舍不得又如何",
+    "uri" : "spotify:track:5cbbvZRaEqcuq3mLiIhp00"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "VALORANT Sounds Vol. 1",
+    "track" : "Ticking Away",
+    "uri" : "spotify:track:7cmFEZ81b4S2u6MIHiCIba"
+  }, {
+    "artist" : "Rival",
+    "album" : "Live A Lie",
+    "track" : "Live A Lie",
+    "uri" : "spotify:track:2YKNb8KV4fwone4Ht8MxaP"
+  }, {
+    "artist" : "Kelly Yu",
+    "album" : "尚未界定",
+    "track" : "體面",
+    "uri" : "spotify:track:7oOfvZDUqhiJd9OC2Tq8Nh"
+  }, {
+    "artist" : "Against The Current",
+    "album" : "fever",
+    "track" : "weapon",
+    "uri" : "spotify:track:5z0QlOV93W6Yo7DG2SYOJP"
+  }, {
+    "artist" : "i-dle",
+    "album" : "HEAT",
+    "track" : "I Want That",
+    "uri" : "spotify:track:2oGscqSTag2iNgQYNn1dhg"
+  }, {
+    "artist" : "Eason Chan",
+    "album" : "What's Going On...?",
+    "track" : "富士山下",
+    "uri" : "spotify:track:3cthRwQ2X0SNTaauD7tjn5"
+  }, {
+    "artist" : "Joker Xue",
+    "album" : "初学者",
+    "track" : "演员",
+    "uri" : "spotify:track:1Bhv4QYee464wjm5pgGJpK"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 11th Mini Album 'SEVENTEENTH HEAVEN'",
+    "track" : "SOS (Prod. Marshmello)",
+    "uri" : "spotify:track:3oTDi9MWC0JB39FcsLRon3"
+  }, {
+    "artist" : "Jason Zhang",
+    "album" : "爱，不解释",
+    "track" : "他不懂",
+    "uri" : "spotify:track:0O7HYpXtOTG61jpk9TveuS"
+  }, {
+    "artist" : "ReN",
+    "album" : "ReNBRANDT",
+    "track" : "あーあ。",
+    "uri" : "spotify:track:3m1gZuWH9qdkUa4BBGH53e"
+  }, {
+    "artist" : "云汐",
+    "album" : "洛春赋",
+    "track" : "洛春赋",
+    "uri" : "spotify:track:037LDNJWp0ZHYPgOJpwHEz"
+  }, {
+    "artist" : "Charlie Puth",
+    "album" : "Nine Track Mind",
+    "track" : "Dangerously",
+    "uri" : "spotify:track:2EbseeW2cr5zK3J8VuYntw"
+  }, {
+    "artist" : "raph",
+    "album" : "Tell Me",
+    "track" : "Tell Me",
+    "uri" : "spotify:track:20HCM9B7zWN96bf6ntSUsK"
+  }, {
+    "artist" : "en王翊恩",
+    "album" : "等雨停",
+    "track" : "等雨停",
+    "uri" : "spotify:track:4YCa62LTCH4mDxWoPLs3tL"
+  }, {
+    "artist" : "TWS",
+    "album" : "hey! hey!",
+    "track" : "hey! hey!",
+    "uri" : "spotify:track:6vSpm3PAXA1PLyEINx3DJC"
+  }, {
+    "artist" : "Against The Current",
+    "album" : "Wildfire",
+    "track" : "Wildfire",
+    "uri" : "spotify:track:2yHmIxXi48DFl6zQlIhEaj"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "VALORANT Sounds Vol. 1",
+    "track" : "UNDEFEATED",
+    "uri" : "spotify:track:5S0xg1acd0gX6wO4xaoCtP"
+  }, {
+    "artist" : "韩帅(HS)",
+    "album" : "遇星（《奕曲同工》广播剧主题曲）",
+    "track" : "遇星（《奕曲同工》广播剧主题曲） - 纯享版",
+    "uri" : "spotify:track:6ZLVvWLGRXheZoTVqnFwI3"
+  }, {
+    "artist" : "GOT7",
+    "album" : "WINTER HEPTAGON",
+    "track" : "Our Youth",
+    "uri" : "spotify:track:73E7gxT3HppBUeB3ckGeOw"
+  }, {
+    "artist" : "aespa",
+    "album" : "SYNK : PARALLEL LINE - Special Digital Single",
+    "track" : "Bored! - NINGNING Solo",
+    "uri" : "spotify:track:44qlcokPO2RjD8791ohJFR"
+  }, {
+    "artist" : "GOT7",
+    "album" : "SPINNING TOP : BETWEEN SECURITY & INSECURITY",
+    "track" : "ECLIPSE",
+    "uri" : "spotify:track:7Foj5OSXpA054zOMxNfPrG"
+  }, {
+    "artist" : "Reol",
+    "album" : "第六感",
+    "track" : "第六感",
+    "uri" : "spotify:track:22sQUmLhT8umlEhQzDrzfJ"
+  }, {
+    "artist" : "Alani",
+    "album" : "Back Here",
+    "track" : "Back Here",
+    "uri" : "spotify:track:3ceKIxs8JBhbWJyu1AjVJw"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "VALORANT Sounds Vol. 1",
+    "track" : "SUPERPOWER",
+    "uri" : "spotify:track:7adlbYpN7XNzgCMOO35671"
+  }, {
+    "artist" : "Reol",
+    "album" : "ディア",
+    "track" : "ディア",
+    "uri" : "spotify:track:2C6am2buzRLvFKNVr4nl3L"
+  }, {
+    "artist" : "Unlike Pluto",
+    "album" : "Everything Black",
+    "track" : "Everything Black",
+    "uri" : "spotify:track:3UEnF6y5tyHVtMzldS3svp"
+  }, {
+    "artist" : "raph",
+    "album" : "HOPELESS",
+    "track" : "HOPELESS",
+    "uri" : "spotify:track:2QKUYjiHrty11WHAcxNlH1"
+  }, {
+    "artist" : "League of Legends",
+    "album" : "Take Over",
+    "track" : "Take Over",
+    "uri" : "spotify:track:7asFSf2pkWNEG3E5EuN1QR"
+  }, {
+    "artist" : "MAX",
+    "album" : "Checklist (feat. Chromeo)",
+    "track" : "Checklist (feat. Chromeo)",
+    "uri" : "spotify:track:3rT0YIyiE1n8JAUpBCUudE"
+  }, {
+    "artist" : "niko rain",
+    "album" : "I Found Out",
+    "track" : "I Found Out",
+    "uri" : "spotify:track:1d8DhD23SnQRHCzcR43mjv"
+  }, {
+    "artist" : "KEY",
+    "album" : "Hate that…",
+    "track" : "Hate that…",
+    "uri" : "spotify:track:7f5np1evozJ5kXUXXztTSm"
+  }, {
+    "artist" : "Vosai",
+    "album" : "Fighting Fire",
+    "track" : "Fighting Fire",
+    "uri" : "spotify:track:2hMHHVBqhmF7kJz1JXTRP9"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Don't Fall In Love With The Moment",
+    "track" : "Unstable",
+    "uri" : "spotify:track:6ubJTQQzb5bl0Bp36nfHSr"
+  }, {
+    "artist" : "Jay Park",
+    "album" : "EVERYTHING YOU WANTED",
+    "track" : "All I Wanna Do",
+    "uri" : "spotify:track:2PcJoVkfjcbvoqBxV1Nj7y"
+  }, {
+    "artist" : "杜宣達",
+    "album" : "背对我逃离的光",
+    "track" : "背对我逃离的光",
+    "uri" : "spotify:track:0Q7aPGSaqZ9zoZ4W2L4GN8"
+  }, {
+    "artist" : "Em Beihold",
+    "album" : "Numb Little Bug",
+    "track" : "Numb Little Bug",
+    "uri" : "spotify:track:3o9kpgkIcffx0iSwxhuNI2"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 9th Mini Album 'Attacca'",
+    "track" : "2 MINUS 1 (Bonus Track)",
+    "uri" : "spotify:track:6o2Pu5qZcinw4mlDlQZFqu"
+  }, {
+    "artist" : "ENHYPEN",
+    "album" : "DARK BLOOD",
+    "track" : "Bite Me",
+    "uri" : "spotify:track:7mpdNiaQvygj2rHoxkzMfa"
+  }, {
+    "artist" : "Vicetone",
+    "album" : "Walk Thru Fire",
+    "track" : "Walk Thru Fire",
+    "uri" : "spotify:track:2wQ411UQL2MRsdAgPRUstT"
+  }, {
+    "artist" : "en",
+    "album" : "间距",
+    "track" : "间距",
+    "uri" : "spotify:track:4U0bL1ouvksMgvXU2aKq4O"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "ALWAYS YOURS",
+    "track" : "Sara Sara",
+    "uri" : "spotify:track:7blRMabWMREl9clNkAhvFS"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "她說",
+    "track" : "當你",
+    "uri" : "spotify:track:56UzFYxgkvxU188BsCKBOc"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 8th Mini Album 'Your Choice'",
+    "track" : "Anyone",
+    "uri" : "spotify:track:12jngD7Hu6if6sIzPkO2k4"
+  }, {
+    "artist" : "Kevin Chung",
+    "album" : "Right About Love",
+    "track" : "Right About Love",
+    "uri" : "spotify:track:7IytIzdicxGzR4GJ0OAs8I"
+  }, {
+    "artist" : "颜人中",
+    "album" : "某年某月某天",
+    "track" : "某年某月某天",
+    "uri" : "spotify:track:2cMiW68cWc0qKC9Iycy7pi"
+  }, {
+    "artist" : "XG",
+    "album" : "NEW DANCE",
+    "track" : "NEW DANCE",
+    "uri" : "spotify:track:6Pjzy9avwlVr4UAbxkQQmh"
+  }, {
+    "artist" : "yama",
+    "album" : "Haru wo Tsugeru",
+    "track" : "Haru wo Tsugeru",
+    "uri" : "spotify:track:5QseXDzPvtjdeaWNhYbm0m"
+  }, {
+    "artist" : "G.E.M.",
+    "album" : "新的心跳",
+    "track" : "多遠都要在一起",
+    "uri" : "spotify:track:55d0jw269HE9pbOt5ntCo8"
+  }, {
+    "artist" : "XG",
+    "album" : "SHOOTING STAR",
+    "track" : "SHOOTING STAR",
+    "uri" : "spotify:track:3IelG5zYpWWCZIH4cqWlPV"
+  }, {
+    "artist" : "Andreas Stone",
+    "album" : "Black Sunrise",
+    "track" : "Black Sunrise",
+    "uri" : "spotify:track:0NJdTqdcayolnPxx6ifc4v"
+  }, {
+    "artist" : "Jonathan & Friends",
+    "album" : "LOVE U 2 DEATH",
+    "track" : "LOVE U 2 DEATH",
+    "uri" : "spotify:track:0VZESWCk41YXSQ9l0M2TcC"
+  }, {
+    "artist" : "XG",
+    "album" : "WINTER WITHOUT YOU",
+    "track" : "WINTER WITHOUT YOU",
+    "uri" : "spotify:track:5KxTHd0r8eM6T2K65zxt2L"
+  }, {
+    "artist" : "封茗囧菌",
+    "album" : "傲娇先生",
+    "track" : "傲娇先生",
+    "uri" : "spotify:track:0zwdcesZCAeTljcq0Xv8LQ"
+  }, {
+    "artist" : "ellis",
+    "album" : "The Taste/Orbit",
+    "track" : "The Taste",
+    "uri" : "spotify:track:5GgiDYTRlUqnl0v0kCSgeH"
+  }, {
+    "artist" : "韩帅(HS)",
+    "album" : "遇星",
+    "track" : "遇星",
+    "uri" : "spotify:track:2Ge8gVgyTG1MgXQeGqMWGf"
+  }, {
+    "artist" : "Khalil Fong",
+    "album" : "愛愛愛",
+    "track" : "愛愛愛",
+    "uri" : "spotify:track:59lBAMCis4C6NsPdUV35Vz"
+  }, {
+    "artist" : "MICO",
+    "album" : "second thoughts EP",
+    "track" : "did too much",
+    "uri" : "spotify:track:4mdbBjKpQUHpMVrsG0nHKZ"
+  }, {
+    "artist" : "G.E.M.",
+    "album" : "摩天動物園",
+    "track" : "句號",
+    "uri" : "spotify:track:66YKSygcUZHHqHJZcWslI3"
+  }, {
+    "artist" : "Charlotte Sands",
+    "album" : "Love and Other Lies",
+    "track" : "Dress",
+    "uri" : "spotify:track:2ptbBxMTCbFBefVMXwrdSC"
+  }, {
+    "artist" : "League of Legends",
+    "album" : "Fire To The Fuse",
+    "track" : "Fire To The Fuse",
+    "uri" : "spotify:track:6yK2AGL6oamq6FP8iqmOBw"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Lost In The Crowd",
+    "track" : "Lost In The Crowd",
+    "uri" : "spotify:track:0zwoLF6XKGZxM8QJyrrrMD"
+  }, {
+    "artist" : "Fall Out Boy",
+    "album" : "American Beauty/American Psycho",
+    "track" : "Immortals",
+    "uri" : "spotify:track:3Te8uLyit6X3ncNW8Fp3K2"
+  }, {
+    "artist" : "SawanoHiroyuki[nZk]",
+    "album" : "INERTIA",
+    "track" : "INERTIA",
+    "uri" : "spotify:track:2joT0CjcGqc1fr8Fvk7itj"
+  }, {
+    "artist" : "BY2",
+    "album" : "16未成年",
+    "track" : "愛丫愛丫",
+    "uri" : "spotify:track:3ug64gXY4mHjvMRYUdGjA2"
+  }, {
+    "artist" : "王子健",
+    "album" : "月神赋",
+    "track" : "月神赋",
+    "uri" : "spotify:track:52BNoKlkjiBFLTUUWyTOx2"
+  }, {
+    "artist" : "BTS",
+    "album" : "The Most Beautiful Moment in Life: Young Forever",
+    "track" : "Save Me",
+    "uri" : "spotify:track:7bxGcILuAjkZzaveU28ZJS"
+  }, {
+    "artist" : "Lot",
+    "album" : "In a world full of mistakes",
+    "track" : "asphalt",
+    "uri" : "spotify:track:2c8OIHUpfDUFUfRPHDIYOO"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN SPECIAL ALBUM 'DIRECTOR'S CUT’",
+    "track" : "Run to you",
+    "uri" : "spotify:track:7MhirYiYlbhN8L1y6VwbBu"
+  }, {
+    "artist" : "小咪",
+    "album" : "我走后",
+    "track" : "我走后 - 发行版",
+    "uri" : "spotify:track:32UZM0QSWwqzLbyr1YoS7x"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Get Out",
+    "track" : "Get Out",
+    "uri" : "spotify:track:1wEjJq0cyf0TZLSeVYhznR"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "CLAP",
+    "uri" : "spotify:track:0pIJiHChaM9jlrlPCAP4aI"
+  }, {
+    "artist" : "福禄寿",
+    "album" : "我用什么把你留住",
+    "track" : "超度我",
+    "uri" : "spotify:track:3XjpT7DTXGVcHxsExf5nVE"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "ALWAYS YOURS",
+    "track" : "今 -明日 世界が終わっても-",
+    "uri" : "spotify:track:2dThVzsCkB0L8tWFvQH53N"
+  }, {
+    "artist" : "Keenan Te",
+    "album" : "Scars",
+    "track" : "Scars",
+    "uri" : "spotify:track:5SjfjoYaRJ5jycgqwV0ow0"
+  }, {
+    "artist" : "颜人中",
+    "album" : "失眠症候群",
+    "track" : "有些",
+    "uri" : "spotify:track:3V2v19gDm4rmRkMwcgS4X2"
+  }, {
+    "artist" : "Halsey",
+    "album" : "hopeless fountain kingdom",
+    "track" : "Bad At Love",
+    "uri" : "spotify:track:3OzCF9i6Ey7EkkAYJztmKp"
+  }, {
+    "artist" : "ONE OK ROCK",
+    "album" : "Make It Out Alive",
+    "track" : "Make It Out Alive",
+    "uri" : "spotify:track:4WVJeRP6hjMMBkmWsV4TtF"
+  }, {
+    "artist" : "政學zedx",
+    "album" : "是你.",
+    "track" : "是你.",
+    "uri" : "spotify:track:3fiXwwPL7cUvD7BqkHdN0J"
+  }, {
+    "artist" : "Ronghao Li",
+    "album" : "模特",
+    "track" : "李白",
+    "uri" : "spotify:track:0aLtafjN146xAdZeqYN8Ho"
+  }, {
+    "artist" : "Ren Ran",
+    "album" : "Ren然",
+    "track" : "飞鸟和蝉",
+    "uri" : "spotify:track:4lhbajK3dvUcJ0UNEeCdMn"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "LALALI",
+    "uri" : "spotify:track:45xiC13XQsLhV57FxQLlLV"
+  }, {
+    "artist" : "Adam Jensen",
+    "album" : "Kings",
+    "track" : "Kings",
+    "uri" : "spotify:track:1ucZ8xnACuDeZuawsE43a3"
+  }, {
+    "artist" : "Alaina Cross",
+    "album" : "Karma",
+    "track" : "Karma",
+    "uri" : "spotify:track:1LRFdWqintP46UIkC33YhL"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "曹操",
+    "track" : "不死之身",
+    "uri" : "spotify:track:1Jzu6oies6m9zCiZtmU658"
+  }, {
+    "artist" : "艾辰",
+    "album" : "想你",
+    "track" : "想你",
+    "uri" : "spotify:track:7599kb4nbjrtbthel7d7bQ"
+  }, {
+    "artist" : "沈以誠",
+    "album" : "初遇",
+    "track" : "形容",
+    "uri" : "spotify:track:1AFTWfGXrUfsL2NRTJGTEI"
+  }, {
+    "artist" : "Fall Out Boy",
+    "album" : "Save Rock And Roll",
+    "track" : "My Songs Know What You Did In The Dark (Light Em Up)",
+    "uri" : "spotify:track:2E43WFS4rRc09za2r2GmZl"
+  }, {
+    "artist" : "LBI利比",
+    "album" : "落入银河里",
+    "track" : "落入银河里",
+    "uri" : "spotify:track:1GyHDgwvGKWGoDR5WfXzMP"
+  }, {
+    "artist" : "张远",
+    "album" : "看着我的眼睛说",
+    "track" : "看着我的眼睛说",
+    "uri" : "spotify:track:5cOXSOo4olhVLVSpQBvQaP"
+  }, {
+    "artist" : "接个吻,开一枪",
+    "album" : "失眠飞行",
+    "track" : "失眠飞行",
+    "uri" : "spotify:track:1olVaaAh1zhi3WFXs318V2"
+  }, {
+    "artist" : "Fall Out Boy",
+    "album" : "Save Rock And Roll",
+    "track" : "The Phoenix",
+    "uri" : "spotify:track:7jwDuO7UZvWs77KNj9HbvF"
+  }, {
+    "artist" : "Ava Max",
+    "album" : "Heaven & Hell",
+    "track" : "Sweet but Psycho",
+    "uri" : "spotify:track:7DnAm9FOTWE3cUvso43HhI"
+  }, {
+    "artist" : "Fiji Blue",
+    "album" : "It Takes Two",
+    "track" : "It Takes Two",
+    "uri" : "spotify:track:5V7qLbZJNTwaEVbZADqofc"
+  }, {
+    "artist" : "Jay Park",
+    "album" : "妳在哪裡 (WYA)",
+    "track" : "妳在哪裡 (WYA)",
+    "uri" : "spotify:track:4WOBcLq8VFP4xWLyNMAotu"
+  }, {
+    "artist" : "Nan Quan Mama",
+    "album" : "優的良曲南搞小孩",
+    "track" : "下雨天",
+    "uri" : "spotify:track:3BfjVIPmUpIrgqLdOJP1My"
+  }, {
+    "artist" : "Jordan Jack",
+    "album" : "Conversation",
+    "track" : "Conversation",
+    "uri" : "spotify:track:4y0CQjZjEpPYUjUEuQcbQT"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "Fire Again",
+    "track" : "Fire Again",
+    "uri" : "spotify:track:02rlJHfeHfAe7ozTFnDbGi"
+  }, {
+    "artist" : "shy martin",
+    "album" : "Feelings",
+    "track" : "Feelings",
+    "uri" : "spotify:track:0FhFZbyZbkUh5uyAKesmDL"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "第二天堂",
+    "track" : "江南",
+    "uri" : "spotify:track:0YgvF6fNWydNGzCY3pzK4Y"
+  }, {
+    "artist" : "XG",
+    "album" : "NEW DNA",
+    "track" : "PUPPET SHOW",
+    "uri" : "spotify:track:7sDkXyDikXhpRz715MdiEp"
+  }, {
+    "artist" : "BSS",
+    "album" : "BSS 1st Single Album 'SECOND WIND'",
+    "track" : "7PM (Feat. Peder Elias)",
+    "uri" : "spotify:track:6tAPw1Rtt3SGEOm6ohYi8l"
+  }, {
+    "artist" : "Jhameel",
+    "album" : "Lion's Den",
+    "track" : "Feisty",
+    "uri" : "spotify:track:4si5dOdtmwFfsaHkiq99pg"
+  }, {
+    "artist" : "Jason Zhang",
+    "album" : "WHITE NIGHT",
+    "track" : "不眠之夜",
+    "uri" : "spotify:track:7iOA2YVu4WQHvedbXUQwWh"
+  }, {
+    "artist" : "颜人中",
+    "album" : "不在",
+    "track" : "不在",
+    "uri" : "spotify:track:5jvk5UfmXVHHjwNezUeqZ5"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "JJ陸",
+    "track" : "醉赤壁",
+    "uri" : "spotify:track:69lAYqbyHL1A0gctdLd9WV"
+  }, {
+    "artist" : "TWICE",
+    "album" : "With YOU-th",
+    "track" : "ONE SPARK",
+    "uri" : "spotify:track:7cIn67LEvk16v6komC8znS"
+  }, {
+    "artist" : "True Damage",
+    "album" : "GIANTS",
+    "track" : "GIANTS",
+    "uri" : "spotify:track:5C0ivQMxes2lWuOANhvVAm"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "Right Away",
+    "track" : "Right Away",
+    "uri" : "spotify:track:54RWPgFcncDvxeVZjnBC6S"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "MAESTRO",
+    "uri" : "spotify:track:2UE9XGbAzicJIyo4bB6sqM"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "Home",
+    "uri" : "spotify:track:3qOdLKfizw3Sc4KmDLeABG"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "Left & Right",
+    "uri" : "spotify:track:065yxZRBAsenRLZacB1uc2"
+  }, {
+    "artist" : "Fairlane",
+    "album" : "Hypnotize",
+    "track" : "Hypnotize",
+    "uri" : "spotify:track:67Sb5mCfhpMDiD2ZbIGh4S"
+  }, {
+    "artist" : "樊宇镈(Coulson Fan)",
+    "album" : "ISTP",
+    "track" : "ISTP",
+    "uri" : "spotify:track:3lv6q27KkZlcN9RILySMoP"
+  }, {
+    "artist" : "Andrah",
+    "album" : "pretty afternoon",
+    "track" : "pretty afternoon",
+    "uri" : "spotify:track:40YPH9eSjV9VY6OGjSTpAc"
+  }, {
+    "artist" : "UNDREAM",
+    "album" : "Chemical X",
+    "track" : "Chemical X",
+    "uri" : "spotify:track:6NndAdLoSF1fcFtbRlGMLt"
+  }, {
+    "artist" : "aespa",
+    "album" : "Girls - The 2nd Mini Album",
+    "track" : "Black Mamba",
+    "uri" : "spotify:track:6Tj9KfzPp7tmgcDdsaPwGE"
+  }, {
+    "artist" : "Madge",
+    "album" : "2WORLDS",
+    "track" : "2WORLDS",
+    "uri" : "spotify:track:1KP03zVTQ0SXVjL0wP2G37"
+  }, {
+    "artist" : "niko rain",
+    "album" : "Gone",
+    "track" : "Gone",
+    "uri" : "spotify:track:4OUJAdeUmoqDh0iBWlvaoy"
+  }, {
+    "artist" : "GOT7",
+    "album" : "WINTER HEPTAGON",
+    "track" : "PYTHON",
+    "uri" : "spotify:track:2kol6tv2jcinBERq425Ahv"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 11th Mini Album 'SEVENTEENTH HEAVEN'",
+    "track" : "Monster",
+    "uri" : "spotify:track:1RMnVmHGSvxlexnenQEXSb"
+  }, {
+    "artist" : "KATSEYE",
+    "album" : "Touch",
+    "track" : "Touch",
+    "uri" : "spotify:track:6aJn7Cst74cj4lNIiPRgav"
+  }, {
+    "artist" : "HOYO-MiX",
+    "album" : "Honkai: Star Rail - Of Snow and Ember",
+    "track" : "Wildfire",
+    "uri" : "spotify:track:2CUSdI74D2yqrvEXRQq2Xl"
+  }, {
+    "artist" : "井迪",
+    "album" : "失控",
+    "track" : "失控",
+    "uri" : "spotify:track:3nZoOZUMQDBcnxu18yWJ7v"
+  }, {
+    "artist" : "aespa",
+    "album" : "Dirty Work",
+    "track" : "Dirty Work",
+    "uri" : "spotify:track:4qtdab2DABnEokwupCl8lG"
+  }, {
+    "artist" : "林小珂",
+    "album" : "翻篇",
+    "track" : "翻篇",
+    "uri" : "spotify:track:1Q4Ldfy62hfzyYcBM09ueQ"
+  }, {
+    "artist" : "BABYMONSTER",
+    "album" : "DRIP",
+    "track" : "DRIP",
+    "uri" : "spotify:track:198zDKzyktXRG1PGpidY9h"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 11th Mini Album 'SEVENTEENTH HEAVEN'",
+    "track" : "God of Music",
+    "uri" : "spotify:track:4MTNimMDRyFZv37Thcktwa"
+  }, {
+    "artist" : "Joker Xue",
+    "album" : "怪咖",
+    "track" : "最好",
+    "uri" : "spotify:track:46jKAQOVARYPGw3ZxpkBdz"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "新地球",
+    "track" : "手心的薔薇 (ft. 鄧紫棋)",
+    "uri" : "spotify:track:0w0u6SaUF3mtxMX0Dohnud"
+  }, {
+    "artist" : "DINO",
+    "album" : "Wait",
+    "track" : "Wait",
+    "uri" : "spotify:track:1KkC3Nzxv3OZorm5m1843p"
+  }, {
+    "artist" : "Marshmello",
+    "album" : "FRIENDS",
+    "track" : "FRIENDS",
+    "uri" : "spotify:track:08bNPGLD8AhKpnnERrAc6G"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "I'm Fine",
+    "track" : "I'm Fine",
+    "uri" : "spotify:track:769jjZRSB2XYGBgAfBw5Sd"
+  }, {
+    "artist" : "音阙诗听",
+    "album" : "桃花庵",
+    "track" : "桃花庵",
+    "uri" : "spotify:track:3LBxWoFkyhDjXt8LQoFmKq"
+  }, {
+    "artist" : "Martin Garrix",
+    "album" : "So Far Away (feat. Jamie Scott & Romy Dya)",
+    "track" : "So Far Away (feat. Jamie Scott & Romy Dya)",
+    "uri" : "spotify:track:0OlnLZY4cmQzT6ZGttvWBM"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "; [Semicolon]",
+    "track" : "All My Love",
+    "uri" : "spotify:track:11zGbqR6W7biyOgSm3WGSO"
+  }, {
+    "artist" : "回音哥",
+    "album" : "回音Echo",
+    "track" : "芊芊",
+    "uri" : "spotify:track:5NeK9z0a8KQsjXLuGmOXJy"
+  }, {
+    "artist" : "LBI利比",
+    "album" : "烂片剧情",
+    "track" : "烂片剧情",
+    "uri" : "spotify:track:488IBZgAqHQmUDjg9kTQYG"
+  }, {
+    "artist" : "ITZY",
+    "album" : "GOLD",
+    "track" : "BORN TO BE - Final Ver.",
+    "uri" : "spotify:track:3r7IwSgxsK8xORuRSVmQzU"
+  }, {
+    "artist" : "于冬然",
+    "album" : "故事很短",
+    "track" : "故事很短",
+    "uri" : "spotify:track:6MMGwoXC1LhNh4JPZmHr8U"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Don't Leave EP",
+    "track" : "Now That We're Done Talking",
+    "uri" : "spotify:track:0FkzEGdnpswHQzsfcnkK7c"
+  }, {
+    "artist" : "許嵩",
+    "album" : "青年晚報",
+    "track" : "雅俗共賞",
+    "uri" : "spotify:track:3ojwY8dyubHnLsoHdRUpo4"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 4th Album 'Face the Sun'",
+    "track" : "DON QUIXOTE",
+    "uri" : "spotify:track:7BiEgR5r0yMmFoWC9kOTGf"
+  }, {
+    "artist" : "Jake Cornell",
+    "album" : "Strangers",
+    "track" : "Strangers",
+    "uri" : "spotify:track:1WDlkgCbHwT9VJLetO6ugR"
+  }, {
+    "artist" : "League of Legends",
+    "album" : "Phoenix",
+    "track" : "Phoenix",
+    "uri" : "spotify:track:6zAiRKvAMlXHxEtyO4yxIO"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 10th Mini Album 'FML'",
+    "track" : "I Don't Understand But I Luv U",
+    "uri" : "spotify:track:3acGHJqr9xU1cnCEfLX1Lx"
+  }, {
+    "artist" : "Charlie Puth",
+    "album" : "Voicenotes",
+    "track" : "Attention",
+    "uri" : "spotify:track:5cF0dROlMOK5uNZtivgu50"
+  }, {
+    "artist" : "JEON SOMI",
+    "album" : "XOXO",
+    "track" : "DUMB DUMB",
+    "uri" : "spotify:track:5VXSt0cvi5wtJTox0wKI4x"
+  }, {
+    "artist" : "Silence Wang",
+    "album" : "耿",
+    "track" : "耿",
+    "uri" : "spotify:track:70ArZtudhjbaZ2TafLhoQx"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "她說",
+    "track" : "一眼萬年",
+    "uri" : "spotify:track:1gwjfiW8tV0obGKlpGxR5O"
+  }, {
+    "artist" : "沈以誠",
+    "album" : "告白",
+    "track" : "告白",
+    "uri" : "spotify:track:2LLfIvhnZnVd17P5Yu01Tk"
+  }, {
+    "artist" : "Jonas Brothers",
+    "album" : "Happiness Begins",
+    "track" : "Sucker",
+    "uri" : "spotify:track:22vgEDb5hykfaTwLuskFGD"
+  }, {
+    "artist" : "于冬然",
+    "album" : "只字未提",
+    "track" : "只字未提",
+    "uri" : "spotify:track:4yHoFLxMl2bmaCdy40sqSb"
+  }, {
+    "artist" : "Keenan Te",
+    "album" : "If This Is Goodbye",
+    "track" : "If This Is Goodbye",
+    "uri" : "spotify:track:62WVGPMAXJtIZLEdgUdzSc"
+  }, {
+    "artist" : "Alex Hagen",
+    "album" : "call declined",
+    "track" : "call declined",
+    "uri" : "spotify:track:12NQFV2IZAIdFeeNXZORTn"
+  }, {
+    "artist" : "Jake Cornell",
+    "album" : "See You Again",
+    "track" : "See You Again",
+    "uri" : "spotify:track:0FP8a7NU6a5A4qbg2nhqdO"
+  }, {
+    "artist" : "Zedd",
+    "album" : "Stay",
+    "track" : "Stay",
+    "uri" : "spotify:track:6uBhi9gBXWjanegOb2Phh0"
+  }, {
+    "artist" : "Jay Park",
+    "album" : "YACHT",
+    "track" : "YACHT (k) (Feat. Sik-K)",
+    "uri" : "spotify:track:57ziFwpzuFkJi5nP91qnl4"
+  }, {
+    "artist" : "XG",
+    "album" : "Tippy Toes",
+    "track" : "Tippy Toes",
+    "uri" : "spotify:track:1MKmSbQfJpEVnC3XfGywyF"
+  }, {
+    "artist" : "Chloe Adams",
+    "album" : "The Monster You Made Me",
+    "track" : "Dirty Thoughts",
+    "uri" : "spotify:track:7zZDRq9CLl37OAywR39KVy"
+  }, {
+    "artist" : "颜人中",
+    "album" : "我只能离开",
+    "track" : "我只能离开",
+    "uri" : "spotify:track:3ATlLkaGNkk1vXIRczgjL7"
+  }, {
+    "artist" : "TAEYEON",
+    "album" : "To. X - The 5th Mini Album",
+    "track" : "To. X",
+    "uri" : "spotify:track:2gyCwrOcC6JBoaJ8JGJ7T8"
+  }, {
+    "artist" : "Valley",
+    "album" : "Last Birthday",
+    "track" : "Like 1999",
+    "uri" : "spotify:track:25gacl0dFF9HTclx7Ug7xC"
+  }, {
+    "artist" : "Charlie Puth",
+    "album" : "Voicenotes",
+    "track" : "How Long",
+    "uri" : "spotify:track:6wmAHw1szh5RCKSRjiXhPe"
+  }, {
+    "artist" : "MAMAMOO",
+    "album" : "RED MOON",
+    "track" : "Egotistic",
+    "uri" : "spotify:track:3a7OyTsoZ8CCBdvEEvzLBv"
+  }, {
+    "artist" : "TAEYEON",
+    "album" : "INVU - The 3rd Album",
+    "track" : "Siren",
+    "uri" : "spotify:track:4XGdr0bJNCLjwQ4k3HWAGP"
+  }, {
+    "artist" : "XG",
+    "album" : "AWE",
+    "track" : "SOMETHING AIN'T RIGHT",
+    "uri" : "spotify:track:3RxL9p66oXKuSdXYeFcJeT"
+  }, {
+    "artist" : "Pets Tseng",
+    "album" : "終極一班2 (電視原聲帶)",
+    "track" : "一個人想著一個人",
+    "uri" : "spotify:track:3n3zzFH7zzO0gJNaw4RKSm"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "ALWAYS YOURS",
+    "track" : "24H",
+    "uri" : "spotify:track:5jXlUt3NS0iu7pHYPqpK2O"
+  }, {
+    "artist" : "GOT7",
+    "album" : "SPINNING TOP : BETWEEN SECURITY & INSECURITY",
+    "track" : "PAGE",
+    "uri" : "spotify:track:6wuKTYIALaY34Olr0UU6mk"
+  }, {
+    "artist" : "Saint Chaos",
+    "album" : "Seeing Red",
+    "track" : "Walk",
+    "uri" : "spotify:track:0RIDiwHM3SAJGut5HTc2ju"
+  }, {
+    "artist" : "杜宣達",
+    "album" : "指紋",
+    "track" : "指紋",
+    "uri" : "spotify:track:01clQd7YUW4nEre2I8jo7d"
+  }, {
+    "artist" : "Charlie Puth",
+    "album" : "CHARLIE",
+    "track" : "Charlie Be Quiet!",
+    "uri" : "spotify:track:2NGPPfcQfNm3f2ym3WHBuf"
+  }, {
+    "artist" : "XG",
+    "album" : "AWE",
+    "track" : "IS THIS LOVE",
+    "uri" : "spotify:track:0dzbNEBsrs17os3jJOFLar"
+  }, {
+    "artist" : "Jung Kook",
+    "album" : "GOLDEN",
+    "track" : "Please Don't Change (feat. DJ Snake)",
+    "uri" : "spotify:track:0k0GtcnyQLMiXrdEDbLXmJ"
+  }, {
+    "artist" : "TAEYEON",
+    "album" : "INVU - The 3rd Album",
+    "track" : "INVU",
+    "uri" : "spotify:track:7rXcCpIAoOUCydkVDMcoPV"
+  }, {
+    "artist" : "en王翊恩",
+    "album" : "嚣张",
+    "track" : "嚣张",
+    "uri" : "spotify:track:1vfUASvUGt3gxQ1x3T3u1C"
+  }, {
+    "artist" : "耗子",
+    "album" : "呼吸定律",
+    "track" : "呼吸定律",
+    "uri" : "spotify:track:1zoWvWopT4mMFNGgVs54s0"
+  }, {
+    "artist" : "XG",
+    "album" : "SHOOTING STAR",
+    "track" : "LEFT RIGHT",
+    "uri" : "spotify:track:3v5o91PrUtf0nmO6j8J7dZ"
+  }, {
+    "artist" : "WOOZI",
+    "album" : "What kind of future",
+    "track" : "What kind of future",
+    "uri" : "spotify:track:1DXomndYd10iSX9uZSPv6e"
+  }, {
+    "artist" : "颜人中",
+    "album" : "失眠症候群",
+    "track" : "假裝沒變過",
+    "uri" : "spotify:track:0kWUppVLq3IIvXjq36v8EU"
+  }, {
+    "artist" : "XG",
+    "album" : "AWE",
+    "track" : "HOWLING",
+    "uri" : "spotify:track:2uaZaTMbYE5KAk8gbdzBgW"
+  }, {
+    "artist" : "Charlie Puth",
+    "album" : "CHARLIE",
+    "track" : "That's Hilarious",
+    "uri" : "spotify:track:0wPKDeY4fZXT6k9bzV0kx0"
+  }, {
+    "artist" : "ROSÉ",
+    "album" : "R",
+    "track" : "Gone",
+    "uri" : "spotify:track:2dHoVW9AxJVSRebPRyV2aA"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "ALWAYS YOURS",
+    "track" : "Happy Ending",
+    "uri" : "spotify:track:6bk9pQwgyR4ihccicvOL9L"
+  }, {
+    "artist" : "HEARTSTEEL",
+    "album" : "PARANOIA",
+    "track" : "PARANOIA",
+    "uri" : "spotify:track:29WxJqIfDRMo9isV07kbJP"
+  }, {
+    "artist" : "G.E.M.",
+    "album" : "倒數",
+    "track" : "倒數",
+    "uri" : "spotify:track:2HmM5p02Q2qrYZvXJRLVx3"
+  }, {
+    "artist" : "aespa",
+    "album" : "Girls - The 2nd Mini Album",
+    "track" : "Girls",
+    "uri" : "spotify:track:2WTHLEVjfefbGoW7F3dXIg"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "ALWAYS YOURS",
+    "track" : "舞い落ちる花びら（Fallin' Flower）",
+    "uri" : "spotify:track:6toOcGbnoQgsExJB9gIjMD"
+  }, {
+    "artist" : "王子健",
+    "album" : "舍离去",
+    "track" : "舍离去",
+    "uri" : "spotify:track:2qjHmz6QWwsECIqJHy43SV"
+  }, {
+    "artist" : "Jay Chou",
+    "album" : "葉惠美",
+    "track" : "晴天",
+    "uri" : "spotify:track:5pIcwtJYNJx93l420oR2Vm"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "Super",
+    "uri" : "spotify:track:3ZpfXyQgcqdSA1TGNc7Ret"
+  }, {
+    "artist" : "MICO",
+    "album" : "Internet hometown hero",
+    "track" : "HOMESICK",
+    "uri" : "spotify:track:1fffWiFwKibt8lvSlGz9SG"
+  }, {
+    "artist" : "RIKII",
+    "album" : "Wait",
+    "track" : "Wait",
+    "uri" : "spotify:track:2u7qeuX1ebETIpHEvrhbYr"
+  }, {
+    "artist" : "MAX",
+    "album" : "Colour Vision",
+    "track" : "Checklist (feat. Chromeo)",
+    "uri" : "spotify:track:1WATa6d8Zj84A2z1mMPck1"
+  }, {
+    "artist" : "Lee Young Ji",
+    "album" : "16 Fantasy",
+    "track" : "Small girl (feat. D.O.)",
+    "uri" : "spotify:track:1AtFSBJibfaqfiOByQCwZ5"
+  }, {
+    "artist" : "李润祺",
+    "album" : "微风吹",
+    "track" : "微风吹",
+    "uri" : "spotify:track:5HNyKhgcTW4Pcf4BvkooPN"
+  }, {
+    "artist" : "BLACKPINK",
+    "album" : "BORN PINK",
+    "track" : "Hard to Love",
+    "uri" : "spotify:track:3MJhPqL2IgGs7gHEB2M35q"
+  }, {
+    "artist" : "Porter Robinson",
+    "album" : "Everything Goes On",
+    "track" : "Everything Goes On",
+    "uri" : "spotify:track:3WBRfkOozHEsG0hbrBzwlm"
+  }, {
+    "artist" : "Silence Wang",
+    "album" : "年轮",
+    "track" : "年轮",
+    "uri" : "spotify:track:7pSHVmCVBw8QJyH8tK89lx"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "Die For You",
+    "track" : "Die For You",
+    "uri" : "spotify:track:2lz3zjQ5QCVXiyOzIk02vW"
+  }, {
+    "artist" : "The Chainsmokers",
+    "album" : "World War Joy",
+    "track" : "Call You Mine",
+    "uri" : "spotify:track:2oejEp50ZzPuQTQ6v54Evp"
+  }, {
+    "artist" : "JUN",
+    "album" : "PSYCHO",
+    "track" : "PSYCHO",
+    "uri" : "spotify:track:41B92XjIUVxOqhNAwzlMpp"
+  }, {
+    "artist" : "TWICE",
+    "album" : "CRY FOR ME",
+    "track" : "CRY FOR ME",
+    "uri" : "spotify:track:2xtP8RNbo2BEMzLX7tK7aq"
+  }, {
+    "artist" : "Keenan Te",
+    "album" : "Temporary Love",
+    "track" : "Temporary Love",
+    "uri" : "spotify:track:6IbHr3NKr1EXe2Im2cnVZx"
+  }, {
+    "artist" : "MICO",
+    "album" : "the tears we fight EP",
+    "track" : "another soul",
+    "uri" : "spotify:track:0Yos7Ql3MvIXE56swDiInZ"
+  }, {
+    "artist" : "Eason Chan",
+    "album" : "認了吧",
+    "track" : "淘汰",
+    "uri" : "spotify:track:3aawXLnJpcDVXCl1UUksAW"
+  }, {
+    "artist" : "MIYAVI",
+    "album" : "Snakes (from the series Arcane League of Legends)",
+    "track" : "Snakes (from the series Arcane League of Legends)",
+    "uri" : "spotify:track:62AdLIvL8qZYX0FhxVJLND"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "Why I",
+    "track" : "Why I",
+    "uri" : "spotify:track:3VgzOo5u2MDqtQlRINynZi"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 5th Album 'HAPPY BURSTDAY'",
+    "track" : "THUNDER",
+    "uri" : "spotify:track:6oeMntjclWLoguzwj5ECTo"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Never Let This Go",
+    "track" : "Never Let This Go",
+    "uri" : "spotify:track:65V63VSXdLbBlU2v7mF6Wk"
+  }, {
+    "artist" : "Virginia To Vegas",
+    "album" : "Just Friends",
+    "track" : "Just Friends",
+    "uri" : "spotify:track:02Ygu8lo3qSknRpcBnspso"
+  }, {
+    "artist" : "司南",
+    "album" : "吹灭小山河",
+    "track" : "吹灭小山河",
+    "uri" : "spotify:track:5pQHRLEVl9zgvrzEKTgAPS"
+  }, {
+    "artist" : "Jake Cornell",
+    "album" : "forgive and forget",
+    "track" : "forgive and forget",
+    "uri" : "spotify:track:0RWuRjR0AI4TfTJBpNlQ0F"
+  }, {
+    "artist" : "BABYMONSTER",
+    "album" : "DRIP",
+    "track" : "FOREVER",
+    "uri" : "spotify:track:6b6KXDbDn0s0Jepxm8a3nr"
+  }, {
+    "artist" : "李润祺",
+    "album" : "茫",
+    "track" : "茫",
+    "uri" : "spotify:track:1ADWDuzQqmQRkSt5LlVjzV"
+  }, {
+    "artist" : "aespa",
+    "album" : "Life's Too Short",
+    "track" : "Life's Too Short (English Version)",
+    "uri" : "spotify:track:2mgzUVvDpb1zMSB4glLQ6T"
+  }, {
+    "artist" : "雪二",
+    "album" : "渐冷",
+    "track" : "渐冷",
+    "uri" : "spotify:track:2KOJdF7jSzMFami54fUJzA"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "她說",
+    "track" : "愛笑的眼睛",
+    "uri" : "spotify:track:2SxXpn73WqM4zWhmWxeQ4s"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 9th Mini Album 'Attacca'",
+    "track" : "Rock with you",
+    "uri" : "spotify:track:6LnEoRQKMcaFTR5UvaKuBy"
+  }, {
+    "artist" : "i-dle",
+    "album" : "2",
+    "track" : "Fate",
+    "uri" : "spotify:track:2vNPGH1x5ZwxTjlvzLCyc2"
+  }, {
+    "artist" : "MICO",
+    "album" : "cut my hair",
+    "track" : "cut my hair",
+    "uri" : "spotify:track:26vtFc2QpDI4yZ69B3qC1i"
+  }, {
+    "artist" : "STIM",
+    "album" : "grow",
+    "track" : "grow",
+    "uri" : "spotify:track:1yTSQuzElaPgduwtvfs43I"
+  }, {
+    "artist" : "aespa",
+    "album" : "Girls - The 2nd Mini Album",
+    "track" : "Illusion",
+    "uri" : "spotify:track:396FqjKmViUZ92Wmm4rx3i"
+  }, {
+    "artist" : "Reol",
+    "album" : "RE RESCUE",
+    "track" : "RE RESCUE",
+    "uri" : "spotify:track:1i5u28LuH3TddcRfOC7Y8U"
+  }, {
+    "artist" : "Kirara Magic",
+    "album" : "Summer Dream",
+    "track" : "Summer Dream",
+    "uri" : "spotify:track:6tUryMdp3vjONBvMX5IrnU"
+  }, {
+    "artist" : "KISS OF LIFE",
+    "album" : "Sticky",
+    "track" : "Sticky",
+    "uri" : "spotify:track:4e1aewX6ATPcdfQIqr7gqO"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "Crazy",
+    "track" : "Crazy",
+    "uri" : "spotify:track:5SYpxnaQ9uP3TVmQDa78Cn"
+  }, {
+    "artist" : "HOYO-MiX",
+    "album" : "TruE",
+    "track" : "TruE",
+    "uri" : "spotify:track:56aR8fCNORk8XIrQGo75IQ"
+  }, {
+    "artist" : "grandson",
+    "album" : "Blood // Water",
+    "track" : "Blood // Water",
+    "uri" : "spotify:track:0AUyNF6iFxMNQsNx2nhtrw"
+  }, {
+    "artist" : "aespa",
+    "album" : "MY WORLD - The 3rd Mini Album",
+    "track" : "Thirsty",
+    "uri" : "spotify:track:6nICBdDevG4NZysIqDFPEa"
+  }, {
+    "artist" : "aespa",
+    "album" : "Armageddon - The 1st Album",
+    "track" : "Prologue",
+    "uri" : "spotify:track:6CAb4UZwQ515bATnwULOJ8"
+  }, {
+    "artist" : "JxW",
+    "album" : "JxW 1st Single Album 'THIS MAN'",
+    "track" : "Last night (Guitar by Park Juwon)",
+    "uri" : "spotify:track:0Qh8dlEJ3jVWk57Ql6XrdS"
+  }, {
+    "artist" : "Joker Xue",
+    "album" : "意外",
+    "track" : "丑八怪",
+    "uri" : "spotify:track:749ROZZstvy0OzCMgNjnXf"
+  }, {
+    "artist" : "Against The Current",
+    "album" : "fever",
+    "track" : "again&again",
+    "uri" : "spotify:track:4hDXe9C6UbApzZhw5AXbC7"
+  }, {
+    "artist" : "BTS",
+    "album" : "The Most Beautiful Moment in Life Pt.1",
+    "track" : "I Need U",
+    "uri" : "spotify:track:3wQnyXNFXNUEOBt1pb4urq"
+  }, {
+    "artist" : "King Gnu",
+    "album" : "SPECIALZ",
+    "track" : "SPECIALZ",
+    "uri" : "spotify:track:0GWNtMohuYUEHVZ40tcnHF"
+  }, {
+    "artist" : "Silence Wang",
+    "album" : "我想念",
+    "track" : "我想念",
+    "uri" : "spotify:track:6nO5UyAtYeK2M8QuCB8bay"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "Wait For Me",
+    "track" : "Wait For Me",
+    "uri" : "spotify:track:6qawcFwYf8DSo4kznNN3UL"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "JJ陸",
+    "track" : "我還想她",
+    "uri" : "spotify:track:5myHTPXrZpxTEgaJaIUxms"
+  }, {
+    "artist" : "于冬然",
+    "album" : "听说你",
+    "track" : "听说你",
+    "uri" : "spotify:track:4PKU5mPzC5lEDOLvVJ04As"
+  }, {
+    "artist" : "GOT7",
+    "album" : "DYE",
+    "track" : "AURA",
+    "uri" : "spotify:track:5n7raBayk9E4vqz5OcGZYF"
+  }, {
+    "artist" : "HxW",
+    "album" : "HxW 1st Single Album 'BEAM'",
+    "track" : "96ers",
+    "uri" : "spotify:track:6AvxOYstG9cCD4RVQp4aJz"
+  }, {
+    "artist" : "K/DA",
+    "album" : "POP/STARS",
+    "track" : "POP/STARS",
+    "uri" : "spotify:track:5sbooPcNgIE22DwO0VNGUJ"
+  }, {
+    "artist" : "LoKk6",
+    "album" : "我还是",
+    "track" : "我还是",
+    "uri" : "spotify:track:1w7JbgE4vljQ0ZNQMELjVE"
+  }, {
+    "artist" : "GOT7",
+    "album" : "DYE",
+    "track" : "POISON",
+    "uri" : "spotify:track:6bTwoNDpDDnXaTwZbDJRqX"
+  }, {
+    "artist" : "Kevin Chung",
+    "album" : "Friends to Lovers",
+    "track" : "Friends to Lovers",
+    "uri" : "spotify:track:2AVsS7r2Z2uV4E7zJTyVt2"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Where Do I Go?",
+    "track" : "Where Do I Go?",
+    "uri" : "spotify:track:29DCVs4TdORajbgYMWG9qg"
+  }, {
+    "artist" : "GOT7",
+    "album" : "GOT7",
+    "track" : "NANANA",
+    "uri" : "spotify:track:2tEMbypmvYhf84mzVbhxwZ"
+  }, {
+    "artist" : "VERNON",
+    "album" : "Black Eye",
+    "track" : "Black Eye",
+    "uri" : "spotify:track:0aW2wxU16UTuwohjldJ5v0"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "An Ode",
+    "track" : "HIT",
+    "uri" : "spotify:track:0uIw1c0E2nyFWWwEVzhl30"
+  }, {
+    "artist" : "Egzod",
+    "album" : "Royalty",
+    "track" : "Royalty",
+    "uri" : "spotify:track:7kUljt0NM5sISL3OGNVxYd"
+  }, {
+    "artist" : "TINNA",
+    "album" : "Blind Spot",
+    "track" : "Blind Spot",
+    "uri" : "spotify:track:2t3QOhy2YqycnOFAHUKHtI"
+  }, {
+    "artist" : "王子健",
+    "album" : "循迹",
+    "track" : "循迹",
+    "uri" : "spotify:track:4ZYemAsK1HOIIpT1FDwFxV"
+  }, {
+    "artist" : "Cosmograph",
+    "album" : "Perfect Maid (Goddess of Victory: NIKKE Original Soundtrack)",
+    "track" : "You′ve always got me",
+    "uri" : "spotify:track:27NirKBeqbyairEHlEuyEk"
+  }, {
+    "artist" : "TakaseToya",
+    "album" : "Love°C",
+    "track" : "FAKE LOVER",
+    "uri" : "spotify:track:4Wcr6qBvYnq7vjq3cHosfP"
+  }, {
+    "artist" : "SHO-SENSEI!!",
+    "album" : "THE TELESCOPE",
+    "track" : "National Road",
+    "uri" : "spotify:track:0897eTA3VYcqu2N7bDcsOh"
+  }, {
+    "artist" : "Ed Sheeran",
+    "album" : "÷",
+    "track" : "Galway Girl",
+    "uri" : "spotify:track:0afhq8XCExXpqazXczTSve"
+  }, {
+    "artist" : "Jackson Wang",
+    "album" : "100 Ways",
+    "track" : "100 Ways",
+    "uri" : "spotify:track:3bdf03GVNLm9GOhjSFvdd9"
+  }, {
+    "artist" : "Rival",
+    "album" : "Traffic Light",
+    "track" : "Traffic Light",
+    "uri" : "spotify:track:0vFlzyabdl9mi1NKUcQDC2"
+  }, {
+    "artist" : "Gyubin",
+    "album" : "Really Like You",
+    "track" : "Really Like You",
+    "uri" : "spotify:track:0achc2JEdzkJQXRl0LbUox"
+  }, {
+    "artist" : "MAMAMOO",
+    "album" : "TRAVEL",
+    "track" : "AYA",
+    "uri" : "spotify:track:4BZXVFYCb76Q0Klojq4piV"
+  }, {
+    "artist" : "Corki刘宗鑫",
+    "album" : "下坠",
+    "track" : "下坠",
+    "uri" : "spotify:track:1HVVumDew8kFEutXSsLdkQ"
+  }, {
+    "artist" : "Sān-Z",
+    "album" : "Come Alive",
+    "track" : "Come Alive",
+    "uri" : "spotify:track:0RtYfzwkgj0sOBuZc3NmSK"
+  }, {
+    "artist" : "KISS OF LIFE",
+    "album" : "224",
+    "track" : "Lips Hips Kiss",
+    "uri" : "spotify:track:5Q4DLsIx0Fl0IDCCWHsLlH"
+  }, {
+    "artist" : "Alex Hagen",
+    "album" : "stalling",
+    "track" : "stalling",
+    "uri" : "spotify:track:3d0mn1w9UcUKJeP7HAz79Y"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "An Ode",
+    "track" : "Snap Shoot",
+    "uri" : "spotify:track:1Yimn9plSAWNv9G3ePzITO"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "她說",
+    "track" : "一生的愛",
+    "uri" : "spotify:track:2goXcSKHaVFQ3ssHbUQ53Y"
+  }, {
+    "artist" : "Zhou Shen",
+    "album" : "借过一下 (《庆余年第二季》影视剧片尾曲)",
+    "track" : "借过一下 (《庆余年第二季》影视剧片尾曲)",
+    "uri" : "spotify:track:5c21VGPrbAlpGdlSY2Bpra"
+  }, {
+    "artist" : "周星星",
+    "album" : "雨爱",
+    "track" : "雨爱",
+    "uri" : "spotify:track:0toZbcHBDwDFetLcO0uLKp"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "VALORANT Sounds Vol. 1",
+    "track" : "Die For You",
+    "uri" : "spotify:track:1YFoeeHQ7YIWqAqWbJoJLO"
+  }, {
+    "artist" : "Kevin Chung",
+    "album" : "If It's The End",
+    "track" : "I Get It But I Don't Tho",
+    "uri" : "spotify:track:53nCQ1a1zZAEYKCFqFn6Ra"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "I'm For It",
+    "track" : "I'm For It",
+    "uri" : "spotify:track:0FektgdwaWFwjdv5HWbW4d"
+  }, {
+    "artist" : "aespa",
+    "album" : "Hold On Tight",
+    "track" : "Hold On Tight",
+    "uri" : "spotify:track:1o844wI52S3TjXGBwvGcc7"
+  }, {
+    "artist" : "BABYMONSTER",
+    "album" : "BABYMONS7ER",
+    "track" : "LIKE THAT",
+    "uri" : "spotify:track:7GDgpad2BQVuDUzaxHFakc"
+  }, {
+    "artist" : "A1Trip",
+    "album" : "孤单寻人启事",
+    "track" : "孤单寻人启事",
+    "uri" : "spotify:track:7fXby0oxrr9NsQKrYeFKyC"
+  }, {
+    "artist" : "大泫",
+    "album" : "静悄悄",
+    "track" : "静悄悄",
+    "uri" : "spotify:track:751bgbxEOI9bjbTO88EKIb"
+  }, {
+    "artist" : "LBI利比",
+    "album" : "小城夏天",
+    "track" : "小城夏天",
+    "uri" : "spotify:track:4QZMBVrBLAvBryj8ZJIIY2"
+  }, {
+    "artist" : "HOYO-MiX",
+    "album" : "No Dazzle, No Break",
+    "track" : "No Dazzle, No Break",
+    "uri" : "spotify:track:3kY5GH6J11WMEspRKNJHXo"
+  }, {
+    "artist" : "Maroon 5",
+    "album" : "Overexposed",
+    "track" : "Payphone",
+    "uri" : "spotify:track:4P0osvTXoSYZZC2n8IFH3c"
+  }, {
+    "artist" : "Seraphine",
+    "album" : "POP/STARS",
+    "track" : "POP/STARS",
+    "uri" : "spotify:track:1mcgxXkPeUN9wXwEex3poW"
+  }, {
+    "artist" : "aespa",
+    "album" : "Drama - The 4th Mini Album",
+    "track" : "Drama",
+    "uri" : "spotify:track:5XWlyfo0kZ8LF7VSyfS4Ew"
+  }, {
+    "artist" : "aespa",
+    "album" : "SYNK : PARALLEL LINE - Special Digital Single",
+    "track" : "UP - KARINA Solo",
+    "uri" : "spotify:track:5sjnkOfTLCLNfkkchI2re2"
+  }, {
+    "artist" : "TAEYANG",
+    "album" : "Solar",
+    "track" : "Wedding Dress",
+    "uri" : "spotify:track:2NO4CA2TFvhGeg7XMz8PmT"
+  }, {
+    "artist" : "IVE",
+    "album" : "Kitsch",
+    "track" : "Kitsch",
+    "uri" : "spotify:track:4hbU7BVioG3WnoRNEy5YUf"
+  }, {
+    "artist" : "STIM",
+    "album" : "blood moon",
+    "track" : "drown",
+    "uri" : "spotify:track:4KlVk25n3oX5e3u92JDXHt"
+  }, {
+    "artist" : "G.E.M.",
+    "album" : "Xposed",
+    "track" : "泡沫",
+    "uri" : "spotify:track:2IfSPLPDW6RGosdB5huwAA"
+  }, {
+    "artist" : "福禄寿",
+    "album" : "我用什么把你留住",
+    "track" : "兰若度母",
+    "uri" : "spotify:track:4auxneP0c6qHwPYc6AfpYr"
+  }, {
+    "artist" : "STIM",
+    "album" : "appetite",
+    "track" : "appetite",
+    "uri" : "spotify:track:24sBckL7mZfqD2g5e2Nc9Q"
+  }, {
+    "artist" : "蓝心羽",
+    "album" : "星辰不坠落",
+    "track" : "星辰不坠落",
+    "uri" : "spotify:track:7KGal7IZNO34QgmNmjLBx4"
+  }, {
+    "artist" : "BTS",
+    "album" : "BE",
+    "track" : "Dynamite",
+    "uri" : "spotify:track:5QDLhrAOJJdNAmCTJ8xMyW"
+  }, {
+    "artist" : "Jex",
+    "album" : "Where We Started",
+    "track" : "Where We Started",
+    "uri" : "spotify:track:3m71VLuekxke2MO8yHkOYg"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "新地球",
+    "track" : "新地球",
+    "uri" : "spotify:track:5aGeWhnZe80YNJ8loeEBQZ"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "LOVE, MONEY, FAME (feat. DJ Khaled) (Timbaland Remix)",
+    "track" : "LOVE, MONEY, FAME (feat. DJ Khaled)",
+    "uri" : "spotify:track:3I2OBA3kKdbDYzFAkDuc81"
+  }, {
+    "artist" : "raph",
+    "album" : "alright",
+    "track" : "alright",
+    "uri" : "spotify:track:6s2TBrbs9bTC1faiyww2AN"
+  }, {
+    "artist" : "KISS OF LIFE",
+    "album" : "Lose Yourself",
+    "track" : "Igloo",
+    "uri" : "spotify:track:2DbDefRFJ5YOfXCKOeCJJh"
+  }, {
+    "artist" : "Halsey",
+    "album" : "Manic",
+    "track" : "Without Me",
+    "uri" : "spotify:track:6FZDfxM3a3UCqtzo5pxSLZ"
+  }, {
+    "artist" : "Grant",
+    "album" : "The Edge",
+    "track" : "The Edge",
+    "uri" : "spotify:track:2P8MOT07PrPiTjqNPKWVsp"
+  }, {
+    "artist" : "福禄寿",
+    "album" : "我用什么把你留住",
+    "track" : "马",
+    "uri" : "spotify:track:2IjLtXQKaA9dTcnPwQJoeu"
+  }, {
+    "artist" : "徐梓淳",
+    "album" : "心动不是答案",
+    "track" : "心动不是答案",
+    "uri" : "spotify:track:5R227gH0LBJDapqWz8MYyH"
+  }, {
+    "artist" : "Stefanie Sun",
+    "album" : "逆光",
+    "track" : "我懷念的",
+    "uri" : "spotify:track:7z2M7DsEjZjwXBkWG3zd21"
+  }, {
+    "artist" : "Haiden Henderson",
+    "album" : "Good Grief!",
+    "track" : "Sorry to Your Next Ex",
+    "uri" : "spotify:track:0RBECHjDFmgLEPLfEhHxGv"
+  }, {
+    "artist" : "Aimer",
+    "album" : "daydream",
+    "track" : "カタオモイ",
+    "uri" : "spotify:track:2HovXsvcdJur52BOcYGydz"
+  }, {
+    "artist" : "BSS",
+    "album" : "BSS 1st Single Album 'SECOND WIND'",
+    "track" : "Fighting (Feat. Lee Young Ji)",
+    "uri" : "spotify:track:7eBpUuPnDTfbeP1P4P93CS"
+  }, {
+    "artist" : "i-dle",
+    "album" : "I NEVER DIE",
+    "track" : "ESCAPE",
+    "uri" : "spotify:track:4O7tVdjaOQARI1rS6E6CCx"
+  }, {
+    "artist" : "Far Out",
+    "album" : "Constellation",
+    "track" : "Constellation",
+    "uri" : "spotify:track:0aDYbKm7Cwe3rkjihsj7S6"
+  }, {
+    "artist" : "G-DRAGON",
+    "album" : "HOME SWEET HOME (feat. TAEYANG & DAESUNG)",
+    "track" : "HOME SWEET HOME (feat. TAEYANG & DAESUNG)",
+    "uri" : "spotify:track:0Cu8JdYvV9DdmzLzhxaZLH"
+  }, {
+    "artist" : "Stray Kids",
+    "album" : "ODDINARY",
+    "track" : "MANIAC",
+    "uri" : "spotify:track:63irPUP3xB74fHdw1Aw9zR"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "JJ陸",
+    "track" : "小酒窩",
+    "uri" : "spotify:track:53WV5mAY2opmFC0r0LjRdM"
+  }, {
+    "artist" : "Daven Wu",
+    "album" : "影",
+    "track" : "影",
+    "uri" : "spotify:track:2EgL9ImnID4TamcOYyVG2X"
+  }, {
+    "artist" : "ari hicks",
+    "album" : "Kiss Me, Kill Me",
+    "track" : "Kiss Me, Kill Me",
+    "uri" : "spotify:track:5249xhc4iZTWhS4MvjrSwq"
+  }, {
+    "artist" : "王子健",
+    "album" : "孤独美学",
+    "track" : "孤独美学",
+    "uri" : "spotify:track:1YGbqDqg0fBkpqHZl19Ctc"
+  }, {
+    "artist" : "tripleS",
+    "album" : "<ASSEMBLE24>",
+    "track" : "Girls Never Die",
+    "uri" : "spotify:track:45OflED18VsURGw2z0Y6Cv"
+  }, {
+    "artist" : "i-dle",
+    "album" : "I feel",
+    "track" : "Allergy",
+    "uri" : "spotify:track:38MKW2tQHtyO8djIOKlEFF"
+  }, {
+    "artist" : "Luke Baker",
+    "album" : "FALL4ME",
+    "track" : "FALL4ME",
+    "uri" : "spotify:track:6VWMI4gW4poF3TLRgUHPt0"
+  }, {
+    "artist" : "STIM",
+    "album" : "ceasefire",
+    "track" : "ceasefire",
+    "uri" : "spotify:track:1ZlMkqleJfeWgQHmuje69Z"
+  }, {
+    "artist" : "JJ Project",
+    "album" : "Verse 2",
+    "track" : "Tomorrow, Today",
+    "uri" : "spotify:track:6GKHrYccvceiS3AFZtfFxm"
+  }, {
+    "artist" : "张远",
+    "album" : "忙著失戀",
+    "track" : "忙著失戀",
+    "uri" : "spotify:track:3AYY6JVxs6vlWdYC13guwY"
+  }, {
+    "artist" : "Maroon 5",
+    "album" : "Sing Along Bangers",
+    "track" : "Payphone",
+    "uri" : "spotify:track:1Vixb2G70s0J2Irf6hi8VE"
+  }, {
+    "artist" : "Henry Moodie",
+    "album" : "in all of my lonely nights",
+    "track" : "pick up the phone",
+    "uri" : "spotify:track:6Z1IBgysq1FfSzhQWUdvAc"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "An Ode",
+    "track" : "Fear",
+    "uri" : "spotify:track:1SgRnIFTs39lSkQJACYDoY"
+  }, {
+    "artist" : "Kenshi Yonezu",
+    "album" : "Lemon",
+    "track" : "Lemon",
+    "uri" : "spotify:track:7Cd17G3oNQ34OWUwS8ZxfR"
+  }, {
+    "artist" : "STIM",
+    "album" : "crucifixes",
+    "track" : "crucifixes",
+    "uri" : "spotify:track:1IRQ7F4PdUSosUfartPzZ3"
+  }, {
+    "artist" : "Keenan Te",
+    "album" : "Where You Are",
+    "track" : "Where You Are",
+    "uri" : "spotify:track:6hYLwcur3csaL9ztenvl3a"
+  }, {
+    "artist" : "KBShinya",
+    "album" : "青衫薄",
+    "track" : "青衫薄",
+    "uri" : "spotify:track:4Rx7FCs5PgH5q8RXybNja3"
+  }, {
+    "artist" : "benny blanco",
+    "album" : "FRIENDS KEEP SECRETS",
+    "track" : "Eastside (with Halsey & Khalid)",
+    "uri" : "spotify:track:7FGq80cy8juXBCD2nrqdWU"
+  }, {
+    "artist" : "Matt Terry",
+    "album" : "Trouble",
+    "track" : "Sucker for You",
+    "uri" : "spotify:track:4vkVvmjIiQibQ6zJnC1Q9z"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "I Want You",
+    "track" : "I Want You",
+    "uri" : "spotify:track:537icFXmb8S4Trqfn7DKjj"
+  }, {
+    "artist" : "XG",
+    "album" : "TGIF",
+    "track" : "TGIF",
+    "uri" : "spotify:track:3horUXBBgEyTEAxfeT9c0P"
+  }, {
+    "artist" : "Mason Murphy",
+    "album" : "Sick Of You",
+    "track" : "Sick Of You",
+    "uri" : "spotify:track:2L9SWESdPoUfOyVrSkWNt3"
+  }, {
+    "artist" : "emma løv",
+    "album" : "Friends",
+    "track" : "Friends",
+    "uri" : "spotify:track:1Vt4oAoHBIopxekC8KhT6X"
+  }, {
+    "artist" : "sunkis",
+    "album" : "4ever",
+    "track" : "4ever",
+    "uri" : "spotify:track:0rRVgRjCjK8SJW5G0zgBqh"
+  }, {
+    "artist" : "Chatterbox",
+    "album" : "New Type of Hero",
+    "track" : "New Type of Hero - 《凸变英雄X》动画原声带",
+    "uri" : "spotify:track:5ShUqjq6BDhmOJEE6Bc13u"
+  }, {
+    "artist" : "张远",
+    "album" : "可以不是你",
+    "track" : "可以不是你",
+    "uri" : "spotify:track:5dcQj27je0qwIHShygEOuv"
+  }, {
+    "artist" : "于冬然",
+    "album" : "我的眼泪 你的战利品",
+    "track" : "我的眼泪 你的战利品",
+    "uri" : "spotify:track:0fqAwMCnNriVxLwPIYfGyR"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "光陰副本",
+    "track" : "光陰副本",
+    "uri" : "spotify:track:7KJ5U4QwsM1FHvSE3M7nLM"
+  }, {
+    "artist" : "于冬然",
+    "album" : "亲爱的不要哭",
+    "track" : "亲爱的不要哭",
+    "uri" : "spotify:track:7oYFWZDpQCgb1p7RHk7zNx"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "Ticking Away",
+    "track" : "Ticking Away",
+    "uri" : "spotify:track:4bdzlt280luOgFi0ZlkTvR"
+  }, {
+    "artist" : "G.E.M.",
+    "album" : "摩天動物園",
+    "track" : "透明",
+    "uri" : "spotify:track:6cCHHwJAI4TEF1eukFeR97"
+  }, {
+    "artist" : "J.Tajor",
+    "album" : "Like I Do",
+    "track" : "Like I Do",
+    "uri" : "spotify:track:1TiZWEsxN85yLJBq56K8mG"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "Cheers to youth",
+    "uri" : "spotify:track:1XvOEvWtfa879Wk1wKHZ1M"
+  }, {
+    "artist" : "ENHYPEN",
+    "album" : "DIMENSION : ANSWER",
+    "track" : "Polaroid Love",
+    "uri" : "spotify:track:5elW2CKSoqjYoJ32AGDxf1"
+  }, {
+    "artist" : "于冬然",
+    "album" : "以朋友的身份",
+    "track" : "以朋友的身份",
+    "uri" : "spotify:track:7zYMWbC1ABibwQmJyESgc6"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Dance in the Rain",
+    "track" : "Dance in the Rain",
+    "uri" : "spotify:track:4ku0V0Ijj4jQ1eaoyRv8tw"
+  }, {
+    "artist" : "张远",
+    "album" : "嘉賓",
+    "track" : "嘉賓",
+    "uri" : "spotify:track:5jAmIkIpskwu2hRz2YaEHi"
+  }, {
+    "artist" : "Hoang",
+    "album" : "Heartstrings",
+    "track" : "Hurts Me Too",
+    "uri" : "spotify:track:1fdLoZtKSChgiWwxP4Pdjq"
+  }, {
+    "artist" : "Seraphine",
+    "album" : "All The Things She Said",
+    "track" : "All The Things She Said",
+    "uri" : "spotify:track:1GglmI9q5ABCHSBoZrMHSu"
+  }, {
+    "artist" : "SABAI",
+    "album" : "Scared",
+    "track" : "Scared",
+    "uri" : "spotify:track:2ktaGvlb0uE3tUQXy2oXoo"
+  }, {
+    "artist" : "Cifer",
+    "album" : "念破",
+    "track" : "念破",
+    "uri" : "spotify:track:29XUTe9tO4qUerr8MUYcrl"
+  }, {
+    "artist" : "G.E.M.",
+    "album" : "啓示錄",
+    "track" : "天空沒有極限",
+    "uri" : "spotify:track:4nivAUgvOrWdkv44kjAlxs"
+  }, {
+    "artist" : "en王翊恩",
+    "album" : "逾矩",
+    "track" : "逾矩",
+    "uri" : "spotify:track:0bO8oexP2tcnHnc4pq6Lv1"
+  }, {
+    "artist" : "aespa",
+    "album" : "Armageddon - The 1st Album",
+    "track" : "Armageddon",
+    "uri" : "spotify:track:4b2fMv44GAYpsDSK4ihbsI"
+  }, {
+    "artist" : "Jasmine Sokko",
+    "album" : "TIRED",
+    "track" : "TIRED",
+    "uri" : "spotify:track:0NmA0vQuaO6rnphLEjCZGq"
+  }, {
+    "artist" : "XG",
+    "album" : "AWE",
+    "track" : "IYKYK",
+    "uri" : "spotify:track:0Gl9pXfGTU8eAnEbcka6AV"
+  }, {
+    "artist" : "高爾宣 OSN",
+    "album" : "Hold On",
+    "track" : "Hold On",
+    "uri" : "spotify:track:580BvW3DyUNoYFgQgoD2GI"
+  }, {
+    "artist" : "The Chainsmokers",
+    "album" : "Closer",
+    "track" : "Closer",
+    "uri" : "spotify:track:7BKLCZ1jbUBVqRi2FVlTVw"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "JJ林俊傑100天",
+    "track" : "背對背擁抱",
+    "uri" : "spotify:track:5OZeRuBBRpEY13BagcAOLJ"
+  }, {
+    "artist" : "Daven Wu",
+    "album" : "秋",
+    "track" : "秋",
+    "uri" : "spotify:track:4r2tv717zX69xu5oMqeolk"
+  }, {
+    "artist" : "League of Legends",
+    "album" : "Burn It All Down",
+    "track" : "Burn It All Down",
+    "uri" : "spotify:track:0ked784BOZ1JtRVHux98jE"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Don't Fall In Love With The Moment",
+    "track" : "Stray Nights",
+    "uri" : "spotify:track:1VoafxoEcG9zOqpxkapHGz"
+  }, {
+    "artist" : "Egzod",
+    "album" : "No Rival",
+    "track" : "No Rival",
+    "uri" : "spotify:track:2bm1FmAxEbpDkuIk2jSDgf"
+  }, {
+    "artist" : "KUURO",
+    "album" : "Snakes & Ladders",
+    "track" : "Snakes & Ladders",
+    "uri" : "spotify:track:5pTSuqFgMdCYszgtpqo5NW"
+  }, {
+    "artist" : "DOUDOU",
+    "album" : "南三环东路",
+    "track" : "南三环东路",
+    "uri" : "spotify:track:4tucyuDfNQQR5pu1xP9K2h"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "願與愁",
+    "track" : "願與愁",
+    "uri" : "spotify:track:4VGvaHir2FQ4WMKn3GS9AS"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "Heng:garæ",
+    "track" : "Kidult",
+    "uri" : "spotify:track:1kmmKv3L4kGmoPu8aDFOmk"
+  }, {
+    "artist" : "HxW",
+    "album" : "HxW 1st Single Album 'BEAM'",
+    "track" : "STUPID IDIOT",
+    "uri" : "spotify:track:298BoO0FqEs3hfwO4K86fI"
+  }, {
+    "artist" : "Reol",
+    "album" : "No title-",
+    "track" : "No title",
+    "uri" : "spotify:track:5pZVsZ8TOGly1KnYFmZ61B"
+  }, {
+    "artist" : "Charlie Puth",
+    "album" : "CHARLIE",
+    "track" : "There’s A First Time For Everything",
+    "uri" : "spotify:track:0I3FXz5RssOlMNI0FmPAkc"
+  }, {
+    "artist" : "Wúmèngluán",
+    "album" : "就是哪吒",
+    "track" : "就是哪吒",
+    "uri" : "spotify:track:5xn9IokJHjhHw5C3XKbFgf"
+  }, {
+    "artist" : "HOYO-MiX",
+    "album" : "Honkai: Star Rail - Experience the Paths Vol. 2",
+    "track" : "Monodrama",
+    "uri" : "spotify:track:109MwAtejD7y1PE8n6Z1jK"
+  }, {
+    "artist" : "aespa",
+    "album" : "Savage - The 1st Mini Album",
+    "track" : "Lucid Dream",
+    "uri" : "spotify:track:285Bh5EkbxGGE76ge8JDbH"
+  }, {
+    "artist" : "Fall Out Boy",
+    "album" : "American Beauty/American Psycho",
+    "track" : "Centuries",
+    "uri" : "spotify:track:04aAxqtGp5pv12UXAg4pkq"
+  }, {
+    "artist" : "Against The Current",
+    "album" : "blindfolded",
+    "track" : "blindfolded",
+    "uri" : "spotify:track:2yH6eL6f1Ada5MnmNpiPbr"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "VALORANT Sounds Vol. 1",
+    "track" : "2WORLDS",
+    "uri" : "spotify:track:5d1LmYNRMctPQFpkKQtEWy"
+  }, {
+    "artist" : "Jung Kook",
+    "album" : "GOLDEN",
+    "track" : "Yes or No",
+    "uri" : "spotify:track:2gkVEnpahpE3bQuvGuCpAV"
+  }, {
+    "artist" : "小炎同學",
+    "album" : "天下的烏鴉一般黑",
+    "track" : "天下的烏鴉一般黑",
+    "uri" : "spotify:track:5XZfygFKhBcUX2ni4I4DPA"
+  }, {
+    "artist" : "要不要买菜",
+    "album" : "下山",
+    "track" : "下山",
+    "uri" : "spotify:track:46UZYFUV5iWLvGCmKszlw4"
+  }, {
+    "artist" : "Lost Sky",
+    "album" : "Fearless",
+    "track" : "Fearless",
+    "uri" : "spotify:track:7xkCeK3qzCyf43cF8yN7Xt"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN 4th Album 'Face the Sun'",
+    "track" : "HOT",
+    "uri" : "spotify:track:6I2tqFhk8tq69iursYxuxd"
+  }, {
+    "artist" : "Peder Elias",
+    "album" : "Youth & Family",
+    "track" : "Holiday (feat. Keenan Te)",
+    "uri" : "spotify:track:6IO56FACaMvp3dxZI6HQh4"
+  }, {
+    "artist" : "JJ Lin",
+    "album" : "\"和自己對話\" 實驗專輯",
+    "track" : "關鍵詞",
+    "uri" : "spotify:track:35B0D3BnZfxl0mA3KkstVK"
+  }, {
+    "artist" : "あれくん",
+    "album" : "あのね。",
+    "track" : "あのね。",
+    "uri" : "spotify:track:5BczZ8OQh8TMM0WL7q806z"
+  }, {
+    "artist" : "MICO",
+    "album" : "Deserve this",
+    "track" : "Deserve this",
+    "uri" : "spotify:track:0Wswlp2rE9mJq3d28p98D6"
+  }, {
+    "artist" : "Jake Miller",
+    "album" : "Silver Lining",
+    "track" : "The Girl That's Underneath (feat. Jabbar Hakeem)",
+    "uri" : "spotify:track:6vzMM12p1XkbheVj39VVvT"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Babe I'm Sorry",
+    "track" : "Babe I'm Sorry",
+    "uri" : "spotify:track:5jevnZ1Al9t4TwotSuOJrx"
+  }, {
+    "artist" : "福禄寿",
+    "album" : "我用什么把你留住",
+    "track" : "我用什么把你留住",
+    "uri" : "spotify:track:4TYi1udOmvZ0yIhHEMro5f"
+  }, {
+    "artist" : "Maria Lynn",
+    "album" : "Lost and Found",
+    "track" : "Drama Free",
+    "uri" : "spotify:track:1o9etP7sO9aVS5ddg4EFbq"
+  }, {
+    "artist" : "MIKOLAS",
+    "album" : "Abu Dhabi",
+    "track" : "Abu Dhabi",
+    "uri" : "spotify:track:5A6STkqg4HlSDuIvLctMC1"
+  }, {
+    "artist" : "Jake Miller",
+    "album" : "Rumors",
+    "track" : "Rumors",
+    "uri" : "spotify:track:6llBOJ6HLHvlVnKeZqhXk8"
+  }, {
+    "artist" : "封茗囧菌",
+    "album" : "半抹烟熏",
+    "track" : "半抹烟熏",
+    "uri" : "spotify:track:3BnpXvYSDDkYMVENCQTiGq"
+  }, {
+    "artist" : "ZEROBASEONE",
+    "album" : "YOUTH IN THE SHADE",
+    "track" : "In Bloom",
+    "uri" : "spotify:track:3F4lHPNHlvr3RpO4tpVOIs"
+  }, {
+    "artist" : "蓝心羽",
+    "album" : "记忆停留",
+    "track" : "记忆停留",
+    "uri" : "spotify:track:5FBYxEvHqoygckBDX8wtRJ"
+  }, {
+    "artist" : "Tom Frane",
+    "album" : "Don't Leave",
+    "track" : "Don't Leave",
+    "uri" : "spotify:track:24S2WSZEcOUM4XGCBFTrBm"
+  }, {
+    "artist" : "Eason Chan",
+    "album" : "黑·白·灰",
+    "track" : "十年",
+    "uri" : "spotify:track:25pWemriUQVrZ3yIiS2IBf"
+  }, {
+    "artist" : "HOYO-MiX",
+    "album" : "Genshin Impact - Blazing Heart",
+    "track" : "Blazing Heart - English Version",
+    "uri" : "spotify:track:27IbWBle43yep3iX0Tslx2"
+  }, {
+    "artist" : "Sabrina Carpenter",
+    "album" : "emails i can't send",
+    "track" : "Nonsense",
+    "uri" : "spotify:track:6dgUya35uo964z7GZXM07g"
+  }, {
+    "artist" : "League of Legends",
+    "album" : "RISE",
+    "track" : "RISE",
+    "uri" : "spotify:track:69Sy7207dnixZ6w7RSV9Kb"
+  }, {
+    "artist" : "YOARI",
+    "album" : "YOARI X MY DEMON",
+    "track" : "TRUE",
+    "uri" : "spotify:track:2oAmC0f5DWBDyXqsKO00ov"
+  }, {
+    "artist" : "Lewis Capaldi",
+    "album" : "Divinely Uninspired To A Hellish Extent",
+    "track" : "Someone You Loved",
+    "uri" : "spotify:track:7qEHsqek33rTcFNT9PFqLf"
+  }, {
+    "artist" : "Sawano Hiroyuki",
+    "album" : "TV Anime \"Attack on Titan Season 2\" (Original Soundtrack)",
+    "track" : "Barricades",
+    "uri" : "spotify:track:6iaQi9uPzHoXLMo5g490Bj"
+  }, {
+    "artist" : "G.E.M.",
+    "album" : "新的心跳",
+    "track" : "再見",
+    "uri" : "spotify:track:5UAGQJmL7Rn4gn7wlkMyqS"
+  }, {
+    "artist" : "Tiger Hu",
+    "album" : "覅忒好",
+    "track" : "你要的全拿走",
+    "uri" : "spotify:track:37BXaP8wCJrH0M3AdtSNyk"
+  }, {
+    "artist" : "STIM",
+    "album" : "ghost",
+    "track" : "ghost",
+    "uri" : "spotify:track:2hqksrQuKeya9oSoAfc9sf"
+  }, {
+    "artist" : "IN-K",
+    "album" : "迷失幻境",
+    "track" : "迷失幻境",
+    "uri" : "spotify:track:1UbwQEeBGvmSsJrnfEoaU1"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "Fear",
+    "uri" : "spotify:track:481yKEOzsONgSgVXlUfOhy"
+  }, {
+    "artist" : "Martin Garrix",
+    "album" : "Scared to Be Lonely",
+    "track" : "Scared to Be Lonely",
+    "uri" : "spotify:track:3ebXMykcMXOcLeJ9xZ17XH"
+  }, {
+    "artist" : "Rumi",
+    "album" : "KPop Demon Hunters",
+    "track" : "Free",
+    "uri" : "spotify:track:5DxDLsW6PsLz5gkwC7Mk5S"
+  }, {
+    "artist" : "pluko",
+    "album" : "Feel the Fire",
+    "track" : "Feel the Fire - Egzod Remix",
+    "uri" : "spotify:track:4lTIMx3oTc2TTcwMbW3Ly9"
+  }, {
+    "artist" : "Qing Madi",
+    "album" : "EGO",
+    "track" : "EGO",
+    "uri" : "spotify:track:4rDKyQvJiMmDbSqH5AbKxh"
+  }, {
+    "artist" : "SHAUN",
+    "album" : "Take",
+    "track" : "Way Back Home",
+    "uri" : "spotify:track:3NxuezMdSLgt4OwHzBoUhL"
+  }, {
+    "artist" : "VALORANT",
+    "album" : "Last Shot",
+    "track" : "Last Shot",
+    "uri" : "spotify:track:5ppdmIeHPG2qLHm0SsmqfB"
+  }, {
+    "artist" : "Peder Elias",
+    "album" : "Hey Hello",
+    "track" : "Hey Hello",
+    "uri" : "spotify:track:77hIkkruDPGPQzbpr4c3wm"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "An Ode",
+    "track" : "Let me hear you say",
+    "uri" : "spotify:track:6wgC1bu0BIx0K9TBbkINDA"
+  }, {
+    "artist" : "Joker Xue",
+    "album" : "意外",
+    "track" : "其实",
+    "uri" : "spotify:track:6Mmdzst5fLkrKjhdkGhLpe"
+  }, {
+    "artist" : "排骨教主",
+    "album" : "牵丝戏",
+    "track" : "牵丝戏",
+    "uri" : "spotify:track:4QUAJ8g7WjYqLVANbcCTUi"
+  }, {
+    "artist" : "SEVENTEEN",
+    "album" : "SEVENTEEN BEST ALBUM '17 IS RIGHT HERE'",
+    "track" : "Don't Wanna Cry",
+    "uri" : "spotify:track:1WEk8mX0loccWCAcTZqVH8"
+  }, {
+    "artist" : "音格概念",
+    "album" : "察觉",
+    "track" : "察觉",
+    "uri" : "spotify:track:6Bn6KUCQ4YPe8IBONYKSBC"
+  }, {
+    "artist" : "GOT7",
+    "album" : "FLIGHT LOG : TURBULENCE",
+    "track" : "Mayday",
+    "uri" : "spotify:track:6km5yPisunorMMg6TXEL6l"
+  } ],
+  "albums" : [ ],
+  "shows" : [ ],
+  "episodes" : [ ],
+  "bannedTracks" : [ ],
+  "artists" : [ {
+    "name" : "Chris James",
+    "uri" : "spotify:artist:1PU4kQGbRVMSyvawEYEjFp"
+  }, {
+    "name" : "GOT7",
+    "uri" : "spotify:artist:6nfDaffa50mKtEOwR8g4df"
+  }, {
+    "name" : "HOYO-MiX",
+    "uri" : "spotify:artist:2YvlK6lKiKVjXxsjvNbnqg"
+  }, {
+    "name" : "J.Tajor",
+    "uri" : "spotify:artist:0VpMOC5IZU06u29fWjv3qJ"
+  }, {
+    "name" : "Jackson Wang",
+    "uri" : "spotify:artist:1kfWoWgCugPkyxQP8lkRlY"
+  }, {
+    "name" : "Jake Cornell",
+    "uri" : "spotify:artist:6zf13X0QDPkbKT2bQAcKyV"
+  }, {
+    "name" : "Jay Park",
+    "uri" : "spotify:artist:4XDi67ZENZcbfKnvMnTYsI"
+  }, {
+    "name" : "Joker Xue",
+    "uri" : "spotify:artist:1cg0bYpP5e2DNG0RgK2CMN"
+  }, {
+    "name" : "MICO",
+    "uri" : "spotify:artist:0wajW5BBnk40YAhJdTkrrG"
+  }, {
+    "name" : "Reol",
+    "uri" : "spotify:artist:7rpKUJ0AnklJ8q9nIPVSpZ"
+  }, {
+    "name" : "SEVENTEEN",
+    "uri" : "spotify:artist:7nqOGRxlXj7N2JYbgNEjYH"
+  }, {
+    "name" : "STIM",
+    "uri" : "spotify:artist:4uy6qQw6mpNpDm1fx6nVZe"
+  }, {
+    "name" : "Tom Frane",
+    "uri" : "spotify:artist:7EJYadnOoXsnXbvULN7YCR"
+  }, {
+    "name" : "XG",
+    "uri" : "spotify:artist:0LOK81e9H5lr61HlGGHqwA"
+  }, {
+    "name" : "aespa",
+    "uri" : "spotify:artist:6YVMFz59CuY7ngCxTxjpxE"
+  }, {
+    "name" : "蓝心羽",
+    "uri" : "spotify:artist:5IUx51U4VsEk4wGQvZQcf2"
+  } ],
+  "bannedArtists" : [ ],
+  "pageMatch" : [ ],
+  "other" : [ ]
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spotify Dashboard — Core Rotation Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-left">
+      <h1>Spotify Listening Dashboard</h1>
+      <p class="subtitle">
+        Decision: build a “core rotation” playlist using evidence from repeats, time trends, and playlist behavior.
+      </p>
+      <div class="chips">
+        <span id="chipArtist" class="chip hidden" aria-live="polite"></span>
+        <span id="chipDateRange" class="chip hidden" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="status">
+        <span class="dot" id="statusDot" aria-hidden="true"></span>
+        <span id="statusText">Loading data…</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="controls" aria-label="Dashboard controls">
+    <div class="control">
+      <label for="playlistSelect">Playlist</label>
+      <select id="playlistSelect">
+        <option value="ALL">ALL</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label for="raceMetric">Race metric</label>
+      <select id="raceMetric">
+        <option value="streamCount">Plays (streamCount)</option>
+        <option value="secondsPlayed">Time (secondsPlayed)</option>
+      </select>
+    </div>
+
+    <div class="control buttons">
+      <button id="clearFiltersBtn" class="btn secondary" type="button">Clear filters</button>
+      <button id="exportShortlistBtn" class="btn" type="button">Export shortlist</button>
+    </div>
+
+    <div class="control meta">
+      <span id="shortlistCount" class="meta-text">Shortlist: 0</span>
+    </div>
+  </section>
+
+  <main class="grid">
+    <section class="card" aria-label="Top tracks chart">
+      <div class="card-head">
+        <h2>Top Tracks (Wrapped)</h2>
+        <p class="card-subtitle">Click a bar to add/remove from shortlist.</p>
+      </div>
+      <div id="chartTopTracks" class="chart"></div>
+    </section>
+
+    <section class="card span-2" aria-label="Shortlist panel">
+      <div class="card-head">
+        <h2>Shortlist</h2>
+        <p class="card-subtitle">Your candidate tracks for the “core rotation” playlist.</p>
+      </div>
+      <div id="panelShortlist" class="panel"></div>
+    </section>
+
+    <section class="card" aria-label="Artist bar race chart">
+      <div class="card-head">
+        <h2>Top Artists (Animated Race)</h2>
+        <p class="card-subtitle">Auto-plays weekly stats. Click an artist to filter the dashboard.</p>
+      </div>
+      <div class="inline-controls">
+        <button id="racePlayPauseBtn" class="btn small" type="button">Pause</button>
+        <span id="raceDateLabel" class="meta-text"></span>
+      </div>
+      <div id="chartArtistRace" class="chart"></div>
+    </section>
+
+    <section class="card" aria-label="Playlist additions timeline">
+      <div class="card-head">
+        <h2>Playlist Additions Over Time</h2>
+        <p class="card-subtitle">Brush a date range to filter.</p>
+      </div>
+      <div id="chartPlaylistTimeline" class="chart"></div>
+    </section>
+
+    <section class="card" aria-label="Highlights panel">
+      <div class="card-head">
+        <h2>Highlights (Sound Capsule)</h2>
+        <p class="card-subtitle">Quick “moments” from your year.</p>
+      </div>
+      <div id="panelHighlights" class="panel"></div>
+    </section>
+
+
+  </main>
+
+  <footer class="footer">
+    <span class="meta-text">Tip: Run a local server (Live Server / Vite / python http.server) so JSON fetch works.</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

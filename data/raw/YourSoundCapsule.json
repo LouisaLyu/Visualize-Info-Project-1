@@ -1,0 +1,371 @@
+{
+  "stats" : [ {
+    "date" : "2026-01-12",
+    "streamCount" : 0,
+    "secondsPlayed" : 0,
+    "topTracks" : [ {
+      "name" : "年轮",
+      "streamCount" : 7,
+      "secondsPlayed" : 1700
+    }, {
+      "name" : "茫",
+      "streamCount" : 3,
+      "secondsPlayed" : 681
+    }, {
+      "name" : "看着我的眼睛说",
+      "streamCount" : 3,
+      "secondsPlayed" : 582
+    }, {
+      "name" : "愛笑的眼睛",
+      "streamCount" : 3,
+      "secondsPlayed" : 703
+    }, {
+      "name" : "Senses",
+      "streamCount" : 3,
+      "secondsPlayed" : 471
+    }, {
+      "name" : "HOPELESS",
+      "streamCount" : 3,
+      "secondsPlayed" : 328
+    }, {
+      "name" : "嘉賓",
+      "streamCount" : 2,
+      "secondsPlayed" : 666
+    }, {
+      "name" : "嚣张",
+      "streamCount" : 2,
+      "secondsPlayed" : 506
+    }, {
+      "name" : "我走后 - 发行版",
+      "streamCount" : 2,
+      "secondsPlayed" : 496
+    }, {
+      "name" : "其实",
+      "streamCount" : 2,
+      "secondsPlayed" : 484
+    } ],
+    "topArtists" : [ {
+      "name" : "Silence Wang",
+      "streamCount" : 13,
+      "secondsPlayed" : 2878
+    }, {
+      "name" : "Joker Xue",
+      "streamCount" : 7,
+      "secondsPlayed" : 1681
+    }, {
+      "name" : "张远",
+      "streamCount" : 7,
+      "secondsPlayed" : 1609
+    }, {
+      "name" : "MICO",
+      "streamCount" : 6,
+      "secondsPlayed" : 970
+    }, {
+      "name" : "JJ Lin",
+      "streamCount" : 5,
+      "secondsPlayed" : 1065
+    }, {
+      "name" : "王子健",
+      "streamCount" : 5,
+      "secondsPlayed" : 1021
+    }, {
+      "name" : "蓝心羽",
+      "streamCount" : 5,
+      "secondsPlayed" : 980
+    }, {
+      "name" : "raph",
+      "streamCount" : 5,
+      "secondsPlayed" : 575
+    }, {
+      "name" : "en王翊恩",
+      "streamCount" : 4,
+      "secondsPlayed" : 949
+    }, {
+      "name" : "VALORANT",
+      "streamCount" : 4,
+      "secondsPlayed" : 739
+    } ],
+    "topGenres" : [ ]
+  }, {
+    "date" : "2026-01-05",
+    "streamCount" : 0,
+    "secondsPlayed" : 0,
+    "topTracks" : [ {
+      "name" : "最好",
+      "streamCount" : 2,
+      "secondsPlayed" : 511
+    }, {
+      "name" : "愛愛愛",
+      "streamCount" : 2,
+      "secondsPlayed" : 277
+    }, {
+      "name" : "一生的愛",
+      "streamCount" : 2,
+      "secondsPlayed" : 274
+    }, {
+      "name" : "耿",
+      "streamCount" : 1,
+      "secondsPlayed" : 269
+    }, {
+      "name" : "认真的雪",
+      "streamCount" : 1,
+      "secondsPlayed" : 261
+    }, {
+      "name" : "我還想她",
+      "streamCount" : 1,
+      "secondsPlayed" : 247
+    }, {
+      "name" : "指紋",
+      "streamCount" : 1,
+      "secondsPlayed" : 240
+    }, {
+      "name" : "听说你",
+      "streamCount" : 1,
+      "secondsPlayed" : 239
+    }, {
+      "name" : "超度我",
+      "streamCount" : 1,
+      "secondsPlayed" : 231
+    }, {
+      "name" : "自畫像",
+      "streamCount" : 1,
+      "secondsPlayed" : 226
+    } ],
+    "topArtists" : [ {
+      "name" : "Joker Xue",
+      "streamCount" : 7,
+      "secondsPlayed" : 1391
+    }, {
+      "name" : "JJ Lin",
+      "streamCount" : 6,
+      "secondsPlayed" : 900
+    }, {
+      "name" : "MICO",
+      "streamCount" : 3,
+      "secondsPlayed" : 374
+    }, {
+      "name" : "Khalil Fong",
+      "streamCount" : 2,
+      "secondsPlayed" : 277
+    }, {
+      "name" : "Silence Wang",
+      "streamCount" : 1,
+      "secondsPlayed" : 269
+    }, {
+      "name" : "杜宣達",
+      "streamCount" : 1,
+      "secondsPlayed" : 240
+    }, {
+      "name" : "于冬然",
+      "streamCount" : 1,
+      "secondsPlayed" : 239
+    }, {
+      "name" : "福禄寿",
+      "streamCount" : 1,
+      "secondsPlayed" : 231
+    }, {
+      "name" : "樊宇镈(Coulson Fan)",
+      "streamCount" : 1,
+      "secondsPlayed" : 191
+    }, {
+      "name" : "王子健",
+      "streamCount" : 1,
+      "secondsPlayed" : 185
+    } ],
+    "topGenres" : [ ]
+  }, {
+    "date" : "2025-12-29",
+    "streamCount" : 0,
+    "secondsPlayed" : 0,
+    "topTracks" : [ {
+      "name" : "alright",
+      "streamCount" : 2,
+      "secondsPlayed" : 250
+    }, {
+      "name" : "嘉賓",
+      "streamCount" : 1,
+      "secondsPlayed" : 333
+    }, {
+      "name" : "暧昧",
+      "streamCount" : 1,
+      "secondsPlayed" : 312
+    }, {
+      "name" : "你要的全拿走",
+      "streamCount" : 1,
+      "secondsPlayed" : 299
+    }, {
+      "name" : "可惜沒如果",
+      "streamCount" : 1,
+      "secondsPlayed" : 298
+    }, {
+      "name" : "天后",
+      "streamCount" : 1,
+      "secondsPlayed" : 289
+    }, {
+      "name" : "我懷念的",
+      "streamCount" : 1,
+      "secondsPlayed" : 289
+    }, {
+      "name" : "修煉愛情",
+      "streamCount" : 1,
+      "secondsPlayed" : 287
+    }, {
+      "name" : "可以不是你",
+      "streamCount" : 1,
+      "secondsPlayed" : 283
+    }, {
+      "name" : "體面",
+      "streamCount" : 1,
+      "secondsPlayed" : 282
+    } ],
+    "topArtists" : [ {
+      "name" : "JJ Lin",
+      "streamCount" : 8,
+      "secondsPlayed" : 2098
+    }, {
+      "name" : "Joker Xue",
+      "streamCount" : 6,
+      "secondsPlayed" : 1602
+    }, {
+      "name" : "颜人中",
+      "streamCount" : 4,
+      "secondsPlayed" : 905
+    }, {
+      "name" : "张远",
+      "streamCount" : 3,
+      "secondsPlayed" : 896
+    }, {
+      "name" : "于冬然",
+      "streamCount" : 3,
+      "secondsPlayed" : 686
+    }, {
+      "name" : "Jake Cornell",
+      "streamCount" : 3,
+      "secondsPlayed" : 505
+    }, {
+      "name" : "G.E.M.",
+      "streamCount" : 3,
+      "secondsPlayed" : 794
+    }, {
+      "name" : "Eason Chan",
+      "streamCount" : 3,
+      "secondsPlayed" : 742
+    }, {
+      "name" : "糯米Nomi",
+      "streamCount" : 2,
+      "secondsPlayed" : 417
+    }, {
+      "name" : "XG",
+      "streamCount" : 2,
+      "secondsPlayed" : 354
+    } ],
+    "topGenres" : [ ]
+  } ],
+  "highlights" : [ {
+    "date" : "2026-01-18",
+    "highlightType" : "ON_REPEAT",
+    "onRepeatHighlight" : {
+      "entity" : "年轮",
+      "streamCount" : 7
+    }
+  }, {
+    "date" : "2026-01-11",
+    "highlightType" : "STREAKS",
+    "streaksHighlight" : {
+      "entity" : "Joker Xue",
+      "dayStreaks" : 4
+    }
+  }, {
+    "date" : "2026-01-04",
+    "highlightType" : "PROPORTION_LISTENING_ENTITY",
+    "proportionListeningHighlight" : {
+      "entity" : "纯emo",
+      "listeningPercentage" : 64.22369917968985
+    }
+  }, {
+    "date" : "2025-12-28",
+    "highlightType" : "MILESTONE",
+    "multiEntityMilestoneHighlight" : {
+      "entities" : [ "颜人中", "Jay Chou", "League of Legends", "指紋", "爱怎么了", "With or Without You", "願與愁", "Die For You", "INVU" ],
+      "milestoneListeningSeconds" : 31056
+    }
+  }, {
+    "date" : "2025-12-21",
+    "highlightType" : "MILESTONE",
+    "multiEntityMilestoneHighlight" : {
+      "entities" : [ "League of Legends", "MICO", "VALORANT", "Die For You", "渐冷", "FOREVER", "Empty Love", "Teeth", "願與愁" ],
+      "milestoneListeningSeconds" : 37485
+    }
+  }, {
+    "date" : "2025-12-14",
+    "highlightType" : "MILESTONE",
+    "multiEntityMilestoneHighlight" : {
+      "entities" : [ "League of Legends", "Tom Frane", "MICO", "南三环东路", "INERTIA", "李白", "循迹", "another soul", "ceasefire" ],
+      "milestoneListeningSeconds" : 34884
+    }
+  }, {
+    "date" : "2025-12-07",
+    "highlightType" : "UNLIKE_COMBINATION",
+    "unlikeCombinationHighlight" : {
+      "firstEntity" : "TAEYEON",
+      "secondEntity" : "Jabbar Hakeem"
+    }
+  }, {
+    "date" : "2025-11-16",
+    "highlightType" : "MILESTONE",
+    "multiEntityMilestoneHighlight" : {
+      "entities" : [ "Joker Xue", "League of Legends", "Charlie Puth", "暧昧", "Dangerously", "嗵嗵", "凄美地", "體面", "Perfect Night" ],
+      "milestoneListeningSeconds" : 40145
+    }
+  }, {
+    "date" : "2025-11-09",
+    "highlightType" : "STREAKS",
+    "streaksHighlight" : {
+      "entity" : "指紋",
+      "dayStreaks" : 3
+    }
+  }, {
+    "date" : "2025-10-26",
+    "highlightType" : "FIRST_TO_DISCOVER",
+    "firstToDiscoverHighlight" : {
+      "entity" : "Deja Vu - Japanese Ver.",
+      "country" : "CA",
+      "position" : 8364
+    }
+  }, {
+    "date" : "2025-10-19",
+    "highlightType" : "ON_REPEAT",
+    "onRepeatHighlight" : {
+      "entity" : "ISTP",
+      "streamCount" : 10
+    }
+  }, {
+    "date" : "2025-10-12",
+    "highlightType" : "STREAKS",
+    "streaksHighlight" : {
+      "entity" : "SEVENTEEN",
+      "dayStreaks" : 6
+    }
+  }, {
+    "date" : "2025-10-05",
+    "highlightType" : "UNLIKE_COMBINATION",
+    "unlikeCombinationHighlight" : {
+      "firstEntity" : "KEY",
+      "secondEntity" : "Jabbar Hakeem"
+    }
+  }, {
+    "date" : "2025-09-28",
+    "highlightType" : "MILESTONE",
+    "multiEntityMilestoneHighlight" : {
+      "entities" : [ "VALORANT", "JJ Lin", "福禄寿", "我用什么把你留住", "Last Shot", "超度我", "願與愁", "Where We Started", "月神赋" ],
+      "milestoneListeningSeconds" : 65735
+    }
+  }, {
+    "date" : "2025-09-21",
+    "highlightType" : "STREAKS",
+    "streaksHighlight" : {
+      "entity" : "王子健",
+      "dayStreaks" : 5
+    }
+  } ]
+}
