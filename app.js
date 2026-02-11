@@ -16,8 +16,6 @@ let raceTimer = null;
 let raceIndex = 0;
 
 const els = {
-    statusDot: document.getElementById("statusDot"),
-    statusText: document.getElementById("statusText"),
     playlistSelect: document.getElementById("playlistSelect"),
     raceMetric: document.getElementById("raceMetric"),
     clearFiltersBtn: document.getElementById("clearFiltersBtn"),
@@ -30,9 +28,7 @@ const els = {
 };
 
 function setStatus(ok, text) {
-    els.statusText.textContent = text;
-    els.statusDot.style.background = ok ? "#22c55e" : "#eab308";
-    els.statusDot.style.boxShadow = ok ? "0 0 0 3px rgba(34,197,94,0.12)" : "0 0 0 3px rgba(234,179,8,0.12)";
+    // Status indicator removed
 }
 
 function setState(patch) {
@@ -131,7 +127,7 @@ function transform({ wrapped, capsule, playlist, library }) {
         };
     }).sort((a, b) => b.count - a.count);
 
-    
+
 
     // Playlist adds
     const playlistAdds = [];
@@ -171,37 +167,69 @@ function transform({ wrapped, capsule, playlist, library }) {
     }).sort((a, b) => +a.date - +b.date);
 
     // Highlights
+    // Highlights (Sound Capsule) — parse per highlightType
     const highlights = (capsule.highlights || []).map(h => {
         const date = new Date(h.date);
         const type = h.highlightType;
+
         let entity = "";
         let value = "";
+
         if (type === "ON_REPEAT") {
-            entity = h.onRepeatHighlight?.entity || "";
+            entity = h.onRepeatHighlight?.entity ?? "";
             value = h.onRepeatHighlight?.streamCount ?? "";
-        } else if (type === "STREAKS") {
-            entity = h.streaksHighlight?.entity || "";
-            value = h.streaksHighlight?.dayStreaks ?? "";
-        } else if (type === "PROPORTION_LISTENING_ENTITY") {
-            entity = h.proportionListeningHighlight?.entity || "";
-            value = h.proportionListeningHighlight?.listeningPercentage ?? "";
-        } else {
-            entity = (h.entity || "");
-            value = (h.value || "");
         }
+        else if (type === "STREAKS") {
+            entity = h.streaksHighlight?.entity ?? "";
+            value = h.streaksHighlight?.dayStreaks ?? "";
+        }
+        else if (type === "PROPORTION_LISTENING_ENTITY") {
+            entity = h.proportionListeningHighlight?.entity ?? "";
+            const pct = h.proportionListeningHighlight?.listeningPercentage;
+            value = (pct != null && pct !== "") ? `${Number(pct).toFixed(1)}%` : "";
+        }
+        else if (type === "MILESTONE") {
+            const ents = h.multiEntityMilestoneHighlight?.entities ?? [];
+            if (Array.isArray(ents) && ents.length) {
+                entity = ents.slice(0, 3).join(", ") + (ents.length > 3 ? ` +${ents.length - 3} more` : "");
+            } else {
+                entity = "Milestone";
+            }
+            const secs = h.multiEntityMilestoneHighlight?.milestoneListeningSeconds;
+            value = (secs != null) ? `${Math.round(secs / 60)} min` : "";
+        }
+        else if (type === "UNLIKE_COMBINATION") {
+            const a = h.unlikeCombinationHighlight?.firstEntity ?? "";
+            const b = h.unlikeCombinationHighlight?.secondEntity ?? "";
+            entity = [a, b].filter(Boolean).join(" + ");
+        }
+        else if (type === "FIRST_TO_DISCOVER") {
+            entity = h.firstToDiscoverHighlight?.entity ?? "";
+            const country = h.firstToDiscoverHighlight?.country;
+            const pos = h.firstToDiscoverHighlight?.position;
+            value = [country ? `in ${country}` : "", pos != null ? `rank ${pos}` : ""]
+                .filter(Boolean)
+                .join(" · ");
+        }
+
+        // Last-resort fallback so it doesn't become blank
+        if (!entity) entity = "(unknown)";
+
         return { date, type, entity, value };
     }).sort((a, b) => +b.date - +a.date);
+
 
     return { topTracks, playlistAdds, raceFrames, highlights };
 }
 
 // ---------- Charts ----------
-function drawTopTracksChart(data) {
+function drawTopTracksChart(data, mode = "plays") {
+    // mode: "plays" (Wrapped) or "adds" (from filtered playlist additions)
     const container = d3.select("#chartTopTracks");
     const W = container.node().clientWidth;
     const H = 320;
 
-    const margin = { top: 16, right: 12, bottom: 70, left: 46 };
+    const margin = { top: 22, right: 12, bottom: 70, left: 46 };
     const width = Math.max(320, W);
     const height = H;
 
@@ -233,6 +261,15 @@ function drawTopTracksChart(data) {
         .call(d3.axisBottom(x).tickFormat(() => ""))
         .call(g => g.selectAll("path,line").attr("stroke", "rgba(167,175,194,0.35)"));
 
+    // Title hint (dynamic)
+    const label = mode === "adds" ? "Adds (from current filters)" : "Plays (Wrapped)";
+    svg.append("text")
+        .attr("x", margin.left)
+        .attr("y", 14)
+        .attr("fill", "#a7afc2")
+        .attr("font-size", 11)
+        .text(`Top 15 tracks by ${label}`);
+
     const bars = svg.append("g").selectAll("rect")
         .data(rows, d => d.trackUri)
         .join("rect")
@@ -247,32 +284,32 @@ function drawTopTracksChart(data) {
         .on("click", (_, d) => {
             if (state.shortlist.has(d.trackUri)) state.shortlist.delete(d.trackUri);
             else state.shortlist.set(d.trackUri, d);
+
             renderShortlist();
-            drawTopTracksChart(tables.topTracks);
+            // redraw *the same dataset you’re currently viewing*
+            drawTopTracksChart(data, mode);
         });
 
-    bars.append("title").text(d => `${d.trackName} — ${d.artistName}\nplays: ${d.count}`);
+    // Tooltip (dynamic wording)
+    bars.append("title").text(d => {
+        const metricWord = mode === "adds" ? "adds" : "plays";
+        return `${d.trackName} — ${d.artistName}\n${metricWord}: ${d.count}`;
+    });
 
-    // Labels (short)
+    // Rank labels (1..15)
     svg.append("g")
-        .selectAll("text")
+        .selectAll("text.rank")
         .data(rows, d => d.trackUri)
         .join("text")
+        .attr("class", "rank")
         .attr("x", d => x(d.trackUri) + x.bandwidth() / 2)
         .attr("y", height - margin.bottom + 14)
         .attr("text-anchor", "middle")
         .attr("fill", "#a7afc2")
         .attr("font-size", 10)
         .text((d, i) => i + 1);
-
-    // Title hint
-    svg.append("text")
-        .attr("x", margin.left)
-        .attr("y", 12)
-        .attr("fill", "#a7afc2")
-        .attr("font-size", 11)
-        .text("Top 15 tracks by play count");
 }
+
 
 function drawPlaylistTimeline(allAdds) {
     const container = d3.select("#chartPlaylistTimeline");
@@ -493,21 +530,24 @@ function renderHighlights(highlights) {
         return;
     }
 
-    const ul = document.createElement("ul");
-    ul.style.margin = "0";
-    ul.style.paddingLeft = "18px";
+    const wrap = document.createElement("div");
+    wrap.className = "list";
 
     for (const h of top) {
-        const li = document.createElement("li");
-        li.style.marginBottom = "10px";
-        li.innerHTML = `
-      <div style="font-size:12px;color:#a7afc2;">${fmtDate(h.date)} — ${h.type}</div>
-      <div style="font-size:13px;color:#e7eaf2;">${h.entity || "(unknown)"} <span style="color:#a7afc2;">${h.value !== "" ? `(${h.value})` : ""}</span></div>
+        const div = document.createElement("div");
+        div.className = "item";
+        div.innerHTML = `
+      <div class="left">
+        <div class="sub">${fmtDate(h.date)} · ${h.type}</div>
+        <div class="title">${h.entity || "(unknown)"} ${h.value !== "" ? `<span class="pill">${h.value}</span>` : ""}</div>
+      </div>
     `;
-        ul.appendChild(li);
+        wrap.appendChild(div);
     }
-    panel.appendChild(ul);
+
+    panel.appendChild(wrap);
 }
+
 
 function renderShortlist() {
     els.shortlistCount.textContent = `Shortlist: ${state.shortlist.size}`;
@@ -522,50 +562,97 @@ function renderShortlist() {
     const items = Array.from(state.shortlist.values())
         .sort((a, b) => (b.count || 0) - (a.count || 0));
 
-    const ol = document.createElement("ol");
-    ol.style.margin = "0";
-    ol.style.paddingLeft = "18px";
+    const wrap = document.createElement("div");
+    wrap.className = "list";
 
     for (const it of items) {
-        const li = document.createElement("li");
-        li.style.marginBottom = "8px";
-        li.innerHTML = `
-      <span style="font-size:13px;">${it.trackName}</span>
-      <span style="color:#a7afc2;font-size:12px;"> — ${it.artistName || ""} (plays: ${it.count || 0})</span>
-      <button data-uri="${it.trackUri}" class="removeBtn" style="margin-left:8px;border:1px solid rgba(35,40,56,0.8);background:rgba(28,34,53,0.9);color:#e7eaf2;border-radius:10px;padding:4px 8px;cursor:pointer;">Remove</button>
+        const div = document.createElement("div");
+        div.className = "item";
+        div.innerHTML = `
+      <div class="left">
+        <div class="title">${it.trackName}</div>
+        <div class="sub">${it.artistName || ""} · plays: ${it.count || 0}</div>
+      </div>
+      <button data-uri="${it.trackUri}" class="removeBtn">Remove</button>
     `;
-        ol.appendChild(li);
+        wrap.appendChild(div);
     }
 
-    panel.appendChild(ol);
+    panel.appendChild(wrap);
 
     panel.querySelectorAll(".removeBtn").forEach(btn => {
         btn.addEventListener("click", (e) => {
             const uri = e.currentTarget.getAttribute("data-uri");
             state.shortlist.delete(uri);
             renderShortlist();
-            drawTopTracksChart(tables.topTracks);
+            // redraw top tracks so highlight updates
+            drawTopTracksChart(tables.topTracks, "plays");
         });
     });
 }
+
 
 // ---------- Render orchestrator ----------
 function renderAll() {
     updateChips();
 
-    // Apply date range filter to playlist adds only (for now)
-    const adds = tables.playlistAdds.filter(d => {
-        if (!state.dateRange) return true;
-        const [a, b] = state.dateRange;
-        return d.addedDate >= a && d.addedDate <= b;
-    });
+    // 1) Start from all playlist additions
+    let filteredAdds = tables.playlistAdds;
 
-    drawTopTracksChart(tables.topTracks);
-    drawPlaylistTimeline(adds);
+    // Apply playlist filter
+    if (state.selectedPlaylistName !== "ALL") {
+        filteredAdds = filteredAdds.filter(d => d.playlistName === state.selectedPlaylistName);
+    }
+
+    // Apply date brush filter
+    if (state.dateRange) {
+        const [a, b] = state.dateRange;
+        filteredAdds = filteredAdds.filter(d => d.addedDate >= a && d.addedDate <= b);
+    }
+
+    // Apply artist filter (but don’t let it wipe everything if names don’t match)
+    if (state.selectedArtistName) {
+        const norm = s => (s || "").toLowerCase().trim();
+        const matched = filteredAdds.filter(d => norm(d.artistName) === norm(state.selectedArtistName));
+        if (matched.length > 0) filteredAdds = matched;
+    }
+
+    // 2) Decide what Top Tracks should show
+    const anyFilterActive =
+        state.selectedPlaylistName !== "ALL" || !!state.dateRange || !!state.selectedArtistName;
+
+    let topTracksToShow = tables.topTracks; // default: Wrapped
+    const topTitle = document.querySelector("#topTracksTitle"); // add this id (see next step)
+
+    if (anyFilterActive) {
+        // Build "top tracks" from filtered playlist adds (count = how many times added)
+        const agg = d3.rollup(
+            filteredAdds,
+            v => ({
+                trackUri: v[0].trackUri,
+                trackName: v[0].trackName,
+                artistName: v[0].artistName,
+                count: v.length,
+                msPlayed: 0
+            }),
+            d => d.trackUri
+        );
+
+        topTracksToShow = Array.from(agg.values()).sort((a, b) => b.count - a.count);
+
+        if (topTitle) topTitle.textContent = "Top Tracks (from current filters)";
+    } else {
+        if (topTitle) topTitle.textContent = "Top Tracks (Wrapped)";
+    }
+
+    // 3) Draw everything
+    drawTopTracksChart(topTracksToShow);
+    drawPlaylistTimeline(filteredAdds);
     drawArtistRace(tables.raceFrames);
     renderHighlights(tables.highlights);
     renderShortlist();
 }
+
 
 // ---------- Wire controls ----------
 function wireControls() {

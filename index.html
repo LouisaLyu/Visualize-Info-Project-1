@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Spotify Dashboard — Core Rotation Builder</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <div class="container">
   <header class="site-header">
     <div class="header-left">
       <h1>Spotify Listening Dashboard</h1>
-      <p class="subtitle">
-        Decision: build a “core rotation” playlist using evidence from repeats, time trends, and playlist behavior.
-      </p>
+
       <div class="chips">
         <span id="chipArtist" class="chip hidden" aria-live="polite"></span>
         <span id="chipDateRange" class="chip hidden" aria-live="polite"></span>
@@ -21,10 +21,6 @@
     </div>
 
     <div class="header-right">
-      <div class="status">
-        <span class="dot" id="statusDot" aria-hidden="true"></span>
-        <span id="statusText">Loading data…</span>
-      </div>
     </div>
   </header>
 
@@ -36,13 +32,7 @@
       </select>
     </div>
 
-    <div class="control">
-      <label for="raceMetric">Race metric</label>
-      <select id="raceMetric">
-        <option value="streamCount">Plays (streamCount)</option>
-        <option value="secondsPlayed">Time (secondsPlayed)</option>
-      </select>
-    </div>
+
 
     <div class="control buttons">
       <button id="clearFiltersBtn" class="btn secondary" type="button">Clear filters</button>
@@ -57,7 +47,7 @@
   <main class="grid">
     <section class="card" aria-label="Top tracks chart">
       <div class="card-head">
-        <h2>Top Tracks (Wrapped)</h2>
+        <h2 id="topTracksTitle">Top Tracks (Wrapped)</h2>
         <p class="card-subtitle">Click a bar to add/remove from shortlist.</p>
       </div>
       <div id="chartTopTracks" class="chart"></div>
@@ -77,6 +67,13 @@
         <p class="card-subtitle">Auto-plays weekly stats. Click an artist to filter the dashboard.</p>
       </div>
       <div class="inline-controls">
+        <div class="control" style="min-width:auto; margin-right:auto;">
+          <label for="raceMetric" style="font-size:10px;">Metric</label>
+          <select id="raceMetric" style="padding:4px 8px; font-size:12px;">
+            <option value="streamCount">Plays</option>
+            <option value="secondsPlayed">Time</option>
+          </select>
+        </div>
         <button id="racePlayPauseBtn" class="btn small" type="button">Pause</button>
         <span id="raceDateLabel" class="meta-text"></span>
       </div>
@@ -103,9 +100,10 @@
   </main>
 
   <footer class="footer">
-    <span class="meta-text">Tip: Run a local server (Live Server / Vite / python http.server) so JSON fetch works.</span>
   </footer>
+  </div>
 
   <script type="module" src="app.js"></script>
 </body>
+
 </html>
