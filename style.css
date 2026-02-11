@@ -1,40 +1,46 @@
 :root{
-  --bg0:#f6f7fb;
-  --bg1:#ffffff;
+  /* Pastel palette */
+  --ink:#15223b;
+  --muted:#53627d;
 
-  --card:#ffffffcc;                 /* glassy */
-  --cardSolid:#ffffff;
+  --bgA:#fff6fb;          /* pinky white */
+  --bgB:#f3fbff;          /* sky white */
+  --bgC:#f7fff6;          /* minty white */
 
-  --line:rgba(15,23,42,.10);
-  --line2:rgba(15,23,42,.16);
+  --card:#ffffffcc;
+  --line:rgba(21,34,59,.10);
+  --line2:rgba(21,34,59,.14);
 
-  --text:#0f172a;                   /* slate-900 */
-  --muted:#475569;                  /* slate-600 */
+  --accent:#ff6bb5;       /* bubblegum */
+  --accent2:#6d5efc;      /* lavender */
+  --accent3:#22c55e;      /* mint */
+  --accent4:#06b6d4;      /* cyan */
 
-  --accent:#6d5efc;                 /* soft purple */
-  --accent2:#22c55e;                /* green */
+  --shadow: 0 18px 45px rgba(21,34,59,.10);
+  --shadow2: 0 10px 25px rgba(21,34,59,.08);
 
-  --shadow: 0 18px 45px rgba(15,23,42,.10);
-  --shadow2: 0 10px 25px rgba(15,23,42,.08);
-  --r:18px;
+  --r:24px;
+  --r2:18px;
 }
 
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+
 body{
   margin:0;
-  color:var(--text);
+  color:var(--ink);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   background:
-    radial-gradient(1000px 600px at 15% 0%, rgba(109,94,252,.18) 0%, transparent 55%),
-    radial-gradient(1000px 600px at 85% 10%, rgba(34,197,94,.12) 0%, transparent 50%),
-    linear-gradient(180deg, var(--bg1), var(--bg0));
+    radial-gradient(900px 600px at 10% 0%, rgba(255,107,181,.22) 0%, transparent 55%),
+    radial-gradient(900px 600px at 90% 10%, rgba(109,94,252,.20) 0%, transparent 55%),
+    radial-gradient(800px 520px at 50% 105%, rgba(34,197,94,.16) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bgB), var(--bgA) 55%, var(--bgC));
 }
 
 .container{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 18px 18px 22px;
+  padding: 18px 18px 26px;
 }
 
 /* Header */
@@ -48,7 +54,7 @@ body{
 
 h1{
   margin:0 0 6px;
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: .2px;
 }
 
@@ -57,7 +63,7 @@ h1{
   color:var(--muted);
   font-size: 13px;
   line-height: 1.45;
-  max-width: 72ch;
+  max-width: 78ch;
 }
 
 .chips{
@@ -66,20 +72,17 @@ h1{
   margin-top:10px;
   flex-wrap:wrap;
 }
-
 .chip{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding: 7px 10px;
+  padding: 7px 12px;
   border-radius: 999px;
-  background: rgba(109,94,252,.08);
-  border:1px solid rgba(109,94,252,.18);
+  background: rgba(255,255,255,.75);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow2);
   font-size: 12px;
-  color: var(--text);
 }
-
-.hidden{ display:none; }
 
 /* Status */
 .status{
@@ -88,16 +91,16 @@ h1{
   gap:10px;
   padding: 10px 12px;
   border:1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(255,255,255,.8);
+  border-radius: 16px;
+  background: rgba(255,255,255,.78);
   box-shadow: var(--shadow2);
 }
-
 .dot{
   width:10px;height:10px;border-radius:999px;
-  background: var(--accent2);
-  box-shadow: 0 0 0 4px rgba(34,197,94,.16);
+  background: var(--accent3);
+  box-shadow: 0 0 0 4px rgba(34,197,94,.14);
 }
+.hidden{ display:none; }
 
 /* Controls */
 .controls{
@@ -109,15 +112,15 @@ h1{
   padding: 12px;
   border:1px solid var(--line);
   border-radius: var(--r);
-  background: rgba(255,255,255,.85);
-  box-shadow: var(--shadow2);
+  background: rgba(255,255,255,.75);
+  box-shadow: var(--shadow);
 }
 
 .control{
   display:flex;
   flex-direction:column;
   gap:6px;
-  min-width: 170px;
+  min-width: 180px;
 }
 .control label{
   font-size: 12px;
@@ -126,17 +129,18 @@ h1{
 
 select{
   appearance:none;
-  border-radius: 14px;
+  border-radius: 16px;
   border: 1px solid var(--line);
-  background: #ffffff;
-  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+  color: var(--ink);
   padding: 10px 12px;
   outline: none;
-  box-shadow: inset 0 0 0 1px rgba(15,23,42,.02);
+  box-shadow: inset 0 0 0 1px rgba(21,34,59,.02);
 }
 select:focus{
-  border-color: rgba(109,94,252,.55);
-  box-shadow: 0 0 0 4px rgba(109,94,252,.18);
+  border-color: rgba(255,107,181,.55);
+  box-shadow: 0 0 0 5px rgba(255,107,181,.18);
 }
 
 .buttons{
@@ -146,27 +150,29 @@ select:focus{
 }
 
 .btn{
-  border: 1px solid rgba(109,94,252,.25);
-  background: linear-gradient(180deg, rgba(109,94,252,.95), rgba(109,94,252,.80));
+  border: 1px solid rgba(21,34,59,.10);
+  background:
+    linear-gradient(180deg, rgba(255,107,181,.95), rgba(255,107,181,.78));
   color: #ffffff;
   padding: 10px 12px;
-  border-radius: 14px;
+  border-radius: 16px;
   cursor: pointer;
   box-shadow: var(--shadow2);
   transition: transform .08s ease, filter .12s ease;
 }
-.btn:hover{ filter: brightness(1.05); }
+.btn:hover{ filter: brightness(1.04); }
 .btn:active{ transform: translateY(1px); }
 
 .btn.secondary{
-  background: #ffffff;
-  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.78));
+  color: var(--ink);
   border: 1px solid var(--line);
 }
 
 .btn.small{
   padding: 8px 10px;
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: none;
 }
 
@@ -175,7 +181,7 @@ select:focus{
   font-size: 12px;
 }
 
-/* Grid + Cards */
+/* Grid */
 .grid{
   display:grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
@@ -185,20 +191,21 @@ select:focus{
 .card{
   border-radius: var(--r);
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.85);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.75));
   box-shadow: var(--shadow);
   overflow:hidden;
-  transition: transform .12s ease, border-color .12s ease;
+  transition: transform .12s ease;
 }
-.card:hover{
-  transform: translateY(-1px);
-  border-color: var(--line2);
-}
+.card:hover{ transform: translateY(-2px); }
 
 .card-head{
   padding: 14px 14px 10px;
-  border-bottom: 1px solid rgba(15,23,42,.06);
-  background: rgba(255,255,255,.6);
+  border-bottom: 1px solid rgba(21,34,59,.06);
+  background:
+    radial-gradient(480px 160px at 10% 0%, rgba(255,107,181,.16) 0%, transparent 60%),
+    radial-gradient(420px 150px at 90% 0%, rgba(109,94,252,.14) 0%, transparent 60%),
+    rgba(255,255,255,.65);
 }
 
 .card h2{
@@ -212,27 +219,30 @@ select:focus{
   font-size: 12px;
 }
 
-.inline-controls{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding: 10px 14px;
-}
-
-/* Chart/panel canvases */
+/* Chart and panel canvases */
 .chart{
   width:100%;
   min-height: 320px;
   background:
-    radial-gradient(circle at 20% 20%, rgba(109,94,252,.10) 0%, transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(34,197,94,.08) 0%, transparent 45%),
-    rgba(248,250,252,.9);
+    radial-gradient(circle at 18% 20%, rgba(255,107,181,.12) 0%, transparent 42%),
+    radial-gradient(circle at 82% 28%, rgba(109,94,252,.12) 0%, transparent 42%),
+    radial-gradient(circle at 65% 90%, rgba(34,197,94,.10) 0%, transparent 50%),
+    rgba(255,255,255,.72);
 }
 
 .panel{
   padding: 14px;
   min-height: 320px;
-  background: rgba(248,250,252,.9);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(6,182,212,.10) 0%, transparent 45%),
+    rgba(255,255,255,.72);
+}
+
+.inline-controls{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 10px 14px;
 }
 
 .span-2{ grid-column: span 2; }
@@ -246,23 +256,27 @@ select:focus{
 
 .item{
   border: 1px solid var(--line);
-  background: #ffffff;
-  border-radius: 14px;
+  background: rgba(255,255,255,.85);
+  border-radius: var(--r2);
   padding: 10px 12px;
   display:flex;
   justify-content:space-between;
   gap:10px;
   align-items:flex-start;
+  box-shadow: 0 10px 20px rgba(21,34,59,.06);
 }
+
 .item .left{
   display:flex;
   flex-direction:column;
   gap:4px;
 }
+
 .item .title{
   font-size: 13px;
-  color: var(--text);
+  color: var(--ink);
 }
+
 .item .sub{
   font-size: 12px;
   color: var(--muted);
@@ -275,16 +289,16 @@ select:focus{
   font-size: 11px;
   padding: 5px 8px;
   border-radius: 999px;
-  border: 1px solid rgba(109,94,252,.20);
-  background: rgba(109,94,252,.08);
+  border: 1px solid rgba(109,94,252,.18);
+  background: rgba(109,94,252,.10);
   color: var(--muted);
 }
 
 .removeBtn{
   border: 1px solid var(--line);
-  background: rgba(248,250,252,1);
-  color: var(--text);
-  border-radius: 12px;
+  background: rgba(255,255,255,.85);
+  color: var(--ink);
+  border-radius: 14px;
   padding: 8px 10px;
   cursor:pointer;
   transition: filter .12s ease, transform .08s ease;
@@ -296,8 +310,14 @@ select:focus{
 .footer{
   margin-top: 14px;
   padding: 10px 2px;
-  border-top: 1px solid rgba(15,23,42,.08);
+  border-top: 1px solid rgba(21,34,59,.08);
 }
 
-/* D3 axis defaults */
+/* Make D3 axis text match the theme (works because we set fill in JS too) */
 svg text{ font-family: inherit; }
+
+/* Responsive */
+@media (max-width: 980px){
+  .grid{ grid-template-columns: 1fr; }
+  .span-2{ grid-column: span 1; }
+}

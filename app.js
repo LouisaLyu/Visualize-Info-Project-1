@@ -253,20 +253,20 @@ function drawTopTracksChart(data, mode = "plays") {
     svg.append("g")
         .attr("transform", `translate(${margin.left},0)`)
         .call(d3.axisLeft(y).ticks(5))
-        .call(g => g.selectAll("text").attr("fill", "#a7afc2"))
-        .call(g => g.selectAll("path,line").attr("stroke", "rgba(167,175,194,0.35)"));
+        .call(g => g.selectAll("text").attr("fill", "#53627d"))
+        .call(g => g.selectAll("path,line").attr("stroke", "rgba(21,34,59,0.18)"));
 
     svg.append("g")
         .attr("transform", `translate(0,${height - margin.bottom})`)
         .call(d3.axisBottom(x).tickFormat(() => ""))
-        .call(g => g.selectAll("path,line").attr("stroke", "rgba(167,175,194,0.35)"));
+        .call(g => g.selectAll("path,line").attr("stroke", "rgba(21,34,59,0.18)"));
 
     // Title hint (dynamic)
     const label = mode === "adds" ? "Adds (from current filters)" : "Plays (Wrapped)";
     svg.append("text")
         .attr("x", margin.left)
         .attr("y", 14)
-        .attr("fill", "#a7afc2")
+        .attr("fill", "#53627d")
         .attr("font-size", 11)
         .text(`Top 15 tracks by ${label}`);
 
@@ -305,7 +305,7 @@ function drawTopTracksChart(data, mode = "plays") {
         .attr("x", d => x(d.trackUri) + x.bandwidth() / 2)
         .attr("y", height - margin.bottom + 14)
         .attr("text-anchor", "middle")
-        .attr("fill", "#a7afc2")
+        .attr("fill", "#53627d")
         .attr("font-size", 10)
         .text((d, i) => i + 1);
 }
@@ -358,14 +358,14 @@ function drawPlaylistTimeline(allAdds) {
     svg.append("g")
         .attr("transform", `translate(${margin.left},0)`)
         .call(d3.axisLeft(y).ticks(5))
-        .call(g => g.selectAll("text").attr("fill", "#a7afc2"))
-        .call(g => g.selectAll("path,line").attr("stroke", "rgba(167,175,194,0.35)"));
+        .call(g => g.selectAll("text").attr("fill", "#53627d"))
+        .call(g => g.selectAll("path,line").attr("stroke", "rgba(21,34,59,0.18)"));
 
     svg.append("g")
         .attr("transform", `translate(0,${height - margin.bottom})`)
         .call(d3.axisBottom(x).ticks(6))
-        .call(g => g.selectAll("text").attr("fill", "#a7afc2"))
-        .call(g => g.selectAll("path,line").attr("stroke", "rgba(167,175,194,0.35)"));
+        .call(g => g.selectAll("text").attr("fill", "#53627d"))
+        .call(g => g.selectAll("path,line").attr("stroke", "rgba(21,34,59,0.18)"));
 
     svg.append("g")
         .selectAll("rect")
@@ -453,8 +453,8 @@ function drawArtistRace(frames) {
             .attr("class", "axis")
             .attr("transform", `translate(0,${height - margin.bottom})`)
             .call(d3.axisBottom(x).ticks(5).tickSizeOuter(0))
-            .call(g => g.selectAll("text").attr("fill", "#a7afc2"))
-            .call(g => g.selectAll("path,line").attr("stroke", "rgba(167,175,194,0.35)"));
+            .call(g => g.selectAll("text").attr("fill", "#53627d"))
+            .call(g => g.selectAll("path,line").attr("stroke", "rgba(21,34,59,0.18)"));
 
         const t = svg.transition().duration(650).ease(d3.easeCubicOut);
 
