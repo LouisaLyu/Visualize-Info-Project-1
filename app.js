@@ -342,7 +342,7 @@ function drawTopTracksChart(data, mode = "plays") {
       .attr("dy", "-0.6em")
       .style("font-weight", "bold")
       .style("font-size", d => Math.max(8, d.r / 4) + "px") // dynamic sizing
-      .text(d => d.r > 25 ? (d.data.trackName.length > 15 ? d.data.trackName.slice(0,14)+"..." : d.data.trackName) : "");
+      .text(d => d.r > 25 ? (d.data.trackName.length > 8 ? d.data.trackName.slice(0,7)+"..." : d.data.trackName) : "");
 
   // 2) Artist Name
   text.append("tspan")
