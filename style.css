@@ -355,7 +355,7 @@ svg text {
   font-family: inherit;
 }
 
-/* Responsive */
+/* Responsives */
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;
