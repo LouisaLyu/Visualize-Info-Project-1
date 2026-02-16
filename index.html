@@ -9,101 +9,102 @@
 </head>
 
 <body>
-    <div class="container">
-  <header class="site-header">
-    <div class="header-left">
-      <h1>Spotify Listening Dashboard</h1>
+  <div class="container">
+    <header class="site-header">
+      <div class="header-left">
+        <h1>Spotify Listening Dashboard</h1>
 
-      <div class="chips">
-        <span id="chipArtist" class="chip hidden" aria-live="polite"></span>
-        <span id="chipDateRange" class="chip hidden" aria-live="polite"></span>
-      </div>
-    </div>
-
-    <div class="header-right">
-    </div>
-  </header>
-
-  <section class="controls" aria-label="Dashboard controls">
-    <div class="control">
-      <label for="playlistSelect">Playlist</label>
-      <select id="playlistSelect">
-        <option value="ALL">ALL</option>
-      </select>
-    </div>
-
-
-
-    <div class="control buttons">
-      <button id="clearFiltersBtn" class="btn secondary" type="button">Clear filters</button>
-      <button id="exportShortlistBtn" class="btn" type="button">Export shortlist</button>
-    </div>
-
-    <div class="control meta">
-      <span id="shortlistCount" class="meta-text">Shortlist: 0</span>
-    </div>
-  </section>
-
-  <main class="grid">
-    <section class="card" aria-label="Top tracks chart">
-      <div class="card-head">
-        <h2 id="topTracksTitle">Top Tracks (Wrapped)</h2>
-        <p class="card-subtitle">Click a bar to add/remove from shortlist.</p>
-      </div>
-      <div id="chartTopTracks" class="chart"></div>
-    </section>
-
-    <section class="card" aria-label="Shortlist panel">
-      <div class="card-head">
-        <h2>Shortlist</h2>
-        <p class="card-subtitle">Your candidate tracks for the “core rotation” playlist.</p>
-      </div>
-      <div id="panelShortlist" class="panel"></div>
-    </section>
-
-    <section class="card" aria-label="Artist bar race chart">
-      <div class="card-head">
-        <h2>Top Artists (Animated Race)</h2>
-        <p class="card-subtitle">Auto-plays weekly stats. Click an artist to filter the dashboard.</p>
-      </div>
-      <div class="inline-controls">
-        <div class="control" style="min-width:auto; margin-right:auto;">
-          <label for="raceMetric" style="font-size:10px;">Metric</label>
-          <select id="raceMetric" style="padding:4px 8px; font-size:12px;">
-            <option value="streamCount">Plays</option>
-            <option value="secondsPlayed">Time</option>
-          </select>
+        <div class="chips">
+          <span id="chipArtist" class="chip hidden" aria-live="polite"></span>
+          <span id="chipDateRange" class="chip hidden" aria-live="polite"></span>
         </div>
-        <button id="racePlayPauseBtn" class="btn small" type="button">Pause</button>
-        <span id="raceDateLabel" class="meta-text"></span>
       </div>
-      <div id="chartArtistRace" class="chart"></div>
+
+      <div class="header-right">
+      </div>
+    </header>
+
+    <section class="controls" aria-label="Dashboard controls">
+      <div class="control">
+        <label for="playlistSelect">Playlist</label>
+        <select id="playlistSelect">
+          <option value="ALL">ALL</option>
+        </select>
+      </div>
+
+
+
+      <div class="control buttons">
+        <button id="clearFiltersBtn" class="btn secondary" type="button">Clear filters</button>
+        <button id="exportShortlistBtn" class="btn" type="button">Export shortlist</button>
+      </div>
+
+      <div class="control meta">
+        <span id="shortlistCount" class="meta-text">Shortlist: 0</span>
+      </div>
     </section>
 
-    <section class="card" aria-label="Playlist additions timeline">
-      <div class="card-head">
-        <h2>Playlist Additions Over Time</h2>
-        <p class="card-subtitle">Brush a date range to filter.</p>
-      </div>
-      <div id="chartPlaylistTimeline" class="chart"></div>
-    </section>
+    <main class="grid">
+      <section class="card" aria-label="Top tracks chart">
+        <div class="card-head">
+          <h2 id="topTracksTitle">Top Tracks (Wrapped)</h2>
+          <p class="card-subtitle">Click a bar to add/remove from shortlist.</p>
+        </div>
+        <div id="chartTopTracks" class="chart"></div>
+      </section>
 
-    <section class="card span-2" aria-label="Highlights panel">
-      <div class="card-head">
-        <h2>Highlights (Sound Capsule)</h2>
-        <p class="card-subtitle">Quick “moments” from your year.</p>
-      </div>
-      <div id="panelHighlights" class="panel"></div>
-    </section>
+      <section class="card" aria-label="Shortlist panel">
+        <div class="card-head">
+          <h2>Shortlist</h2>
+          <p class="card-subtitle">Your candidate tracks for the “core rotation” playlist.</p>
+        </div>
+        <div id="panelShortlist" class="panel"></div>
+      </section>
+
+      <section class="card" aria-label="Artist bar race chart">
+        <div class="card-head">
+          <h2>Top Artists (Animated Race)</h2>
+          <p class="card-subtitle">Auto-plays weekly stats. Click an artist to filter the dashboard.</p>
+        </div>
+        <div class="inline-controls">
+          <div class="control" style="min-width:auto; margin-right:auto;">
+            <label for="raceMetric" style="font-size:10px;">Metric</label>
+            <select id="raceMetric" style="padding:4px 8px; font-size:12px;">
+              <option value="streamCount">Plays</option>
+              <option value="secondsPlayed">Time</option>
+            </select>
+          </div>
+          <button id="racePlayPauseBtn" class="btn small" type="button">Pause</button>
+          <span id="raceDateLabel" class="meta-text"></span>
+        </div>
+        <div id="chartArtistRace" class="chart"></div>
+      </section>
+
+      <section class="card" aria-label="Playlist additions timeline">
+        <div class="card-head">
+          <h2>Playlist Additions Over Time</h2>
+          <p class="card-subtitle">Brush a date range to filter.</p>
+        </div>
+        <div id="chartPlaylistTimeline" class="chart"></div>
+      </section>
+
+      <section class="card span-2" aria-label="Highlights panel">
+        <div class="card-head">
+          <h2>Highlights (Sound Capsule)</h2>
+          <p class="card-subtitle">Quick “moments” from your year.</p>
+        </div>
+        <div id="panelHighlights" class="panel"></div>
+      </section>
 
 
-  </main>
+    </main>
 
-  <footer class="footer">
-  </footer>
+    <footer class="footer">
+    </footer>
   </div>
 
-  <script type="module" src="app.js"></script>
+
+  <script type="module" src="app.js?v=2"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ const RAW = "./data/raw/";
 
 const state = {
     selectedArtistName: null,
-    selectedPlaylistName: "ALL",
+    // selectedPlaylistName removed
     dateRange: null,          // [Date, Date]
     shortlist: new Map(),     // trackUri -> {trackName, artistName, count, msPlayed}
     raceMetric: "streamCount",
@@ -16,7 +16,7 @@ let raceTimer = null;
 let raceIndex = 0;
 
 const els = {
-    playlistSelect: document.getElementById("playlistSelect"),
+    // playlistSelect removed
     raceMetric: document.getElementById("raceMetric"),
     clearFiltersBtn: document.getElementById("clearFiltersBtn"),
     exportShortlistBtn: document.getElementById("exportShortlistBtn"),
@@ -39,10 +39,10 @@ function setState(patch) {
 function clearFilters() {
     setState({
         selectedArtistName: null,
-        selectedPlaylistName: "ALL",
+        // selectedPlaylistName removed
         dateRange: null
     });
-    els.playlistSelect.value = "ALL";
+    // els.playlistSelect removed
     updateChips();
 }
 
@@ -166,8 +166,14 @@ function transform({ wrapped, capsule, playlist, library }) {
         return { date, rows };
     }).sort((a, b) => +a.date - +b.date);
 
-    // Highlights
     // Highlights (Sound Capsule) — parse per highlightType
+    // Pass stats for Heatmap
+    const listeningStats = (capsule.stats || []).map(s => ({
+        date: new Date(s.date),
+        streamCount: s.streamCount || 0,
+        secondsPlayed: s.secondsPlayed || 0
+    })).sort((a,b) => a.date - b.date);
+
     const highlights = (capsule.highlights || []).map(h => {
         const date = new Date(h.date);
         const type = h.highlightType;
@@ -219,166 +225,325 @@ function transform({ wrapped, capsule, playlist, library }) {
     }).sort((a, b) => +b.date - +a.date);
 
 
-    return { topTracks, playlistAdds, raceFrames, highlights };
+    return { topTracks, playlistAdds, raceFrames, highlights, listeningStats };
+}
+
+// ---------- Heatmap Logic (Ported from heatmap_app.js) ----------
+const HEATMAP_DAYS_MON_START = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+
+function heatmapLocalParts(date) {
+  // Use user's local time or a specific timezone. 
+  // Here we use browser default for simplicity, or "en-CA" if requested.
+  const dtf = new Intl.DateTimeFormat("en-CA", {
+    weekday: "short",
+    hour: "2-digit",
+    hour12: false
+  });
+  const parts = dtf.formatToParts(date);
+  const map = Object.fromEntries(parts.map(p => [p.type, p.value]));
+  return { weekday: map.weekday, hour: Number(map.hour) };
+}
+
+function aggregateWeekHourHeatmap(rows, { timeField="date" } = {}) {
+  const counts = Array.from({ length: 7 }, () => Array(24).fill(0));
+
+  for (const r of (rows || [])) {
+    const raw = r?.[timeField];
+    if (!raw) continue;
+
+    const d = new Date(raw);
+    if (Number.isNaN(d.getTime())) continue;
+
+    const { weekday, hour } = heatmapLocalParts(d);
+    const di = HEATMAP_DAYS_MON_START.indexOf(weekday);
+    if (di === -1 || hour < 0 || hour > 23) continue;
+    counts[di][hour] += 1;
+  }
+
+  const data = [];
+  for (let di = 0; di < 7; di++) {
+    for (let h = 0; h < 24; h++) {
+      data.push({ day: HEATMAP_DAYS_MON_START[di], dayIndex: di, hour: h, value: counts[di][h] });
+    }
+  }
+  return data;
+}
+
+function ensureHeatmapTooltip() {
+  let tip = d3.select("body").selectAll(".hm-tooltip").data([null]);
+  tip = tip.enter().append("div").attr("class","hm-tooltip").merge(tip);
+  return tip;
+}
+
+function drawListeningHeatmap(dataRows, title="Listening Rhythm (When Added)") {
+    console.log("Building Heatmap from dataRows:", dataRows?.length); // Debug info 
+    const container = d3.select("#panelHighlights");
+
+    const W = container.node().clientWidth;
+    const padding = { top: 16, right: 14, bottom: 34, left: 32 };
+    const width = Math.max(360, W);
+    const height = 280;
+    const innerW = width - padding.left - padding.right;
+    const innerH = height - padding.top - padding.bottom;
+    
+    // We use playlistAdds as a proxy for "activity" since we lack hourly streaming history
+    // dataRows should be `tables.playlistAdds`
+    const cfg = {
+        cellSize: 18,
+        gap: 1,
+        xTickHours: [0, 4, 8, 12, 16, 20, 23]
+    };
+
+    container.html("");
+    const tip = ensureHeatmapTooltip();
+
+    if (!dataRows || dataRows.length === 0) {
+        container.html(`<p class="meta-text">No activity data available.</p>`);
+        return;
+    }
+
+    const data = aggregateWeekHourHeatmap(dataRows, { timeField: "addedDate" });
+    const values = data.map(d => d.value);
+    const max = d3.max(values) || 1;
+    const domainMax = Math.max(1, max);
+
+    // Expand focus: Trim empty hours (start/end of day)
+    const activeData = data.filter(d => d.value > 0);
+    let minHour = 0, maxHour = 23;
+    if (activeData.length > 0) {
+        const hours = activeData.map(d => d.hour);
+        minHour = Math.max(0, d3.min(hours) - 1); // buffer
+        maxHour = Math.min(23, d3.max(hours) + 1);
+    }
+    const hourDomain = d3.range(minHour, maxHour + 1);
+
+    const svg = container.append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    const g = svg.append("g")
+        .attr("transform", `translate(${padding.left},${padding.top})`);
+
+    const x = d3.scaleBand()
+        .domain(hourDomain)
+        .range([0, innerW])
+        .paddingInner(cfg.gap / (cfg.cellSize + cfg.gap));
+
+    const y = d3.scaleBand()
+        .domain(HEATMAP_DAYS_MON_START)
+        .range([0, innerH])
+        .paddingInner(cfg.gap / (cfg.cellSize + cfg.gap));
+
+    const color = d3.scaleSequential()
+        .domain([0, domainMax])
+        .interpolator(d3.interpolateBlues);
+
+    const xAxis = d3.axisBottom(x)
+        .tickValues(hourDomain.filter(h => h % 4 === 0 || h === minHour || h === maxHour)) // smarter ticks
+        .tickFormat(d => `${String(d).padStart(2,"0")}:00`);
+
+    const yAxis = d3.axisLeft(y).tickSize(0);
+
+    g.append("g")
+        .attr("transform", `translate(0,${innerH})`)
+        .call(xAxis)
+        .call(ax => ax.selectAll("text").attr("fill","#53627d").attr("font-size",11))
+        .call(ax => ax.selectAll("path,line").attr("stroke","rgba(21,34,59,0.18)"));
+
+    g.append("g")
+        .call(yAxis)
+        .call(ax => ax.selectAll("text").attr("fill","#53627d").attr("font-size",11))
+        .call(ax => ax.select(".domain").remove());
+
+    g.append("g")
+        .selectAll("rect")
+        .data(data)
+        .join("rect")
+        .attr("x", d => x(d.hour))
+        .attr("y", d => y(d.day))
+        .attr("width", x.bandwidth())
+        .attr("height", y.bandwidth())
+        .attr("rx", 4)
+        .attr("ry", 4)
+        .attr("fill", d => color(d.value))
+        .attr("opacity", d => d.value === 0 ? 0.18 : 1)
+        .on("mousemove", (event, d) => {
+            tip.style("opacity", 1)
+                .style("left", `${event.pageX + 10}px`)
+                .style("top", `${event.pageY + 10}px`)
+                .html(`
+                    <div style="font-weight:600;margin-bottom:2px;">${d.day} • ${String(d.hour).padStart(2,"0")}:00</div>
+                    <div>${d.value} events</div>
+                `);
+        })
+        .on("mouseleave", () => tip.style("opacity", 0));
+
+    // Title
+    svg.append("text")
+        .attr("x", padding.left)
+        .attr("y", 12)
+        .attr("fill", "#53627d")
+        .attr("font-size", 12)
+        .text(title);
 }
 
 // ---------- Charts ----------
 function drawTopTracksChart(data, mode = "plays") {
-  const container = d3.select("#chartTopTracks");
-  const W = container.node().clientWidth;
-  const H = 320;
+    const container = d3.select("#chartTopTracks");
+    const W = container.node().clientWidth;
+    const H = 320;
 
-  const margin = { top: 30, right: 14, bottom: 14, left: 14 };
-  const width = Math.max(320, W);
-  const height = H;
+    const margin = { top: 30, right: 14, bottom: 14, left: 14 };
+    const width = Math.max(320, W);
+    const height = H;
 
-  const rows = (data || []).slice(0, 15);
+    const rows = (data || []).slice(0, 15);
 
-  container.html("");
+    container.html("");
 
-  if (!rows.length) {
-    container.html(`<p class="meta-text">No tracks available for this view.</p>`);
-    return;
-  }
+    if (!rows.length) {
+        container.html(`<p class="meta-text">No tracks available for this view.</p>`);
+        return;
+    }
 
-  const svg = container.append("svg")
-    .attr("width", width)
-    .attr("height", height);
+    const svg = container.append("svg")
+        .attr("width", width)
+        .attr("height", height);
 
-  const label = mode === "adds" ? "Adds (from current filters)" : "Plays (Wrapped)";
+    const label = mode === "adds" ? "Adds (from current filters)" : "Plays (Wrapped)";
 
-  // little caption
-  svg.append("text")
-    .attr("x", margin.left)
-    .attr("y", 18)
-    .attr("fill", "#53627d")
-    .attr("font-size", 12)
-    .text(`Top tracks by ${label} — click to shortlist`);
+    // little caption
+    svg.append("text")
+        .attr("x", margin.left)
+        .attr("y", 18)
+        .attr("fill", "#53627d")
+        .attr("font-size", 12)
+        .text(`Top tracks by ${label} — click to shortlist`);
 
-  // --- Robust Scaler Logic ---
-  // We want to scale "msPlayed" so outlier tracks don't dwarf others, 
-  // ensuring areas are distinguishable.
-  const values = rows.map(d => d.msPlayed || 0).sort((a,b) => a - b);
-  let scaleFn = d => d; // default identity
+    // --- Robust Scaler Logic ---
+    // We want to scale "msPlayed" so outlier tracks don't dwarf others, 
+    // ensuring areas are distinguishable.
+    const values = rows.map(d => d.msPlayed || 0).sort((a, b) => a - b);
+    let scaleFn = d => d; // default identity
 
-  if (values.length > 0) {
-      const q1 = d3.quantile(values, 0.25);
-      const q3 = d3.quantile(values, 0.75);
-      const iqr = q3 - q1;
-      // If IQR is 0 (all same or very close), fallback to linear min-max
-      if (iqr === 0) {
-         scaleFn = d => d; 
-      } else {
-         // Robust scaling: (x - median) / IQR
-         // But d3.pack requires positive values for area.
-         // We'll map the robust range [Q1 - 1.5*IQR, Q3 + 1.5*IQR] to a reasonable size range.
-         const lowerBound = Math.max(0, q1 - 1.5 * iqr);
-         const upperBound = q3 + 1.5 * iqr;
-         
-         // Create a clamp scale
-         const robustScale = d3.scaleLinear()
-            .domain([lowerBound, upperBound])
-            .range([100, 10000]) // arbitrary area units
-            .clamp(true);
+    if (values.length > 0) {
+        const q1 = d3.quantile(values, 0.25);
+        const q3 = d3.quantile(values, 0.75);
+        const iqr = q3 - q1;
+        // If IQR is 0 (all same or very close), fallback to linear min-max
+        if (iqr === 0) {
+            scaleFn = d => d;
+        } else {
+            // Robust scaling: (x - median) / IQR
+            // But d3.pack requires positive values for area.
+            // We'll map the robust range [Q1 - 1.5*IQR, Q3 + 1.5*IQR] to a reasonable size range.
+            const lowerBound = Math.max(0, q1 - 1.5 * iqr);
+            const upperBound = q3 + 1.5 * iqr;
 
-         scaleFn = val => robustScale(val);
-      }
-  }
+            // Create a clamp scale
+            const robustScale = d3.scaleLinear()
+                .domain([lowerBound, upperBound])
+                .range([100, 10000]) // arbitrary area units
+                .clamp(true);
 
-  // Build hierarchy for d3.pack
-  const root = d3.hierarchy({ children: rows })
-    .sum(d => {
-        // Use msPlayed with robust scaling
-        const val = d.msPlayed || 0;
-        return scaleFn(val);
-    })
-    .sort((a, b) => (b.value || 0) - (a.value || 0));
+            scaleFn = val => robustScale(val);
+        }
+    }
 
-  const pack = d3.pack()
-    .size([width - margin.left - margin.right, height - margin.top - margin.bottom])
-    .padding(8);
+    // Build hierarchy for d3.pack
+    const root = d3.hierarchy({ children: rows })
+        .sum(d => {
+            // Use msPlayed with robust scaling
+            const val = d.msPlayed || 0;
+            return scaleFn(val);
+        })
+        .sort((a, b) => (b.value || 0) - (a.value || 0));
 
-  pack(root);
+    const pack = d3.pack()
+        .size([width - margin.left - margin.right, height - margin.top - margin.bottom])
+        .padding(8);
 
-  const g = svg.append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
+    pack(root);
 
-  // Color scale (soft)
-  const baseFill = "rgba(96,165,250,0.45)";
-  const selectedFill = "rgba(96,165,250,0.90)";
+    const g = svg.append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  const nodes = g.selectAll("g.node")
-    .data(root.leaves(), d => d.data.trackUri)
-    .join("g")
-    .attr("class", "node")
-    .attr("transform", d => `translate(${d.x},${d.y})`)
-    .style("cursor", "pointer")
-    .on("click", (_, d) => {
-      const key = d.data.trackUri;
-      if (state.shortlist.has(key)) state.shortlist.delete(key);
-      else state.shortlist.set(key, d.data);
+    // Color scale (soft)
+    const baseFill = "rgba(96,165,250,0.45)";
+    const selectedFill = "rgba(96,165,250,0.90)";
 
-      renderShortlist();
-      // redraw the SAME view the user is seeing
-      drawTopTracksChart(data, mode);
-    });
+    const nodes = g.selectAll("g.node")
+        .data(root.leaves(), d => d.data.trackUri)
+        .join("g")
+        .attr("class", "node")
+        .attr("transform", d => `translate(${d.x},${d.y})`)
+        .style("cursor", "pointer")
+        .on("click", (_, d) => {
+            const key = d.data.trackUri;
+            if (state.shortlist.has(key)) state.shortlist.delete(key);
+            else state.shortlist.set(key, d.data);
 
-  nodes.append("circle")
-    .attr("r", d => d.r)
-    .attr("fill", d => state.shortlist.has(d.data.trackUri) ? selectedFill : baseFill)
-    .attr("stroke", d => state.shortlist.has(d.data.trackUri) ? "rgba(21,34,59,0.35)" : "rgba(21,34,59,0.12)")
-    .attr("stroke-width", d => state.shortlist.has(d.data.trackUri) ? 2 : 1);
+            renderShortlist();
+            // redraw the SAME view the user is seeing
+            drawTopTracksChart(data, mode);
+        });
 
-  // Labels: show rank number inside if circle is big enough
-  const text = nodes.append("text")
-      .style("text-anchor", "middle")
-      .style("pointer-events", "none")
-      .style("fill", "rgba(21,34,59,0.9)")
-      .attr("dy", "-0.2em"); // Initial offset to center the block
+    nodes.append("circle")
+        .attr("r", d => d.r)
+        .attr("fill", d => state.shortlist.has(d.data.trackUri) ? selectedFill : baseFill)
+        .attr("stroke", d => state.shortlist.has(d.data.trackUri) ? "rgba(21,34,59,0.35)" : "rgba(21,34,59,0.12)")
+        .attr("stroke-width", d => state.shortlist.has(d.data.trackUri) ? 2 : 1);
 
-  // 1) Song Name
-  text.append("tspan")
-      .attr("x", 0)
-      .attr("dy", "-0.6em")
-      .style("font-weight", "bold")
-      .style("font-size", d => Math.max(8, d.r / 4) + "px") // dynamic sizing
-      .text(d => d.r > 25 ? (d.data.trackName.length > 8 ? d.data.trackName.slice(0,7)+"..." : d.data.trackName) : "");
+    // Labels: show rank number inside if circle is big enough
+    const text = nodes.append("text")
+        .style("text-anchor", "middle")
+        .style("pointer-events", "none")
+        .style("fill", "rgba(21,34,59,0.9)")
+        .attr("dy", "-0.2em"); // Initial offset to center the block
 
-  // 2) Artist Name
-  text.append("tspan")
-      .attr("x", 0)
-      .attr("dy", "1.1em")
-      .style("font-size", d => Math.max(7, d.r / 5) + "px")
-      .text(d => d.r > 25 ? (d.data.artistName.length > 15 ? d.data.artistName.slice(0,14)+"..." : d.data.artistName) : "");
+    // 1) Song Name
+    text.append("tspan")
+        .attr("x", 0)
+        .attr("dy", "-0.6em")
+        .style("font-weight", "bold")
+        .style("font-size", d => Math.max(8, d.r / 4) + "px") // dynamic sizing
+        .text(d => d.r > 25 ? (d.data.trackName.length > 8 ? d.data.trackName.slice(0, 7) + "..." : d.data.trackName) : "");
 
-  // 3) Listening Time (Top Tracks mode usually has msPlayed)
-  text.append("tspan")
-      .attr("x", 0)
-      .attr("dy", "1.1em")
-      .style("font-size", d => Math.max(7, d.r / 5) + "px")
-      .style("opacity", 0.8)
-      .text(d => {
-          if (d.r <= 25) return "";
-          // Convert ms to minutes
-          const mins = Math.round((d.data.msPlayed || 0) / 60000);
-          return `${mins} min`;
-      });
+    // 2) Artist Name
+    text.append("tspan")
+        .attr("x", 0)
+        .attr("dy", "1.1em")
+        .style("font-size", d => Math.max(7, d.r / 5) + "px")
+        .text(d => d.r > 25 ? (d.data.artistName.length > 15 ? d.data.artistName.slice(0, 14) + "..." : d.data.artistName) : "");
 
-  // Tooltip
-  nodes.append("title")
-    .text(d => {
-      const metricWord = mode === "adds" ? "adds" : "plays";
-      return `${d.data.trackName} — ${d.data.artistName}\n${metricWord}: ${d.data.count}`;
-    });
+    // 3) Listening Time (Top Tracks mode usually has msPlayed)
+    text.append("tspan")
+        .attr("x", 0)
+        .attr("dy", "1.1em")
+        .style("font-size", d => Math.max(7, d.r / 5) + "px")
+        .style("opacity", 0.8)
+        .text(d => {
+            if (d.r <= 25) return "";
+            // Convert ms to minutes
+            const mins = Math.round((d.data.msPlayed || 0) / 60000);
+            return `${mins} min`;
+        });
 
-  // Optional: tiny legend for selected
-  svg.append("text")
-    .attr("x", width - margin.right)
-    .attr("y", 18)
-    .attr("text-anchor", "end")
-    .attr("fill", "#53627d")
-    .attr("font-size", 12)
-    .text(`Shortlisted: ${state.shortlist.size}`);
+    // Tooltip
+    nodes.append("title")
+        .text(d => {
+            const metricWord = mode === "adds" ? "adds" : "plays";
+            return `${d.data.trackName} — ${d.data.artistName}\n${metricWord}: ${d.data.count}`;
+        });
+
+    // Optional: tiny legend for selected
+    svg.append("text")
+        .attr("x", width - margin.right)
+        .attr("y", 18)
+        .attr("text-anchor", "end")
+        .attr("fill", "#53627d")
+        .attr("font-size", 12)
+        .text(`Shortlisted: ${state.shortlist.size}`);
 }
 
 
@@ -394,8 +559,8 @@ function drawPlaylistTimeline(allAdds) {
 
     const norm = s => (s || "").toLowerCase().trim();
 
-    let adds = allAdds
-        .filter(d => state.selectedPlaylistName === "ALL" || d.playlistName === state.selectedPlaylistName);
+    // Playlist filter removed, keeping only artist filter if active
+    let adds = allAdds;
 
     // only apply artist filter if it actually matches something
     if (state.selectedArtistName) {
@@ -468,9 +633,27 @@ function drawPlaylistTimeline(allAdds) {
     svg.append("g").call(brush);
 
     // If state already has dateRange, show it
-    if (state.dateRange) {
+    if (state.dateRange && x) {
         const [a, b] = state.dateRange;
-        svg.select("g").call(brush.move, [x(a), x(b)]);
+        let xA, xB;
+        try {
+            xA = x(a);
+            xB = x(b);
+        } catch (e) {
+            return;
+        }
+        if (typeof xA === "number" && typeof xB === "number" && isFinite(xA) && isFinite(xB)) {
+            // Only call brush.move if the brush group exists
+            const brushGroup = svg.select("g");
+            if (!brushGroup.empty() && brush && brush.move) {
+                try {
+                    brushGroup.call(brush.move, [xA, xB]);
+                } catch (e) {
+                    // Defensive: log and skip if brush.move fails
+                    // console.warn("brush.move failed", e);
+                }
+            }
+        }
     }
 }
 
@@ -672,10 +855,7 @@ function renderAll() {
     // 1) Start from all playlist additions
     let filteredAdds = tables.playlistAdds;
 
-    // Apply playlist filter
-    if (state.selectedPlaylistName !== "ALL") {
-        filteredAdds = filteredAdds.filter(d => d.playlistName === state.selectedPlaylistName);
-    }
+    // Playlist dropdown filter logic removed
 
     // Apply date brush filter
     if (state.dateRange) {
@@ -691,8 +871,9 @@ function renderAll() {
     }
 
     // 2) Decide what Top Tracks should show
-    const anyFilterActive =
-        state.selectedPlaylistName !== "ALL";
+    const anyFilterActive = false;
+    // Previously: state.selectedPlaylistName !== "ALL";
+
 
     let topTracksToShow = tables.topTracks; // default: Wrapped
     const topTitle = document.querySelector("#topTracksTitle"); // add this id (see next step)
@@ -722,16 +903,19 @@ function renderAll() {
     drawTopTracksChart(topTracksToShow);
     drawPlaylistTimeline(filteredAdds);
     drawArtistRace(tables.raceFrames);
-    drawHighlightsTimeline(tables.highlights);
+    
+    // Switch to Weekday x Hour heatmap using Playlist Adds as a proxy 
+    // because we lack granular streaming history in the provided files.
+    // We reuse the logic from heatmap_app.js but feed it `filteredAdds` which has `addedDate`.
+    drawListeningHeatmap(filteredAdds, "Listening Rhythm (Playlist Adds)");
+    
     renderShortlist();
 }
 
 
 // ---------- Wire controls ----------
 function wireControls() {
-    els.playlistSelect.addEventListener("change", (e) => {
-        setState({ selectedPlaylistName: e.target.value });
-    });
+    // Playlist select event listener removed
 
     els.raceMetric.addEventListener("change", (e) => {
         setState({ raceMetric: e.target.value });
@@ -751,128 +935,12 @@ function wireControls() {
 }
 
 function populatePlaylists(playlistJson) {
-    const names = (playlistJson.playlists || []).map(p => p.name).sort((a, b) => a.localeCompare(b));
-    for (const name of names) {
-        const opt = document.createElement("option");
-        opt.value = name;
-        opt.textContent = name;
-        els.playlistSelect.appendChild(opt);
-    }
+    // Playlist dropdown population removed
 }
 
-function drawHighlightsTimeline(highlightsRaw) {
-  const container = d3.select("#panelHighlights");
-  if (container.empty()) {
-    console.error("drawHighlightsTimeline: #panelHighlights not found");
-    return;
-  }
+// ---------- Heatmap Logic (Ported from heatmap_app.js) ----------
+// OLD function removed.
 
-  const rect = container.node().getBoundingClientRect();
-  const width = Math.max(360, rect.width || 0);
-  const height = 240;
-
-  const margin = { top: 18, right: 16, bottom: 36, left: 200 };
-
-  // Parse + normalize
-  const highlights = (highlightsRaw || [])
-    .map(d => ({
-      ...d,
-      date: d.date ? new Date(d.date) : (d.timestamp ? new Date(d.timestamp) : null),
-      type: d.type || d.highlightType || d.category || "UNKNOWN",
-    }))
-    .filter(d => d.date && !Number.isNaN(+d.date));
-
-  if (highlights.length === 0) {
-    container.html(`<p class="meta-text">No highlights found.</p>`);
-    return;
-  }
-
-  // If you have a global dateRange filter, apply it
-  const filtered = (state && state.dateRange)
-    ? highlights.filter(d => d.date >= state.dateRange[0] && d.date <= state.dateRange[1])
-    : highlights;
-
-  const types = Array.from(new Set(filtered.map(d => d.type)));
-
-  // Fixed-ish order
-  const preferred = [
-    "STREAKS",
-    "MILESTONE",
-    "UNLIKE_COMBINATION",
-    "ON_REPEAT",
-    "FIRST_TO_DISCOVER",
-    "PROPORTION_LISTENING_ENTITY",
-    "UNKNOWN",
-  ];
-  const typeOrder = preferred.filter(t => types.includes(t)).concat(types.filter(t => !preferred.includes(t)));
-
-  const xDomain = d3.extent(filtered, d => d.date);
-  const x = d3.scaleTime()
-    .domain(xDomain[0] && xDomain[1] ? xDomain : [new Date("2025-01-01"), new Date("2025-12-31")])
-    .range([margin.left, width - margin.right]);
-
-  const y = d3.scalePoint()
-    .domain(typeOrder)
-    .range([margin.top, height - margin.bottom])
-    .padding(0.7);
-
-  const svg = container.html("")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-  // Left axis + horizontal gridlines
-  svg.append("g")
-    .attr("transform", `translate(${margin.left},0)`)
-    .call(d3.axisLeft(y).tickSize(-(width - margin.left - margin.right)))
-    .call(g => g.selectAll(".tick line").attr("stroke", "rgba(21,34,59,0.12)"))
-    .call(g => g.selectAll(".domain").attr("stroke", "rgba(21,34,59,0.18)"))
-    .call(g => g.selectAll("text").attr("fill", "#53627d").attr("font-size", 12));
-
-  // Bottom axis
-  svg.append("g")
-    .attr("transform", `translate(0,${height - margin.bottom})`)
-    .call(d3.axisBottom(x).ticks(Math.min(6, width / 140)))
-    .call(g => g.selectAll(".domain").attr("stroke", "rgba(21,34,59,0.18)"))
-    .call(g => g.selectAll("line").attr("stroke", "rgba(21,34,59,0.12)"))
-    .call(g => g.selectAll("text").attr("fill", "#53627d"));
-
-  // Deterministic tiny jitter (prevents exact overlap)
-  const jitter = (key) => {
-    let h = 0;
-    for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
-    return ((h % 9) - 4) * 1.2;
-  };
-
-  const color = d3.scaleOrdinal()
-    .domain(typeOrder)
-    .range(["#22c55e", "#6366f1", "#06b6d4", "#ec4899", "#f59e0b", "#8b5cf6", "#94a3b8"]);
-
-  svg.append("g")
-    .selectAll("circle")
-    .data(filtered, d => `${d.type}-${+d.date}-${d.entity || ""}`)
-    .join("circle")
-    .attr("cx", d => x(d.date))
-    .attr("cy", d => y(d.type) + jitter(`${d.type}-${d3.timeDay.floor(d.date)}`))
-    .attr("r", 6)
-    .attr("fill", d => color(d.type))
-    .attr("opacity", 0.95)
-    .attr("stroke", "white")
-    .attr("stroke-width", 2)
-    .style("cursor", "pointer")
-    .on("click", (_, d) => {
-      const start = new Date(+d.date - 7 * 24 * 3600 * 1000);
-      const end   = new Date(+d.date + 7 * 24 * 3600 * 1000);
-      setState({ dateRange: [start, end] });
-      updateChips();
-    })
-    .append("title")
-    .text(d => {
-      const day = d.date.toISOString().slice(0, 10);
-      const extra = d.entity || d.entityName || d.trackName || d.artistName || d.value || "";
-      return `${day}\n${d.type}${extra ? `\n${extra}` : ""}\n(click to filter dates)`;
-    });
-}
 
 
 
@@ -890,7 +958,7 @@ async function main() {
             loadJSON(`${RAW}YourLibrary.json`).catch(() => ({}))
         ]);
 
-        populatePlaylists(playlist);
+        // populatePlaylists(playlist); // Removed
         tables = transform({ wrapped, capsule, playlist, library });
 
         setStatus(true, "Loaded. Dashboard ready.");

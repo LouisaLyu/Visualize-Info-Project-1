@@ -40,9 +40,9 @@ body {
   color: var(--ink);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   background:
-    radial-gradient(1100px 720px at 10% 0%, rgba(37,99,235,.09) 0%, transparent 62%),
-    radial-gradient(1100px 720px at 90% 10%, rgba(6,182,212,.08) 0%, transparent 62%),
-    radial-gradient(980px 650px at 50% 105%, rgba(34,197,94,.06) 0%, transparent 62%),
+    radial-gradient(1100px 720px at 10% 0%, rgba(37, 99, 235, .09) 0%, transparent 62%),
+    radial-gradient(1100px 720px at 90% 10%, rgba(6, 182, 212, .08) 0%, transparent 62%),
+    radial-gradient(980px 650px at 50% 105%, rgba(34, 197, 94, .06) 0%, transparent 62%),
     linear-gradient(180deg, #ffffff 0%, #f9fcff 55%, #fbfffe 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -355,7 +355,7 @@ svg text {
   font-family: inherit;
 }
 
-/* Responsives */
+/* Responsive */
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;
@@ -368,21 +368,21 @@ svg text {
 
 .card,
 .controls,
-.status{
-  background: rgba(255,255,255,.92) !important;
-  border-color: rgba(7,18,37,.14) !important;
-  box-shadow: 0 18px 55px rgba(7,18,37,.12) !important;
+.status {
+  background: rgba(255, 255, 255, .92) !important;
+  border-color: rgba(7, 18, 37, .14) !important;
+  box-shadow: 0 18px 55px rgba(7, 18, 37, .12) !important;
 }
 
 .chip,
-.item{
-  background: rgba(255,255,255,.94) !important;
-  border-color: rgba(7,18,37,.12) !important;
-  box-shadow: 0 12px 30px rgba(7,18,37,.10) !important;
+.item {
+  background: rgba(255, 255, 255, .94) !important;
+  border-color: rgba(7, 18, 37, .12) !important;
+  box-shadow: 0 12px 30px rgba(7, 18, 37, .10) !important;
 }
 
 /* Optional: make chart/panel a touch whiter so they still read as “inside a card” */
 .chart,
-.panel{
-  background: rgba(255,255,255,.78) !important;
+.panel {
+  background: rgba(255, 255, 255, .78) !important;
 }
