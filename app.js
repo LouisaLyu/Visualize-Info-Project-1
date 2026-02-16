@@ -224,91 +224,163 @@ function transform({ wrapped, capsule, playlist, library }) {
 
 // ---------- Charts ----------
 function drawTopTracksChart(data, mode = "plays") {
-    // mode: "plays" (Wrapped) or "adds" (from filtered playlist additions)
-    const container = d3.select("#chartTopTracks");
-    const W = container.node().clientWidth;
-    const H = 320;
+  const container = d3.select("#chartTopTracks");
+  const W = container.node().clientWidth;
+  const H = 320;
 
-    const margin = { top: 22, right: 12, bottom: 70, left: 46 };
-    const width = Math.max(320, W);
-    const height = H;
+  const margin = { top: 30, right: 14, bottom: 14, left: 14 };
+  const width = Math.max(320, W);
+  const height = H;
 
-    const rows = data.slice(0, 15);
+  const rows = (data || []).slice(0, 15);
 
-    const x = d3.scaleBand()
-        .domain(rows.map(d => d.trackUri))
-        .range([margin.left, width - margin.right])
-        .padding(0.2);
+  container.html("");
 
-    const y = d3.scaleLinear()
-        .domain([0, d3.max(rows, d => d.count) || 1])
-        .nice()
-        .range([height - margin.bottom, margin.top]);
+  if (!rows.length) {
+    container.html(`<p class="meta-text">No tracks available for this view.</p>`);
+    return;
+  }
 
-    const svg = container.html("")
-        .append("svg")
-        .attr("width", width)
-        .attr("height", height);
+  const svg = container.append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
-    svg.append("g")
-        .attr("transform", `translate(${margin.left},0)`)
-        .call(d3.axisLeft(y).ticks(5))
-        .call(g => g.selectAll("text").attr("fill", "#53627d"))
-        .call(g => g.selectAll("path,line").attr("stroke", "rgba(21,34,59,0.18)"));
+  const label = mode === "adds" ? "Adds (from current filters)" : "Plays (Wrapped)";
 
-    svg.append("g")
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(x).tickFormat(() => ""))
-        .call(g => g.selectAll("path,line").attr("stroke", "rgba(21,34,59,0.18)"));
+  // little caption
+  svg.append("text")
+    .attr("x", margin.left)
+    .attr("y", 18)
+    .attr("fill", "#53627d")
+    .attr("font-size", 12)
+    .text(`Top tracks by ${label} — click to shortlist`);
 
-    // Title hint (dynamic)
-    const label = mode === "adds" ? "Adds (from current filters)" : "Plays (Wrapped)";
-    svg.append("text")
-        .attr("x", margin.left)
-        .attr("y", 14)
-        .attr("fill", "#53627d")
-        .attr("font-size", 11)
-        .text(`Top 15 tracks by ${label}`);
+  // --- Robust Scaler Logic ---
+  // We want to scale "msPlayed" so outlier tracks don't dwarf others, 
+  // ensuring areas are distinguishable.
+  const values = rows.map(d => d.msPlayed || 0).sort((a,b) => a - b);
+  let scaleFn = d => d; // default identity
 
-    const bars = svg.append("g").selectAll("rect")
-        .data(rows, d => d.trackUri)
-        .join("rect")
-        .attr("x", d => x(d.trackUri))
-        .attr("y", d => y(d.count))
-        .attr("width", x.bandwidth())
-        .attr("height", d => y(0) - y(d.count))
-        .attr("fill", d => state.shortlist.has(d.trackUri) ? "#60a5fa" : "rgba(96,165,250,0.55)")
-        .attr("stroke", d => state.shortlist.has(d.trackUri) ? "#e7eaf2" : "transparent")
-        .attr("stroke-width", 1)
-        .style("cursor", "pointer")
-        .on("click", (_, d) => {
-            if (state.shortlist.has(d.trackUri)) state.shortlist.delete(d.trackUri);
-            else state.shortlist.set(d.trackUri, d);
+  if (values.length > 0) {
+      const q1 = d3.quantile(values, 0.25);
+      const q3 = d3.quantile(values, 0.75);
+      const iqr = q3 - q1;
+      // If IQR is 0 (all same or very close), fallback to linear min-max
+      if (iqr === 0) {
+         scaleFn = d => d; 
+      } else {
+         // Robust scaling: (x - median) / IQR
+         // But d3.pack requires positive values for area.
+         // We'll map the robust range [Q1 - 1.5*IQR, Q3 + 1.5*IQR] to a reasonable size range.
+         const lowerBound = Math.max(0, q1 - 1.5 * iqr);
+         const upperBound = q3 + 1.5 * iqr;
+         
+         // Create a clamp scale
+         const robustScale = d3.scaleLinear()
+            .domain([lowerBound, upperBound])
+            .range([100, 10000]) // arbitrary area units
+            .clamp(true);
 
-            renderShortlist();
-            // redraw *the same dataset you’re currently viewing*
-            drawTopTracksChart(data, mode);
-        });
+         scaleFn = val => robustScale(val);
+      }
+  }
 
-    // Tooltip (dynamic wording)
-    bars.append("title").text(d => {
-        const metricWord = mode === "adds" ? "adds" : "plays";
-        return `${d.trackName} — ${d.artistName}\n${metricWord}: ${d.count}`;
+  // Build hierarchy for d3.pack
+  const root = d3.hierarchy({ children: rows })
+    .sum(d => {
+        // Use msPlayed with robust scaling
+        const val = d.msPlayed || 0;
+        return scaleFn(val);
+    })
+    .sort((a, b) => (b.value || 0) - (a.value || 0));
+
+  const pack = d3.pack()
+    .size([width - margin.left - margin.right, height - margin.top - margin.bottom])
+    .padding(8);
+
+  pack(root);
+
+  const g = svg.append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Color scale (soft)
+  const baseFill = "rgba(96,165,250,0.45)";
+  const selectedFill = "rgba(96,165,250,0.90)";
+
+  const nodes = g.selectAll("g.node")
+    .data(root.leaves(), d => d.data.trackUri)
+    .join("g")
+    .attr("class", "node")
+    .attr("transform", d => `translate(${d.x},${d.y})`)
+    .style("cursor", "pointer")
+    .on("click", (_, d) => {
+      const key = d.data.trackUri;
+      if (state.shortlist.has(key)) state.shortlist.delete(key);
+      else state.shortlist.set(key, d.data);
+
+      renderShortlist();
+      // redraw the SAME view the user is seeing
+      drawTopTracksChart(data, mode);
     });
 
-    // Rank labels (1..15)
-    svg.append("g")
-        .selectAll("text.rank")
-        .data(rows, d => d.trackUri)
-        .join("text")
-        .attr("class", "rank")
-        .attr("x", d => x(d.trackUri) + x.bandwidth() / 2)
-        .attr("y", height - margin.bottom + 14)
-        .attr("text-anchor", "middle")
-        .attr("fill", "#53627d")
-        .attr("font-size", 10)
-        .text((d, i) => i + 1);
+  nodes.append("circle")
+    .attr("r", d => d.r)
+    .attr("fill", d => state.shortlist.has(d.data.trackUri) ? selectedFill : baseFill)
+    .attr("stroke", d => state.shortlist.has(d.data.trackUri) ? "rgba(21,34,59,0.35)" : "rgba(21,34,59,0.12)")
+    .attr("stroke-width", d => state.shortlist.has(d.data.trackUri) ? 2 : 1);
+
+  // Labels: show rank number inside if circle is big enough
+  const text = nodes.append("text")
+      .style("text-anchor", "middle")
+      .style("pointer-events", "none")
+      .style("fill", "rgba(21,34,59,0.9)")
+      .attr("dy", "-0.2em"); // Initial offset to center the block
+
+  // 1) Song Name
+  text.append("tspan")
+      .attr("x", 0)
+      .attr("dy", "-0.6em")
+      .style("font-weight", "bold")
+      .style("font-size", d => Math.max(8, d.r / 4) + "px") // dynamic sizing
+      .text(d => d.r > 25 ? (d.data.trackName.length > 15 ? d.data.trackName.slice(0,14)+"..." : d.data.trackName) : "");
+
+  // 2) Artist Name
+  text.append("tspan")
+      .attr("x", 0)
+      .attr("dy", "1.1em")
+      .style("font-size", d => Math.max(7, d.r / 5) + "px")
+      .text(d => d.r > 25 ? (d.data.artistName.length > 15 ? d.data.artistName.slice(0,14)+"..." : d.data.artistName) : "");
+
+  // 3) Listening Time (Top Tracks mode usually has msPlayed)
+  text.append("tspan")
+      .attr("x", 0)
+      .attr("dy", "1.1em")
+      .style("font-size", d => Math.max(7, d.r / 5) + "px")
+      .style("opacity", 0.8)
+      .text(d => {
+          if (d.r <= 25) return "";
+          // Convert ms to minutes
+          const mins = Math.round((d.data.msPlayed || 0) / 60000);
+          return `${mins} min`;
+      });
+
+  // Tooltip
+  nodes.append("title")
+    .text(d => {
+      const metricWord = mode === "adds" ? "adds" : "plays";
+      return `${d.data.trackName} — ${d.data.artistName}\n${metricWord}: ${d.data.count}`;
+    });
+
+  // Optional: tiny legend for selected
+  svg.append("text")
+    .attr("x", width - margin.right)
+    .attr("y", 18)
+    .attr("text-anchor", "end")
+    .attr("fill", "#53627d")
+    .attr("font-size", 12)
+    .text(`Shortlisted: ${state.shortlist.size}`);
 }
+
 
 
 function drawPlaylistTimeline(allAdds) {
@@ -494,17 +566,18 @@ function drawArtistRace(frames) {
         labels.join(
             enter => enter.append("text")
                 .attr("class", "label")
-                .attr("x", d => x(d.value) + 6)
+                .attr("x", x(0) - 6)
                 .attr("y", d => y(d.artistName) + y.bandwidth() / 2)
+                .attr("text-anchor", "end")
                 .attr("dy", "0.35em")
-                .attr("fill", "#e7eaf2")
+                .attr("fill", "#737373")
                 .attr("font-size", 12)
                 .text(d => `${d.artistName} (${d.value})`),
             update => update,
             exit => exit.transition(t).style("opacity", 0).remove()
         )
             .transition(t)
-            .attr("x", d => x(d.value) + 6)
+            .attr("x", x(0) - 6)
             .attr("y", d => y(d.artistName) + y.bandwidth() / 2)
             .text(d => `${d.artistName} (${d.value})`);
     }
@@ -619,7 +692,7 @@ function renderAll() {
 
     // 2) Decide what Top Tracks should show
     const anyFilterActive =
-        state.selectedPlaylistName !== "ALL" || !!state.dateRange || !!state.selectedArtistName;
+        state.selectedPlaylistName !== "ALL";
 
     let topTracksToShow = tables.topTracks; // default: Wrapped
     const topTitle = document.querySelector("#topTracksTitle"); // add this id (see next step)
