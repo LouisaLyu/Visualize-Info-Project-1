@@ -688,47 +688,56 @@ function populatePlaylists(playlistJson) {
 }
 
 function drawHighlightsTimeline(highlightsRaw) {
-  const container = d3.select("#chartHighlights");
-  const W = container.node().clientWidth;
-  const H = 280;
+  const container = d3.select("#panelHighlights");
+  if (container.empty()) {
+    console.error("drawHighlightsTimeline: #panelHighlights not found");
+    return;
+  }
 
-  const margin = { top: 18, right: 16, bottom: 36, left: 220 };
-  const width = Math.max(320, W);
-  const height = H;
+  const rect = container.node().getBoundingClientRect();
+  const width = Math.max(360, rect.width || 0);
+  const height = 240;
 
-  // --- Parse + filter (adjust field names if yours differ)
+  const margin = { top: 18, right: 16, bottom: 36, left: 200 };
+
+  // Parse + normalize
   const highlights = (highlightsRaw || [])
     .map(d => ({
       ...d,
       date: d.date ? new Date(d.date) : (d.timestamp ? new Date(d.timestamp) : null),
-      type: d.type || d.highlightType || d.category || "UNKNOWN"
+      type: d.type || d.highlightType || d.category || "UNKNOWN",
     }))
     .filter(d => d.date && !Number.isNaN(+d.date));
 
-  // If you have a dashboard dateRange filter, apply it:
-  const filtered = state?.dateRange
+  if (highlights.length === 0) {
+    container.html(`<p class="meta-text">No highlights found.</p>`);
+    return;
+  }
+
+  // If you have a global dateRange filter, apply it
+  const filtered = (state && state.dateRange)
     ? highlights.filter(d => d.date >= state.dateRange[0] && d.date <= state.dateRange[1])
     : highlights;
 
   const types = Array.from(new Set(filtered.map(d => d.type)));
 
-  // If you want a fixed order, define it:
-  const typeOrder = [
+  // Fixed-ish order
+  const preferred = [
     "STREAKS",
     "MILESTONE",
     "UNLIKE_COMBINATION",
     "ON_REPEAT",
     "FIRST_TO_DISCOVER",
     "PROPORTION_LISTENING_ENTITY",
-    "UNKNOWN"
-  ].filter(t => types.includes(t)).concat(types.filter(t => !typeOrder?.includes(t)));
+    "UNKNOWN",
+  ];
+  const typeOrder = preferred.filter(t => types.includes(t)).concat(types.filter(t => !preferred.includes(t)));
 
   const xDomain = d3.extent(filtered, d => d.date);
   const x = d3.scaleTime()
     .domain(xDomain[0] && xDomain[1] ? xDomain : [new Date("2025-01-01"), new Date("2025-12-31")])
     .range([margin.left, width - margin.right]);
 
-  // Use scalePoint for clean “lanes”
   const y = d3.scalePoint()
     .domain(typeOrder)
     .range([margin.top, height - margin.bottom])
@@ -739,54 +748,59 @@ function drawHighlightsTimeline(highlightsRaw) {
     .attr("width", width)
     .attr("height", height);
 
-  // Horizontal lane gridlines
+  // Left axis + horizontal gridlines
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
     .call(d3.axisLeft(y).tickSize(-(width - margin.left - margin.right)))
-    .call(g => g.selectAll(".tick line").attr("stroke", "rgba(20,20,40,0.08)"))
-    .call(g => g.selectAll(".domain").attr("stroke", "rgba(20,20,40,0.12)"))
-    .call(g => g.selectAll("text").attr("fill", "rgba(20,20,40,0.70)").attr("font-size", 12));
+    .call(g => g.selectAll(".tick line").attr("stroke", "rgba(21,34,59,0.12)"))
+    .call(g => g.selectAll(".domain").attr("stroke", "rgba(21,34,59,0.18)"))
+    .call(g => g.selectAll("text").attr("fill", "#53627d").attr("font-size", 12));
 
-  // X axis
+  // Bottom axis
   svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)
-    .call(d3.axisBottom(x).ticks(Math.min(6, width / 120)))
-    .call(g => g.selectAll(".domain").attr("stroke", "rgba(20,20,40,0.12)"))
-    .call(g => g.selectAll("line").attr("stroke", "rgba(20,20,40,0.12)"))
-    .call(g => g.selectAll("text").attr("fill", "rgba(20,20,40,0.65)"));
+    .call(d3.axisBottom(x).ticks(Math.min(6, width / 140)))
+    .call(g => g.selectAll(".domain").attr("stroke", "rgba(21,34,59,0.18)"))
+    .call(g => g.selectAll("line").attr("stroke", "rgba(21,34,59,0.12)"))
+    .call(g => g.selectAll("text").attr("fill", "#53627d"));
 
-  // Deterministic tiny jitter ONLY for same-day collisions (optional)
+  // Deterministic tiny jitter (prevents exact overlap)
   const jitter = (key) => {
     let h = 0;
     for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
-    return ((h % 9) - 4) * 1.2; // ~ -4.8..+4.8 px
+    return ((h % 9) - 4) * 1.2;
   };
 
   const color = d3.scaleOrdinal()
     .domain(typeOrder)
-    .range(["#22c55e","#6366f1","#06b6d4","#ec4899","#f59e0b","#8b5cf6","#94a3b8"]);
+    .range(["#22c55e", "#6366f1", "#06b6d4", "#ec4899", "#f59e0b", "#8b5cf6", "#94a3b8"]);
 
-  // Dots
   svg.append("g")
     .selectAll("circle")
-    .data(filtered, d => `${d.type}-${+d.date}-${d.id || ""}`)
+    .data(filtered, d => `${d.type}-${+d.date}-${d.entity || ""}`)
     .join("circle")
     .attr("cx", d => x(d.date))
     .attr("cy", d => y(d.type) + jitter(`${d.type}-${d3.timeDay.floor(d.date)}`))
     .attr("r", 6)
     .attr("fill", d => color(d.type))
-    .attr("opacity", 0.9)
+    .attr("opacity", 0.95)
     .attr("stroke", "white")
-    .attr("stroke-width", 2);
-
-  // Tooltip (shows whatever fields you have)
-  svg.selectAll("circle").append("title")
+    .attr("stroke-width", 2)
+    .style("cursor", "pointer")
+    .on("click", (_, d) => {
+      const start = new Date(+d.date - 7 * 24 * 3600 * 1000);
+      const end   = new Date(+d.date + 7 * 24 * 3600 * 1000);
+      setState({ dateRange: [start, end] });
+      updateChips();
+    })
+    .append("title")
     .text(d => {
       const day = d.date.toISOString().slice(0, 10);
-      const extra = d.entityName || d.trackName || d.artistName || d.value || "";
-      return `${day}\n${d.type}${extra ? `\n${extra}` : ""}`;
+      const extra = d.entity || d.entityName || d.trackName || d.artistName || d.value || "";
+      return `${day}\n${d.type}${extra ? `\n${extra}` : ""}\n(click to filter dates)`;
     });
 }
+
 
 
 
