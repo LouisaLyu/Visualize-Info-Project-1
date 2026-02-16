@@ -228,162 +228,218 @@ function transform({ wrapped, capsule, playlist, library }) {
     return { topTracks, playlistAdds, raceFrames, highlights, listeningStats };
 }
 
-// ---------- Heatmap Logic (Ported from heatmap_app.js) ----------
-const HEATMAP_DAYS_MON_START = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+// ---------- Scatterplot for Highlights/Sound Capsule ----------
 
-function heatmapLocalParts(date) {
-  // Use user's local time or a specific timezone. 
-  // Here we use browser default for simplicity, or "en-CA" if requested.
-  const dtf = new Intl.DateTimeFormat("en-CA", {
-    weekday: "short",
-    hour: "2-digit",
-    hour12: false
-  });
-  const parts = dtf.formatToParts(date);
-  const map = Object.fromEntries(parts.map(p => [p.type, p.value]));
-  return { weekday: map.weekday, hour: Number(map.hour) };
-}
-
-function aggregateWeekHourHeatmap(rows, { timeField="date" } = {}) {
-  const counts = Array.from({ length: 7 }, () => Array(24).fill(0));
-
-  for (const r of (rows || [])) {
-    const raw = r?.[timeField];
-    if (!raw) continue;
-
-    const d = new Date(raw);
-    if (Number.isNaN(d.getTime())) continue;
-
-    const { weekday, hour } = heatmapLocalParts(d);
-    const di = HEATMAP_DAYS_MON_START.indexOf(weekday);
-    if (di === -1 || hour < 0 || hour > 23) continue;
-    counts[di][hour] += 1;
-  }
-
-  const data = [];
-  for (let di = 0; di < 7; di++) {
-    for (let h = 0; h < 24; h++) {
-      data.push({ day: HEATMAP_DAYS_MON_START[di], dayIndex: di, hour: h, value: counts[di][h] });
-    }
-  }
-  return data;
-}
-
-function ensureHeatmapTooltip() {
-  let tip = d3.select("body").selectAll(".hm-tooltip").data([null]);
-  tip = tip.enter().append("div").attr("class","hm-tooltip").merge(tip);
+function ensureLineChartTooltip() {
+  let tip = d3.select("body").selectAll(".line-tooltip").data([null]);
+  tip = tip.enter().append("div").attr("class","line-tooltip").merge(tip);
   return tip;
 }
 
-function drawListeningHeatmap(dataRows, title="Listening Rhythm (When Added)") {
-    console.log("Building Heatmap from dataRows:", dataRows?.length); // Debug info 
+function drawHighlightsLineChart(highlightsData, title="Highlights Timeline (Sound Capsule)") {
+    console.log("Building scatterplot from highlights:", highlightsData?.length);
     const container = d3.select("#panelHighlights");
 
     const W = container.node().clientWidth;
-    const padding = { top: 16, right: 14, bottom: 34, left: 32 };
+    const margin = { top: 40, right: 30, bottom: 50, left: 140 };
     const width = Math.max(360, W);
-    const height = 280;
-    const innerW = width - padding.left - padding.right;
-    const innerH = height - padding.top - padding.bottom;
-    
-    // We use playlistAdds as a proxy for "activity" since we lack hourly streaming history
-    // dataRows should be `tables.playlistAdds`
-    const cfg = {
-        cellSize: 18,
-        gap: 1,
-        xTickHours: [0, 4, 8, 12, 16, 20, 23]
-    };
+    const height = 320;
+    const innerW = width - margin.left - margin.right;
+    const innerH = height - margin.top - margin.bottom;
 
     container.html("");
-    const tip = ensureHeatmapTooltip();
+    const tip = ensureLineChartTooltip();
 
-    if (!dataRows || dataRows.length === 0) {
-        container.html(`<p class="meta-text">No activity data available.</p>`);
+    if (!highlightsData || highlightsData.length === 0) {
+        container.html(`<p class="meta-text">No highlight data available.</p>`);
         return;
     }
 
-    const data = aggregateWeekHourHeatmap(dataRows, { timeField: "addedDate" });
-    const values = data.map(d => d.value);
-    const max = d3.max(values) || 1;
-    const domainMax = Math.max(1, max);
+    // Format highlight type for display
+    const formatType = (type) => {
+        const typeMap = {
+            "ON_REPEAT": "On Repeat",
+            "STREAKS": "Streak",
+            "PROPORTION_LISTENING_ENTITY": "Top Listening",
+            "MILESTONE": "Milestone",
+            "UNLIKE_COMBINATION": "Unlike Combo",
+            "FIRST_TO_DISCOVER": "First Discovery"
+        };
+        return typeMap[type] || type;
+    };
 
-    // Expand focus: Trim empty hours (start/end of day)
-    const activeData = data.filter(d => d.value > 0);
-    let minHour = 0, maxHour = 23;
-    if (activeData.length > 0) {
-        const hours = activeData.map(d => d.hour);
-        minHour = Math.max(0, d3.min(hours) - 1); // buffer
-        maxHour = Math.min(23, d3.max(hours) + 1);
-    }
-    const hourDomain = d3.range(minHour, maxHour + 1);
+    // Extract month from date
+    const getMonth = (date) => {
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return monthNames[date.getMonth()];
+    };
+
+    // Get unique highlight types and months from data
+    const highlightTypes = Array.from(new Set(highlightsData.map(h => formatType(h.type))));
+    const months = Array.from(new Set(highlightsData.map(h => getMonth(h.date))));
+    
+    // Sort months chronologically (assuming data spans recent months)
+    const monthOrder = ["Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
+    const sortedMonths = months.sort((a, b) => monthOrder.indexOf(a) - monthOrder.indexOf(b));
+
+    // Color scale for different highlight types
+    const colorScale = d3.scaleOrdinal()
+        .domain(highlightTypes)
+        .range(["#1DB954", "#FF6B6B", "#4ECDC4", "#FFD93D", "#A78BFA", "#FB923C"]);
+
+    // Prepare data with month and formatted type
+    const data = highlightsData.map(h => ({
+        ...h,
+        month: getMonth(h.date),
+        typeLabel: formatType(h.type)
+    }));
 
     const svg = container.append("svg")
         .attr("width", width)
         .attr("height", height);
 
     const g = svg.append("g")
-        .attr("transform", `translate(${padding.left},${padding.top})`);
+        .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const x = d3.scaleBand()
-        .domain(hourDomain)
+    // Scales
+    const xScale = d3.scalePoint()
+        .domain(sortedMonths)
         .range([0, innerW])
-        .paddingInner(cfg.gap / (cfg.cellSize + cfg.gap));
+        .padding(0.5);
 
-    const y = d3.scaleBand()
-        .domain(HEATMAP_DAYS_MON_START)
+    const yScale = d3.scalePoint()
+        .domain(highlightTypes)
         .range([0, innerH])
-        .paddingInner(cfg.gap / (cfg.cellSize + cfg.gap));
+        .padding(0.5);
 
-    const color = d3.scaleSequential()
-        .domain([0, domainMax])
-        .interpolator(d3.interpolateBlues);
+    // Axes
+    const xAxis = d3.axisBottom(xScale);
 
-    const xAxis = d3.axisBottom(x)
-        .tickValues(hourDomain.filter(h => h % 4 === 0 || h === minHour || h === maxHour)) // smarter ticks
-        .tickFormat(d => `${String(d).padStart(2,"0")}:00`);
-
-    const yAxis = d3.axisLeft(y).tickSize(0);
+    const yAxis = d3.axisLeft(yScale);
 
     g.append("g")
         .attr("transform", `translate(0,${innerH})`)
         .call(xAxis)
-        .call(ax => ax.selectAll("text").attr("fill","#53627d").attr("font-size",11))
-        .call(ax => ax.selectAll("path,line").attr("stroke","rgba(21,34,59,0.18)"));
+        .call(ax => ax.selectAll("text")
+            .attr("fill", "#53627d")
+            .attr("font-size", 11))
+        .call(ax => ax.selectAll("path,line")
+            .attr("stroke", "rgba(21,34,59,0.18)"));
 
     g.append("g")
         .call(yAxis)
-        .call(ax => ax.selectAll("text").attr("fill","#53627d").attr("font-size",11))
-        .call(ax => ax.select(".domain").remove());
+        .call(ax => ax.selectAll("text")
+            .attr("fill", "#53627d")
+            .attr("font-size", 11))
+        .call(ax => ax.selectAll("path,line")
+            .attr("stroke", "rgba(21,34,59,0.18)"));
+
+    // Add grid lines for better readability
+    g.append("g")
+        .attr("class", "grid")
+        .selectAll("line")
+        .data(sortedMonths)
+        .join("line")
+        .attr("x1", d => xScale(d))
+        .attr("x2", d => xScale(d))
+        .attr("y1", 0)
+        .attr("y2", innerH)
+        .attr("stroke", "rgba(21,34,59,0.05)")
+        .attr("stroke-dasharray", "2,2");
 
     g.append("g")
-        .selectAll("rect")
+        .attr("class", "grid")
+        .selectAll("line")
+        .data(highlightTypes)
+        .join("line")
+        .attr("x1", 0)
+        .attr("x2", innerW)
+        .attr("y1", d => yScale(d))
+        .attr("y2", d => yScale(d))
+        .attr("stroke", "rgba(21,34,59,0.05)")
+        .attr("stroke-dasharray", "2,2");
+
+    // Add scatter points with pulsing animation
+    const points = g.selectAll("circle.highlight-point")
         .data(data)
-        .join("rect")
-        .attr("x", d => x(d.hour))
-        .attr("y", d => y(d.day))
-        .attr("width", x.bandwidth())
-        .attr("height", y.bandwidth())
-        .attr("rx", 4)
-        .attr("ry", 4)
-        .attr("fill", d => color(d.value))
-        .attr("opacity", d => d.value === 0 ? 0.18 : 1)
+        .join("circle")
+        .attr("class", "highlight-point")
+        .attr("cx", d => xScale(d.month))
+        .attr("cy", d => yScale(d.typeLabel))
+        .attr("r", 10)
+        .attr("fill", d => colorScale(d.typeLabel))
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 2)
+        .attr("opacity", 0.85)
+        .style("cursor", "pointer");
+
+    // Add pulsing animation using D3 transitions
+    function pulse(selection) {
+        selection
+            .transition()
+            .duration(1500)
+            .attr("r", 14)
+            .attr("opacity", 1)
+            .transition()
+            .duration(1500)
+            .attr("r", 10)
+            .attr("opacity", 0.85)
+            .on("end", function() {
+                pulse(d3.select(this));
+            });
+    }
+
+    pulse(points);
+
+    // Add hover effects
+    points
+        .on("mouseenter", function() {
+            d3.select(this)
+                .interrupt() // Stop pulse animation
+                .transition()
+                .duration(150)
+                .attr("r", 10)
+                .attr("opacity", 1);
+        })
         .on("mousemove", (event, d) => {
+            const valueStr = d.value ? ` • ${d.value}` : "";
+            const dotColor = colorScale(d.typeLabel);
             tip.style("opacity", 1)
                 .style("left", `${event.pageX + 10}px`)
                 .style("top", `${event.pageY + 10}px`)
                 .html(`
-                    <div style="font-weight:600;margin-bottom:2px;">${d.day} • ${String(d.hour).padStart(2,"0")}:00</div>
-                    <div>${d.value} events</div>
+                    <div style="font-weight:600;margin-bottom:8px;font-size:14px;">${d3.timeFormat("%b %d, %Y")(d.date)}</div>
+                    <div style="margin-bottom:6px;">
+                        <span style="display:inline-block;width:10px;height:10px;background:${dotColor};border-radius:50%;margin-right:6px;"></span>
+                        <strong style="color:${dotColor};">${d.typeLabel}</strong>
+                    </div>
+                    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.2);">
+                        <div style="font-size:12px;color:#9ca3af;margin-bottom:2px;">Entity:</div>
+                        <div style="font-size:13px;">${d.entity}${valueStr}</div>
+                    </div>
                 `);
         })
-        .on("mouseleave", () => tip.style("opacity", 0));
+        .on("mouseleave", function() {
+            tip.style("opacity", 0);
+            const elem = d3.select(this);
+            elem.interrupt();
+            elem.transition()
+                .duration(150)
+                .attr("r", 6)
+                .attr("opacity", 0.85)
+                .on("end", function() {
+                    pulse(d3.select(this));
+                });
+        });
 
     // Title
     svg.append("text")
-        .attr("x", padding.left)
-        .attr("y", 12)
+        .attr("x", margin.left)
+        .attr("y", 18)
         .attr("fill", "#53627d")
-        .attr("font-size", 12)
+        .attr("font-size", 14)
+        .attr("font-weight", 600)
         .text(title);
 }
 
@@ -904,10 +960,8 @@ function renderAll() {
     drawPlaylistTimeline(filteredAdds);
     drawArtistRace(tables.raceFrames);
     
-    // Switch to Weekday x Hour heatmap using Playlist Adds as a proxy 
-    // because we lack granular streaming history in the provided files.
-    // We reuse the logic from heatmap_app.js but feed it `filteredAdds` which has `addedDate`.
-    drawListeningHeatmap(filteredAdds, "Listening Rhythm (Playlist Adds)");
+    // Draw scatterplot showing highlights achieved over time from Sound Capsule data
+    drawHighlightsLineChart(tables.highlights, "Highlights Scatterplot (Sound Capsule)");
     
     renderShortlist();
 }
