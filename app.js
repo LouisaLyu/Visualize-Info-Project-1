@@ -466,7 +466,7 @@ function drawTopTracksChart(data, mode = "plays") {
         .attr("width", width)
         .attr("height", height);
 
-    const label = mode === "adds" ? "Adds (from current filters)" : "Plays (Wrapped)";
+    const label = mode === "adds" ? "Adds (from current filters)" : "Plays";
 
     // little caption
     svg.append("text")
@@ -950,9 +950,9 @@ function renderAll() {
 
         topTracksToShow = Array.from(agg.values()).sort((a, b) => b.count - a.count);
 
-        if (topTitle) topTitle.textContent = "Top Tracks (from current filters)";
+        if (topTitle) topTitle.textContent = "Your Top Listening Tracks (from current filters)";
     } else {
-        if (topTitle) topTitle.textContent = "Top Tracks (Wrapped)";
+        if (topTitle) topTitle.textContent = "Your Top Listening Tracks";
     }
 
     // 3) Draw everything
@@ -961,7 +961,7 @@ function renderAll() {
     drawArtistRace(tables.raceFrames);
     
     // Draw scatterplot showing highlights achieved over time from Sound Capsule data
-    drawHighlightsLineChart(tables.highlights, "Highlights Scatterplot (Sound Capsule)");
+    drawHighlightsLineChart(tables.highlights, "Highlights Scatterplot");
     
     renderShortlist();
 }
